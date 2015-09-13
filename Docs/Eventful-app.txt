@@ -1,0 +1,38 @@
+Follow Eventful app
+
+- Landing page: 2 main tabs:
++ Event for you: Current location or Current city
++ All event: Category list 
+
+At this page, there will be search part for user to use
+
+
+- Searh result page: will be used for
++ Display event in one Category
++ Display result when user search (text, distance)
+
+- Event detail page:
++ Event information
++ Event like, Event Share
+
+- Event map location page
+
+- Setting page: 
++ Filter (Current city, distance)
+
+
+==> Total around 5 6 screens
+
+
+Parted which need to be focused :
+- Eventful API 
+- UI: make it look good, especially Animation (very strong on iOS)
+- Performace: Find the best way to implement
+- Third party: Facebook, Google Map
+- Assets if neccessary
+
+
+
+
+
+
