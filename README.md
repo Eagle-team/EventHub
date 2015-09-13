@@ -1,7 +1,7 @@
 # EventHub
 The final project of Swift course provided by coderschool.vn
 
-##Members:
+##Members
 * Le Hoan (team lead)
 * Nguyen Hoang-Anh
 * Doan Dat 
@@ -31,6 +31,6 @@ Additionally, EventHub also helps socialize event plan with Facebook integration
 
 ## EventHub Wireframes
 
-
+Check it here: https://moqups.com/anhnguyen/spDsjygZ/p:a32f0bc3a
 
 
