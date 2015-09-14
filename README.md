@@ -31,6 +31,6 @@ Additionally, EventHub also helps socialize event plan with Facebook integration
 
 ## EventHub Wireframes
 
-Check it here: https://moqups.com/anhnguyen/spDsjygZ/p:a32f0bc3a
+Check it here: https://moqups.com/anhnguyen/spDsjygZ
 
 
