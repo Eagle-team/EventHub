@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9B21BA528C3003D83C6 /* AppDelegate.swift */; };
-		CE02D9B51BA528C3003D83C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9B41BA528C3003D83C6 /* ViewController.swift */; };
 		CE02D9B81BA528C3003D83C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B61BA528C3003D83C6 /* Main.storyboard */; };
 		CE02D9BA1BA528C3003D83C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B91BA528C3003D83C6 /* Images.xcassets */; };
 		CE02D9BD1BA528C3003D83C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9BB1BA528C3003D83C6 /* LaunchScreen.xib */; };
 		CE02D9C91BA528C3003D83C6 /* EventHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9C81BA528C3003D83C6 /* EventHubTests.swift */; };
+		CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */; };
+		CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */; };
+		CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,16 @@
 		CE02D9AD1BA528C3003D83C6 /* EventHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02D9B11BA528C3003D83C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE02D9B21BA528C3003D83C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE02D9B41BA528C3003D83C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE02D9B71BA528C3003D83C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE02D9B91BA528C3003D83C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE02D9BC1BA528C3003D83C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CE02D9C21BA528C3003D83C6 /* EventHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02D9C71BA528C3003D83C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE02D9C81BA528C3003D83C6 /* EventHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHubTests.swift; sourceTree = "<group>"; };
+		CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		CEF1D3391BAD7D8A00CE17B4 /* EventHub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventHub-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */,
+				CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,7 @@
 		CE02D9A41BA528C3003D83C6 = {
 			isa = PBXGroup;
 			children = (
+				CEF1D3341BAD7D4700CE17B4 /* Frameworks */,
 				CE02D9AF1BA528C3003D83C6 /* EventHub */,
 				CE02D9C51BA528C3003D83C6 /* EventHubTests */,
 				CE02D9AE1BA528C3003D83C6 /* Products */,
@@ -77,8 +85,8 @@
 		CE02D9AF1BA528C3003D83C6 /* EventHub */ = {
 			isa = PBXGroup;
 			children = (
+				CEF1D33C1BAD7EF100CE17B4 /* View controllers */,
 				CE02D9B21BA528C3003D83C6 /* AppDelegate.swift */,
-				CE02D9B41BA528C3003D83C6 /* ViewController.swift */,
 				CE02D9B61BA528C3003D83C6 /* Main.storyboard */,
 				CE02D9B91BA528C3003D83C6 /* Images.xcassets */,
 				CE02D9BB1BA528C3003D83C6 /* LaunchScreen.xib */,
@@ -90,6 +98,7 @@
 		CE02D9B01BA528C3003D83C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEF1D3391BAD7D8A00CE17B4 /* EventHub-Bridging-Header.h */,
 				CE02D9B11BA528C3003D83C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +119,23 @@
 				CE02D9C71BA528C3003D83C6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CEF1D3341BAD7D4700CE17B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */,
+				CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEF1D33C1BAD7EF100CE17B4 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */,
+			);
+			name = "View controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE02D9B51BA528C3003D83C6 /* ViewController.swift in Sources */,
+				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
 				CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,9 +368,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = EventHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventHub-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +385,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = EventHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EventHub-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +450,7 @@
 				CE02D9CE1BA528C3003D83C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE02D9CF1BA528C3003D83C6 /* Build configuration list for PBXNativeTarget "EventHubTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +459,7 @@
 				CE02D9D11BA528C3003D83C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
