@@ -17,13 +17,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
+            let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetLocationViewController") as? SetLocationViewController
+            
+            self.navigationController?.pushViewController(setlocationVC!, animated: true)
+            self.presentViewController(setlocationVC!, animated: true, completion: nil)
+           // self.navigationController?.popViewControllerAnimated(true)
+        
         }
         else
         {
             let loginView : FBSDKLoginButton = FBSDKLoginButton()
             self.view.addSubview(loginView)
             loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
+            loginView.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
             loginView.delegate = self
         }
     }
@@ -51,6 +57,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             {
                 // Do work
             }
+            
+            let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetLocationViewController") as? SetLocationViewController
+            
+            self.navigationController?.pushViewController(setlocationVC!, animated: true)
+            self.presentViewController(setlocationVC!, animated: true, completion: nil)
         }
     }
     

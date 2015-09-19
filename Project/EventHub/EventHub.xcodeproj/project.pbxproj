@@ -15,6 +15,7 @@
 		CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */; };
 		CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */; };
 		CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */; };
+		CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		CEF1D3391BAD7D8A00CE17B4 /* EventHub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventHub-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */,
+				CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
+				CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */,
 				CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

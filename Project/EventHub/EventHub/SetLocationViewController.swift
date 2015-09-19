@@ -10,6 +10,7 @@ import UIKit
 
 class SetLocationViewController: UIViewController {
 
+    @IBOutlet weak var locationTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +23,8 @@ class SetLocationViewController: UIViewController {
     }
     
 
+    @IBAction func OnLocationSet(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 
