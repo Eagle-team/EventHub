@@ -13,8 +13,8 @@
 		CE12C12A1BA9DA460057118D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE12C1291BA9DA460057118D /* Images.xcassets */; };
 		CE12C12D1BA9DA460057118D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE12C12B1BA9DA460057118D /* LaunchScreen.xib */; };
 		CE12C1391BA9DA460057118D /* testloginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12C1381BA9DA460057118D /* testloginTests.swift */; };
-		CE12C1451BA9DB1E0057118D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE12C1431BA9DB1E0057118D /* FBSDKCoreKit.framework */; };
-		CE12C1461BA9DB1E0057118D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE12C1441BA9DB1E0057118D /* FBSDKLoginKit.framework */; };
+		CEF1D3321BAD124100CE17B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3301BAD124100CE17B4 /* FBSDKCoreKit.framework */; };
+		CEF1D3331BAD124100CE17B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3311BAD124100CE17B4 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +38,9 @@
 		CE12C1321BA9DA460057118D /* testloginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testloginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE12C1371BA9DA460057118D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE12C1381BA9DA460057118D /* testloginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testloginTests.swift; sourceTree = "<group>"; };
-		CE12C1431BA9DB1E0057118D /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		CE12C1441BA9DB1E0057118D /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		CE12C1491BA9DB660057118D /* testlogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testlogin-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE12C1491BA9DB660057118D /* testlogin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testlogin-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		CEF1D3301BAD124100CE17B4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CEF1D3311BAD124100CE17B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,8 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE12C1461BA9DB1E0057118D /* FBSDKLoginKit.framework in Frameworks */,
-				CE12C1451BA9DB1E0057118D /* FBSDKCoreKit.framework in Frameworks */,
+				CEF1D3331BAD124100CE17B4 /* FBSDKLoginKit.framework in Frameworks */,
+				CEF1D3321BAD124100CE17B4 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,6 @@
 				CE12C11F1BA9DA460057118D /* testlogin */,
 				CE12C1351BA9DA460057118D /* testloginTests */,
 				CE12C11E1BA9DA460057118D /* Products */,
-				CE12C1491BA9DB660057118D /* testlogin-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +98,7 @@
 		CE12C1201BA9DA460057118D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CE12C1491BA9DB660057118D /* testlogin-Bridging-Header.h */,
 				CE12C1211BA9DA460057118D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -124,8 +124,8 @@
 		CE12C1421BA9DB000057118D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE12C1431BA9DB1E0057118D /* FBSDKCoreKit.framework */,
-				CE12C1441BA9DB1E0057118D /* FBSDKLoginKit.framework */,
+				CEF1D3301BAD124100CE17B4 /* FBSDKCoreKit.framework */,
+				CEF1D3311BAD124100CE17B4 /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = testlogin/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "testlogin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -383,7 +383,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = testlogin/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "testlogin-Bridging-Header.h";
 			};
@@ -442,6 +442,7 @@
 				CE12C13E1BA9DA460057118D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE12C13F1BA9DA460057118D /* Build configuration list for PBXNativeTarget "testloginTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +451,7 @@
 				CE12C1411BA9DA460057118D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
