@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Yelp.YelpClient.(searchWithTerm (Yelp.YelpClient) -&gt; (Swift.String, sort : Swift.Optional&lt;Yelp.YelpSortMode&gt;, categories : Swift.Optional&lt;Swift.Array&lt;Swift.String&gt;&gt;, deals : Swift.Optional&lt;Swift.Bool&gt;, completion : (Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Yelp.Business&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ObjectiveC.AFHTTPRequestOperation).(closure #2):YelpClient.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Yelp.YelpClient.(searchWithTerm (Yelp.YelpClient) -&gt; (Swift.String, sort : Swift.Optional&lt;Yelp.YelpSortMode&gt;, categories : Swift.Optional&lt;Swift.Array&lt;Swift.String&gt;&gt;, deals : Swift.Optional&lt;Swift.Bool&gt;, completion : (Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Yelp.Business&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ObjectiveC.AFHTTPRequestOperation).(closure #1):YelpClient.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Yelp.YelpClient.searchWithTerm (Yelp.YelpClient)(Swift.String, sort : Swift.Optional&lt;Yelp.YelpSortMode&gt;, categories : Swift.Optional&lt;Swift.Array&lt;Swift.String&gt;&gt;, deals : Swift.Optional&lt;Swift.Bool&gt;, completion : (Swift.ImplicitlyUnwrappedOptional&lt;Swift.Array&lt;Yelp.Business&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; ()) -&gt; ObjectiveC.AFHTTPRequestOperation:YelpClient.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
