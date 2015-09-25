@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DDB00984-D40E-4CB9-9206-0B52000CF615</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EventHub</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>98530157CBB5CF32F4FC0B4CB97D796E2917E00A</key>
+		<string>https://github.com/Eagle-team/EventHub.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Project/EventHub/EventHub.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>98530157CBB5CF32F4FC0B4CB97D796E2917E00A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Eagle-team/EventHub.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>98530157CBB5CF32F4FC0B4CB97D796E2917E00A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>98530157CBB5CF32F4FC0B4CB97D796E2917E00A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EventHub</string>
+		</dict>
+	</array>
+</dict>
+</plist>
