@@ -10,6 +10,9 @@
 		39453052F96E57DCFBAC020B /* libPods-EventHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434C1A264ED0C4F42FC83243 /* libPods-EventHub.a */; };
 		58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771B1BB50BAC00A9595F /* EventClient.swift */; };
 		58E9771F1BB50EDE00A9595F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771E1BB50EDE00A9595F /* Event.swift */; };
+		58E977211BB5398400A9595F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977201BB5398400A9595F /* Location.swift */; };
+		58E977251BB5609200A9595F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977241BB5609200A9595F /* EventViewController.swift */; };
+		58E977281BB56AD400A9595F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977271BB56AD400A9595F /* EventCell.swift */; };
 		CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9B21BA528C3003D83C6 /* AppDelegate.swift */; };
 		CE02D9B81BA528C3003D83C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B61BA528C3003D83C6 /* Main.storyboard */; };
 		CE02D9BA1BA528C3003D83C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B91BA528C3003D83C6 /* Images.xcassets */; };
@@ -35,6 +38,9 @@
 		434C1A264ED0C4F42FC83243 /* libPods-EventHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EventHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58E9771B1BB50BAC00A9595F /* EventClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventClient.swift; sourceTree = "<group>"; };
 		58E9771E1BB50EDE00A9595F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		58E977201BB5398400A9595F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		58E977241BB5609200A9595F /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		58E977271BB56AD400A9595F /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		916BC3F22BD15EAFBBF29A15 /* Pods-EventHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventHub/Pods-EventHub.release.xcconfig"; sourceTree = "<group>"; };
 		CE02D9AD1BA528C3003D83C6 /* EventHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02D9B11BA528C3003D83C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,8 +92,17 @@
 			isa = PBXGroup;
 			children = (
 				58E9771E1BB50EDE00A9595F /* Event.swift */,
+				58E977201BB5398400A9595F /* Location.swift */,
 			);
 			name = EventModel;
+			sourceTree = "<group>";
+		};
+		58E977261BB56AB000A9595F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58E977271BB56AD400A9595F /* EventCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		CE02D9A41BA528C3003D83C6 = {
@@ -113,6 +128,7 @@
 		CE02D9AF1BA528C3003D83C6 /* EventHub */ = {
 			isa = PBXGroup;
 			children = (
+				58E977261BB56AB000A9595F /* Views */,
 				58E9771D1BB50E4400A9595F /* EventModel */,
 				58E9771A1BB50B9500A9595F /* Client */,
 				CEF1D33C1BAD7EF100CE17B4 /* View controllers */,
@@ -166,6 +182,7 @@
 			children = (
 				CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */,
 				CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */,
+				58E977241BB5609200A9595F /* EventViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -316,8 +333,11 @@
 			files = (
 				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
 				58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */,
+				58E977251BB5609200A9595F /* EventViewController.swift in Sources */,
 				CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */,
+				58E977281BB56AD400A9595F /* EventCell.swift in Sources */,
 				CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */,
+				58E977211BB5398400A9595F /* Location.swift in Sources */,
 				58E9771F1BB50EDE00A9595F /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,24 +1,21 @@
 //
-//  SetLocationViewController.swift
+//  EventViewController.swift
 //  EventHub
 //
-//  Created by Anh Nguyen on 9/19/15.
+//  Created by Anh Nguyen on 9/25/15.
 //  Copyright (c) 2015 Eagle-team. All rights reserved.
 //
 
 import UIKit
 
-class SetLocationViewController: UIViewController {
+class EventViewController: UIViewController {
 
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var eventTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        Location.getCurrentLocation { (location, error) -> Void in
-            self.locationTextField.text = location.locationName
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,8 +24,6 @@ class SetLocationViewController: UIViewController {
     }
     
 
-    @IBAction func OnLocationSet(sender: AnyObject) {
-    }
     /*
     // MARK: - Navigation
 

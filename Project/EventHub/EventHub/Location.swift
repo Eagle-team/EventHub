@@ -17,9 +17,16 @@
 
 import UIKit
 
-class Event: NSObject {
-    let title: String?
-    let address: String?
+class Location: NSObject {
+    
+    let countryName: String? // "country_name": "Viet Nam",
+                             //"location_type": "region_id",
+   // let locationId: String? //"location_id": "3329",
+
+    let locationName: String? //"pretty_name": "Ho Chi Minh, thanh pho",
+    //let locationMetaName: String? //"meta_name": "Ho Chi Minh, thanh pho",
+
+    //"country_id": "233",
     //et cityName: String?
     //let countryName: String?
     //let imageURL: NSURL?
@@ -27,23 +34,25 @@ class Event: NSObject {
     
     
     init(dictionary: NSDictionary) {
-        title = dictionary["title"] as? String
-        address = dictionary["venue_address"] as? String
+        countryName = dictionary["country_name"] as? String
+        locationName = dictionary["meta_name"] as? String
         
     }
     
-    class func allEvents(#array: [NSDictionary]) -> [Event] {
-        var  events = [Event]()
+    class func getLocations(#array: [NSDictionary]) -> [Location] {
+        var  allLocations = [Location]()
         for dictionary in array {
-            var anEvent = Event(dictionary: dictionary)
-            events.append(anEvent)
+            var location = Location(dictionary: dictionary)
+            allLocations.append(location)
         }
-        return events
+        return allLocations
     }
     
     
-    class func searchWithBaseLocation(location: String, completion: ([Event]!, NSError!) -> Void) {
-        EventClient.sharedInstance.searchWithBaseLocation(location, completion: completion)
+    class func getCurrentLocation(completion: (Location!, NSError!) -> Void) {
+        
+        EventClient.sharedInstance.suggestCurrentLocation(completion);
+
     }
     
     class func searchWithTerm(term: String, sort: EventSortMode?, categories: [String]?, deals: Bool?, completion: ([Event]!, NSError!) -> Void) -> Void {

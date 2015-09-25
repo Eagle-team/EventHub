@@ -99,9 +99,96 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdy-10-Inj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="406"/>
+            <point key="canvasLocation" x="594" y="406"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="f0Z-7i-WCq">
+            <objects>
+                <viewController id="Lib-xw-HuW" customClass="EventViewController" customModule="EventHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WQ4-fp-TOz"/>
+                        <viewControllerLayoutGuide type="bottom" id="IlB-j6-7gS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S3o-li-WaB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bdR-Ow-5Hg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="EventCell" selectionStyle="default" indentationWidth="10" rowHeight="89" id="1Og-pe-I5I" customClass="EventCell" customModule="EventHub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Og-pe-I5I" id="kmt-DG-9gT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="maM-s3-VFX">
+                                                    <rect key="frame" x="13" y="1" width="79" height="77"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swift Course Final Demo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-As-mJg">
+                                                    <rect key="frame" x="103" y="1" width="186" height="23"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oct 6, 2015  7p.m -  9p.m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-qJ-JzC">
+                                                    <rect key="frame" x="126" y="21" width="186" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ozo-RM-xlP">
+                                                    <rect key="frame" x="103" y="25" width="16" height="16"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm5-i2-DE4">
+                                                    <rect key="frame" x="103" y="55" width="186" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18, Nguyen Thi Minh Khai" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGz-6i-Q8S">
+                                                    <rect key="frame" x="103" y="40" width="186" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventAddress" destination="dGz-6i-Q8S" id="I6u-Yq-rsL"/>
+                                            <outlet property="eventCity" destination="sm5-i2-DE4" id="hO1-Ii-lQB"/>
+                                            <outlet property="eventPoster" destination="maM-s3-VFX" id="lbb-Tf-mdu"/>
+                                            <outlet property="eventTime" destination="1ez-qJ-JzC" id="W2p-JP-bcg"/>
+                                            <outlet property="eventTitle" destination="vb0-As-mJg" id="Pnp-tf-1TY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="eventTableView" destination="bdR-Ow-5Hg" id="d8b-lC-Qyq"/>
+                        <outlet property="searchDisplayController" destination="aNS-12-Lf7" id="jgQ-fP-Cmt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khi-tx-Qp2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="aNS-12-Lf7">
+                    <connections>
+                        <outlet property="delegate" destination="Lib-xw-HuW" id="2fj-4O-KnE"/>
+                        <outlet property="searchContentsController" destination="Lib-xw-HuW" id="nGX-bV-ybs"/>
+                        <outlet property="searchResultsDataSource" destination="Lib-xw-HuW" id="kK9-vX-oog"/>
+                        <outlet property="searchResultsDelegate" destination="Lib-xw-HuW" id="em1-kI-H0Z"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="957" y="406"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clock" width="128" height="128"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
