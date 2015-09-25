@@ -16,9 +16,9 @@ class SetLocationViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        Location.getCurrentLocation { (location, error) -> Void in
-            self.locationTextField.text = location.locationName
-        }
+        //Location.getCurrentLocation { (location, error) -> Void in
+        //    self.locationTextField.text = location.locationName
+        //}
     }
 
     override func didReceiveMemoryWarning() {

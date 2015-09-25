@@ -8,13 +8,27 @@
 
 import UIKit
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var eventTableView: UITableView!
+    
+    var events: [Event]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        eventTableView.dataSource = self
+        eventTableView.delegate = self
+        eventTableView.rowHeight = UITableViewAutomaticDimension
+        eventTableView.estimatedRowHeight = 120
+        
+        
+        Event.searchWithBaseLocation("Ho Chi Minh City", completion: { (events, error) -> Void in
+            self.events = events
+            self.eventTableView.reloadData()
+            
+        })
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +37,25 @@ class EventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if events != nil {
+            return events.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
+        
+        cell.event = events[indexPath.row]
+        
+        return cell
+    }
+
 
     /*
     // MARK: - Navigation

@@ -16,13 +16,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Do any additional setup after loading the view.
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            // User is already logged in, do work such as go to next view controller.
-            let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetLocationViewController") as? SetLocationViewController
+             var timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("ChangeView"), userInfo: nil, repeats: false)
             
-            self.navigationController?.pushViewController(setlocationVC!, animated: true)
-            self.presentViewController(setlocationVC!, animated: true, completion: nil)
-           // self.navigationController?.popViewControllerAnimated(true)
-        
         }
         else
         {
@@ -32,6 +27,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             loginView.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
             loginView.delegate = self
         }
+    }
+    
+   
+    
+    func ChangeView() {
+        // Something after a delay
+        
+        let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetLocationViewController") as? SetLocationViewController
+        
+        self.navigationController?.pushViewController(setlocationVC!, animated: true)
+        
+        self.presentViewController(setlocationVC!, animated: true, completion: nil)
+        self.showViewController(setlocationVC!, sender: self)
+
     }
 
     override func didReceiveMemoryWarning() {

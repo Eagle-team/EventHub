@@ -20,15 +20,28 @@ import UIKit
 class Event: NSObject {
     let title: String?
     let address: String?
-    //et cityName: String?
-    //let countryName: String?
-    //let imageURL: NSURL?
-    //let startTime: String?
+    
+    let cityName: String?
+    let countryName: String?
+    let imageURL: NSURL
+    let startTime: String?
     
     
     init(dictionary: NSDictionary) {
+        
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
+        if dictionary["image.medium.url"] != nil
+        {
+            imageURL = NSURL(string: dictionary["image.medium.url"] as! String)!
+        }
+        else {imageURL = NSURL(string: "")!}
+        
+        cityName = dictionary["city_name"] as? String
+        countryName = dictionary["country_name"] as? String
+        
+        
+        startTime = dictionary["start_time"] as? String
         
     }
     

@@ -17,7 +17,7 @@ let eventfulConsumerKey = "2a9b64c7b372deb628fc"
 let eventfulConsumerSecret = "115f9b6c6f32a714a003"
 let eventfulAppKey = "dBBqWtxNzNgKWx3P"
 
-let baseAPIUrl = "http://api.eventful.com/json"
+let baseAPIUrl = "http://api.eventful.com/json/events/search"
 let searchEventApi = "/events/search"
 
 let baseNormalAPI = "http://eventful.com/json/tools/location/"
@@ -48,7 +48,8 @@ class EventClient: BDBOAuth1RequestOperationManager {
     
     init(consumerKey key: String!, consumerSecret secret: String!){
         
-        var baseUrl = NSURL(string: baseNormalAPI)
+        //var baseUrl = NSURL(string: baseNormalAPI)
+        var baseUrl = NSURL(string: baseAPIUrl)
         super.init(baseURL: baseUrl, consumerKey: key, consumerSecret: secret);
         
         //var token = BDBOAuth1Credential(token: accessToken, secret: accessSecret, expiration: nil)
@@ -124,7 +125,7 @@ class EventClient: BDBOAuth1RequestOperationManager {
         
         println(parameters)
         
-        return self.GET(searchEventApi, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+        return self.GET("", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             println(response["events"]);
             var dictionarie = response["events"]! as? NSDictionary
             var dictionaries = dictionarie?["event"] as? [NSDictionary]

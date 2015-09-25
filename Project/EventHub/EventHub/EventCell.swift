@@ -9,6 +9,21 @@
 import UIKit
 
 class EventCell: UITableViewCell {
+    
+    var event: Event! {
+        didSet {
+            
+            eventTitle.text = event.title
+           // if event.imageURL{
+          ///  eventPoster.setImageWithURL(event.imageURL)
+           // }
+            eventAddress.text = event.address
+            eventCity.text = event.cityName
+            //reviewCountLabel.text = "\(business.reviewCount!) Reviews"
+            eventTime.text = event.startTime //.setImageWithURL(business.ratingImageURL)
+           // distanceLabel.text = business.distance
+        }
+    }
 
     @IBOutlet weak var eventTitle: UILabel!
     
