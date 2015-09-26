@@ -24,7 +24,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         loginView.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
         loginView.delegate = self
         
-        // Do any additional setup after loading the view.
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             getLocation()
@@ -40,7 +39,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
     func getLocation(){
         showLoading()
         locationManager.requestAlwaysAuthorization()
-        //locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
         if (CLLocationManager.locationServicesEnabled()){
             locationManager.delegate = self
@@ -54,11 +53,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (a == 0){
             a = a + 1
-            manager.stopUpdatingLocation()
+            //manager.stopUpdatingLocation()
             goToLanding(manager.location!)
         }
     }
-    
     
     func ChangeView() {
         return;

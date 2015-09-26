@@ -27,7 +27,10 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         eventTableView.estimatedRowHeight = 120
         
         
-        Event.searchWithBaseLocation("Ho Chi Minh City", completion: { (events, error) -> Void in
+        let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+        
+        
+        Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
             self.events = events
             self.eventTableView.reloadData()
             

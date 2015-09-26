@@ -60,37 +60,64 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swift Course Final Demo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-As-mJg">
-                                                    <rect key="frame" x="103" y="1" width="186" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift Course Final Demo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-As-mJg">
+                                                    <rect key="frame" x="96" y="8" width="216" height="20"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oct 6, 2015  7p.m -  9p.m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-qJ-JzC">
-                                                    <rect key="frame" x="126" y="21" width="186" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 6, 2015  7p.m -  9p.m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-qJ-JzC">
+                                                    <rect key="frame" x="120" y="32" width="192" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ozo-RM-xlP">
-                                                    <rect key="frame" x="103" y="25" width="16" height="16"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ozo-RM-xlP">
+                                                    <rect key="frame" x="96" y="32" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="CLx-wl-znj"/>
+                                                        <constraint firstAttribute="width" constant="16" id="GWB-k6-DmB"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm5-i2-DE4">
-                                                    <rect key="frame" x="103" y="55" width="186" height="23"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18, Nguyen Thi Minh Khai" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGz-6i-Q8S">
+                                                    <rect key="frame" x="96" y="51" width="216" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18, Nguyen Thi Minh Khai" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGz-6i-Q8S">
-                                                    <rect key="frame" x="103" y="40" width="186" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="maM-s3-VFX">
-                                                    <rect key="frame" x="15" y="4" width="80" height="80"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="maM-s3-VFX">
+                                                    <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="K29-ww-pfN"/>
+                                                        <constraint firstAttribute="height" constant="80" id="dhf-Zh-NJ3"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sm5-i2-DE4">
+                                                    <rect key="frame" x="96" y="70" width="216" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="sm5-i2-DE4" secondAttribute="trailing" constant="8" id="0Nw-mN-Cgh"/>
+                                                <constraint firstItem="dGz-6i-Q8S" firstAttribute="top" secondItem="1ez-qJ-JzC" secondAttribute="bottom" constant="4" id="7er-za-y8h"/>
+                                                <constraint firstItem="dGz-6i-Q8S" firstAttribute="leading" secondItem="maM-s3-VFX" secondAttribute="trailing" constant="8" id="9mq-rH-gdT"/>
+                                                <constraint firstItem="vb0-As-mJg" firstAttribute="leading" secondItem="maM-s3-VFX" secondAttribute="trailing" constant="8" id="DeT-h7-Pg9"/>
+                                                <constraint firstAttribute="trailing" secondItem="1ez-qJ-JzC" secondAttribute="trailing" constant="8" id="GJ7-fV-wGD"/>
+                                                <constraint firstItem="ozo-RM-xlP" firstAttribute="top" secondItem="vb0-As-mJg" secondAttribute="bottom" constant="4" id="L7h-iY-fAg"/>
+                                                <constraint firstItem="1ez-qJ-JzC" firstAttribute="leading" secondItem="ozo-RM-xlP" secondAttribute="trailing" constant="8" id="Lyz-KG-1Km"/>
+                                                <constraint firstItem="ozo-RM-xlP" firstAttribute="leading" secondItem="maM-s3-VFX" secondAttribute="trailing" constant="8" id="MDr-S1-NHZ"/>
+                                                <constraint firstItem="sm5-i2-DE4" firstAttribute="leading" secondItem="maM-s3-VFX" secondAttribute="trailing" constant="8" id="Rvc-hy-W0u"/>
+                                                <constraint firstItem="1ez-qJ-JzC" firstAttribute="top" secondItem="vb0-As-mJg" secondAttribute="bottom" constant="4" id="ZoG-wB-TBS"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sm5-i2-DE4" secondAttribute="bottom" constant="8" id="c4i-5X-cGG"/>
+                                                <constraint firstItem="maM-s3-VFX" firstAttribute="leading" secondItem="kmt-DG-9gT" secondAttribute="leading" constant="8" id="cM1-14-vsg"/>
+                                                <constraint firstItem="sm5-i2-DE4" firstAttribute="top" secondItem="dGz-6i-Q8S" secondAttribute="bottom" constant="4" id="cm3-eV-5qr"/>
+                                                <constraint firstItem="vb0-As-mJg" firstAttribute="top" secondItem="kmt-DG-9gT" secondAttribute="top" constant="8" id="giK-cE-csX"/>
+                                                <constraint firstAttribute="trailing" secondItem="vb0-As-mJg" secondAttribute="trailing" constant="8" id="gjf-6T-HGo"/>
+                                                <constraint firstAttribute="trailing" secondItem="dGz-6i-Q8S" secondAttribute="trailing" constant="8" id="il9-Ml-jPM"/>
+                                                <constraint firstItem="maM-s3-VFX" firstAttribute="top" secondItem="kmt-DG-9gT" secondAttribute="top" constant="8" id="pO2-ec-a4P"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="eventAddress" destination="dGz-6i-Q8S" id="I6u-Yq-rsL"/>
