@@ -31,9 +31,13 @@ class Event: NSObject {
         
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
-        if dictionary["image.medium.url"] != nil
+        var url = dictionary.valueForKeyPath("image.medium.url") as? String
+        
+        
+        if let url = url
         {
-            imageURL = NSURL(string: dictionary["image.medium.url"] as! String)!
+            print(url)
+            imageURL = NSURL(fileURLWithPath: url)
         }
         else {imageURL = NSURL(string: "")!}
         
