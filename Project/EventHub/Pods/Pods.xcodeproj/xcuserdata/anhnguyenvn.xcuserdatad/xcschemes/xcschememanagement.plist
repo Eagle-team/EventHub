@@ -6,33 +6,43 @@
 	<dict>
 		<key>AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>BDBOAuth1Manager.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-EventHub.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0AAD977138E18E59BFDCFBC7F96C852C</key>
+		<key>19C3C39773D3CEDE035617A9C87DB946</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>586DD07917D169D2464311551F666A41</key>
+		<key>56F1C09AEFBE607D9F6590F0E22A5441</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A4EA973E9C2E25ABD3AC5A591E0595D</key>
+		<key>E0F5C6053CF75E2C469E1A996BFCD011</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD0BD79694B9A107D04A2C1FC873B30D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
