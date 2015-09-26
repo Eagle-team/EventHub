@@ -15,9 +15,9 @@ class EventCell: UITableViewCell {
             
             eventTitle.text = event.title
             if event.imageURL != nil {
-                print("1 \(event.imageURL!)")
                 eventPoster.setImageWithURL(event.imageURL!)
-           }
+            }
+            
             eventAddress.text = event.address
             eventCity.text = event.cityName
             //reviewCountLabel.text = "\(business.reviewCount!) Reviews"
@@ -26,6 +26,9 @@ class EventCell: UITableViewCell {
         }
     }
 
+    override func prepareForReuse() {
+        eventPoster.image = nil
+    }
     @IBOutlet weak var eventTitle: UILabel!
     
     @IBOutlet weak var eventTime: UILabel!

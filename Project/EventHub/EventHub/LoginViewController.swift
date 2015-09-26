@@ -58,30 +58,25 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         }
     }
     
-    func ChangeView() {
-        return;
-        // Something after a delay
-        
-        let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("EventViewController") as? SetLocationViewController
-        
-        self.navigationController?.pushViewController(setlocationVC!, animated: true)
-        
-        self.presentViewController(setlocationVC!, animated: true, completion: nil)
-        self.showViewController(setlocationVC!, sender: self)
-
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func goToLanding (location: CLLocation){
+        print("landing")
+        let tabVc = self.storyboard?.instantiateViewControllerWithIdentifier(NSStringFromClass(UITabBarController.self)) as? UITabBarController
+        let naVc = tabVc?.viewControllers?[0] as? UINavigationController
         
-        let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("EventViewController") as? EventViewController
-        setlocationVC?.location = location
-        self.navigationController?.pushViewController(setlocationVC!, animated: true)
-        self.presentViewController(setlocationVC!, animated: true, completion: nil)
+        let eventVc = naVc?.topViewController as? EventViewController
+        //let tabBarVc = navVc?.topViewController as? UITabBarController
+        //let eventVc = tabBarVc?.viewControllers?[0] as? EventViewController
+        
+        eventVc?.location = location
+        print(location.coordinate.latitude)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.setRootViewController(tabVc!)
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
