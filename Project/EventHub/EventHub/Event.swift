@@ -45,10 +45,10 @@ class Event: NSObject {
         
     }
     
-    class func allEvents(#array: [NSDictionary]) -> [Event] {
+    class func allEvents(array array: [NSDictionary]) -> [Event] {
         var  events = [Event]()
         for dictionary in array {
-            var anEvent = Event(dictionary: dictionary)
+            let anEvent = Event(dictionary: dictionary)
             events.append(anEvent)
         }
         return events

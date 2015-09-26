@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 class EventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var eventTableView: UITableView!
-    
+    var location: CLLocation?
     var events: [Event]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("locationLat \(location?.coordinate.latitude)")
+        print("locationLng \(location?.coordinate.longitude)")
+        
         eventTableView.dataSource = self
         eventTableView.delegate = self
         eventTableView.rowHeight = UITableViewAutomaticDimension

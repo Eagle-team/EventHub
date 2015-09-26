@@ -43,13 +43,13 @@ class EventClient: BDBOAuth1RequestOperationManager {
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
     }
     
     init(consumerKey key: String!, consumerSecret secret: String!){
         
         //var baseUrl = NSURL(string: baseNormalAPI)
-        var baseUrl = NSURL(string: baseAPIUrl)
+        let baseUrl = NSURL(string: baseAPIUrl)
         super.init(baseURL: baseUrl, consumerKey: key, consumerSecret: secret);
         
         //var token = BDBOAuth1Credential(token: accessToken, secret: accessSecret, expiration: nil)
@@ -66,9 +66,9 @@ class EventClient: BDBOAuth1RequestOperationManager {
         var parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
         return self.GET("", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             
-            println(response)
+            print(response)
             
-            var location = response["current"]! as? NSDictionary
+            let location = response["current"]! as? NSDictionary
             
             if location != nil {
                 
@@ -116,19 +116,19 @@ class EventClient: BDBOAuth1RequestOperationManager {
         }
         
         if categories != nil && categories!.count > 0 {
-            parameters["category_filter"] = ",".join(categories!)
+            parameters["category_filter"] = (categories!).joinWithSeparator(",")
         }
         
         if deals != nil {
             parameters["deals_filter"] = deals!
         }
         
-        println(parameters)
+        print(parameters)
         
         return self.GET("", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            println(response["events"]);
-            var dictionarie = response["events"]! as? NSDictionary
-            var dictionaries = dictionarie?["event"] as? [NSDictionary]
+            print(response["events"]);
+            let dictionarie = response["events"]! as? NSDictionary
+            let dictionaries = dictionarie?["event"] as? [NSDictionary]
             if dictionaries != nil {
                 
                 completion(Event.allEvents(array: dictionaries!), nil)

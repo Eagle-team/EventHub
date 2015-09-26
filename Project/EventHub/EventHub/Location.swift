@@ -39,10 +39,10 @@ class Location: NSObject {
         
     }
     
-    class func getLocations(#array: [NSDictionary]) -> [Location] {
+    class func getLocations(array array: [NSDictionary]) -> [Location] {
         var  allLocations = [Location]()
         for dictionary in array {
-            var location = Location(dictionary: dictionary)
+            let location = Location(dictionary: dictionary)
             allLocations.append(location)
         }
         return allLocations
