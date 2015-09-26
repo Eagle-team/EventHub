@@ -14,9 +14,10 @@ class EventCell: UITableViewCell {
         didSet {
             
             eventTitle.text = event.title
-           // if event.imageURL{
-            eventPoster.setImageWithURL(event.imageURL)
-           // }
+            if event.imageURL != nil {
+                print("1 \(event.imageURL!)")
+                eventPoster.setImageWithURL(event.imageURL!)
+           }
             eventAddress.text = event.address
             eventCity.text = event.cityName
             //reviewCountLabel.text = "\(business.reviewCount!) Reviews"

@@ -23,7 +23,7 @@ class Event: NSObject {
     
     let cityName: String?
     let countryName: String?
-    let imageURL: NSURL
+    let imageURL: NSURL?
     let startTime: String?
     
     
@@ -31,15 +31,17 @@ class Event: NSObject {
         
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
-        var url = dictionary.valueForKeyPath("image.medium.url") as? String
+        let url = dictionary.valueForKeyPath("image.medium.url") as? String
         
         
-        if let url = url
+        if  url != nil
         {
             print(url)
-            imageURL = NSURL(fileURLWithPath: url)
+            imageURL = NSURL(string: url!)
         }
-        else {imageURL = NSURL(string: "")!}
+        else {
+            imageURL = nil
+        }
         
         cityName = dictionary["city_name"] as? String
         countryName = dictionary["country_name"] as? String

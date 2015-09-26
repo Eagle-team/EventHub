@@ -58,8 +58,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
         
-        cell.event = events[indexPath.row]
-        
+        cell.event = events[indexPath.row]        
         return cell
     }
 
