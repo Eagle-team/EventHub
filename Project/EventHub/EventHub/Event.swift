@@ -31,9 +31,13 @@ class Event: NSObject {
         
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
-        if dictionary["image.medium.url"] != nil
+        var url = dictionary.valueForKeyPath("image.medium.url") as? String
+        
+        
+        if let url = url
         {
-            imageURL = NSURL(string: dictionary["image.medium.url"] as! String)!
+            print(url)
+            imageURL = NSURL(fileURLWithPath: url)
         }
         else {imageURL = NSURL(string: "")!}
         
@@ -45,10 +49,10 @@ class Event: NSObject {
         
     }
     
-    class func allEvents(#array: [NSDictionary]) -> [Event] {
+    class func allEvents(array array: [NSDictionary]) -> [Event] {
         var  events = [Event]()
         for dictionary in array {
-            var anEvent = Event(dictionary: dictionary)
+            let anEvent = Event(dictionary: dictionary)
             events.append(anEvent)
         }
         return events

@@ -15,7 +15,7 @@ class EventCell: UITableViewCell {
             
             eventTitle.text = event.title
            // if event.imageURL{
-          ///  eventPoster.setImageWithURL(event.imageURL)
+            eventPoster.setImageWithURL(event.imageURL)
            // }
             eventAddress.text = event.address
             eventCity.text = event.cityName
