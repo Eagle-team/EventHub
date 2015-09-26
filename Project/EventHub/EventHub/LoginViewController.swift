@@ -7,34 +7,64 @@
 //
 
 import UIKit
+import CoreLocation
+//import MBProgessHUD
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocationManagerDelegate {
+
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("============================================")
+        let loginView : FBSDKLoginButton = FBSDKLoginButton()
+        self.view.addSubview(loginView)
+        loginView.center = self.view.center
+        loginView.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
+        loginView.delegate = self
+        
         // Do any additional setup after loading the view.
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-             var timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: Selector("ChangeView"), userInfo: nil, repeats: false)
-            
-        }
-        else
-        {
-            let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            self.view.addSubview(loginView)
-            loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
-            loginView.delegate = self
+            getLocation()
         }
     }
     
-   
+    func showLoading(){
+        //let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        //loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        //loadingNotification.labelText = "Loading"
+    }
+    
+    func getLocation(){
+        showLoading()
+        locationManager.requestAlwaysAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.locationServicesEnabled()){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+        }
+        
+    }
+    var a = 0
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if (a == 0){
+            a = a + 1
+            manager.stopUpdatingLocation()
+            goToLanding(manager.location!)
+        }
+    }
+    
     
     func ChangeView() {
+        return;
         // Something after a delay
         
-        let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetLocationViewController") as? SetLocationViewController
+        let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("EventViewController") as? SetLocationViewController
         
         self.navigationController?.pushViewController(setlocationVC!, animated: true)
         
@@ -48,29 +78,33 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func goToLanding (location: CLLocation){
+        
+        let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("EventViewController") as? EventViewController
+        setlocationVC?.location = location
+        self.navigationController?.pushViewController(setlocationVC!, animated: true)
+        self.presentViewController(setlocationVC!, animated: true, completion: nil)
+    }
+    
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
-        println("User Logged In")
+        print("User Logged In")
         
         if ((error) != nil)
         {
-            // Process error
+            print("error")   
         }
         else if result.isCancelled {
-            // Handle cancellations
+            print("cancel")
         }
         else {
+             getLocation()
             // If you ask for multiple permissions at once, you
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
                 // Do work
             }
-            
-            let setlocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetLocationViewController") as? SetLocationViewController
-            
-            self.navigationController?.pushViewController(setlocationVC!, animated: true)
-            self.presentViewController(setlocationVC!, animated: true, completion: nil)
         }
     }
     
@@ -80,7 +114,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     */
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
-        println("User Logged Out")
+        print("User Logged Out")
     }
 
     /*
