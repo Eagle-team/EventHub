@@ -247,7 +247,7 @@
                   moduleName = "EventHub"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/anhnguyenvn/EventHub/Project/EventHub/EventHub/EventClient.swift"
-                  timestampString = "465031079.73354"
+                  timestampString = "465043301.889293"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "147"
@@ -262,7 +262,7 @@
                   moduleName = "EventHub"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/anhnguyenvn/EventHub/Project/EventHub/EventHub/EventClient.swift"
-                  timestampString = "465031079.73405"
+                  timestampString = "465043301.889793"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "148"
@@ -301,6 +301,22 @@
             startingLineNumber = "156"
             endingLineNumber = "156"
             landmarkName = "getAllCategories(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EventHub/EventViewController.swift"
+            timestampString = "465043104.70793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
