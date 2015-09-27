@@ -26,6 +26,9 @@ class Event: NSObject {
     let imageURL: NSURL?
     let startTime: String?
     
+    let longitude: String?
+    let latitude: String?
+    
     
     init(dictionary: NSDictionary) {
         
@@ -36,7 +39,6 @@ class Event: NSObject {
         
         if  url != nil
         {
-            print(url)
             imageURL = NSURL(string: url!)
         }
         else {
@@ -48,6 +50,9 @@ class Event: NSObject {
         
         
         startTime = dictionary["start_time"] as? String
+        
+        latitude = dictionary["latitude"] as? String
+        longitude = dictionary["longitude"] as? String
         
     }
     

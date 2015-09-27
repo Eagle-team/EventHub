@@ -30,14 +30,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         }
     }
     
-    func showLoading(){
-        //let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        //loadingNotification.mode = MBProgressHUDMode.Indeterminate
-        //loadingNotification.labelText = "Loading"
-    }
+   
     
     func getLocation(){
-        showLoading()
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         
@@ -65,16 +60,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
     }
     
     func goToLanding (location: CLLocation){
-        print("landing")
         let tabVc = self.storyboard?.instantiateViewControllerWithIdentifier(NSStringFromClass(UITabBarController.self)) as? UITabBarController
-        let naVc = tabVc?.viewControllers?[0] as? UINavigationController
         
-        let eventVc = naVc?.topViewController as? EventViewController
-        //let tabBarVc = navVc?.topViewController as? UITabBarController
-        //let eventVc = tabBarVc?.viewControllers?[0] as? EventViewController
+        let eventNavigationVc = tabVc?.viewControllers?[0] as? UINavigationController
+        let mapNavigationVc = tabVc?.viewControllers?[1] as? UINavigationController
+        let eventVc = eventNavigationVc?.topViewController as? EventViewController
+        let mapVc = mapNavigationVc?.topViewController as? EventMapViewController
         
         eventVc?.location = location
-        print(location.coordinate.latitude)
+        mapVc?.location = location
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.setRootViewController(tabVc!)
     }
@@ -92,12 +87,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         }
         else {
              getLocation()
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                // Do work
-            }
         }
     }
     

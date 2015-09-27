@@ -17,8 +17,8 @@ let eventfulConsumerKey = "2a9b64c7b372deb628fc"
 let eventfulConsumerSecret = "115f9b6c6f32a714a003"
 let eventfulAppKey = "dBBqWtxNzNgKWx3P"
 
-let baseAPIUrl = "http://api.eventful.com/json/events/search"
-let searchEventApi = "/events/search"
+let baseAPIUrl = "http://api.eventful.com"
+let searchEventApi = "/json/events/search"
 
 let baseNormalAPI = "http://eventful.com/json/tools/location/"
 let locationSearchAPI = "/Location/typedown"
@@ -62,11 +62,11 @@ class EventClient: BDBOAuth1RequestOperationManager {
     
     func suggestCurrentLocation(completion: (Location!, NSError!) -> Void) -> AFHTTPRequestOperation {
 
-        let getCurrentLocationURL = "eventful.com/json/tools/location"
-        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
+       //let getCurrentLocationURL = "eventful.com/json/tools/location"
+        //var parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
         return self.GET("", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             
-            print(response)
+            //print(response)
             
             let location = response["current"]! as? NSDictionary
             
@@ -123,10 +123,7 @@ class EventClient: BDBOAuth1RequestOperationManager {
             parameters["deals_filter"] = deals!
         }
         
-        print(parameters)
-        
-        return self.GET("", parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            print(response["events"]);
+        return self.GET(searchEventApi, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             let dictionarie = response["events"]! as? NSDictionary
             let dictionaries = dictionarie?["event"] as? [NSDictionary]
             if dictionaries != nil {

@@ -26,11 +26,13 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         eventTableView.rowHeight = UITableViewAutomaticDimension
         eventTableView.estimatedRowHeight = 120
         
+        Utils.showLoading(self.view)
         
         let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
         
         
         Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
+            Utils.hideLoading(self.view)
             self.events = events
             self.eventTableView.reloadData()
             
@@ -43,7 +45,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func showLoading(){
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        loadingNotification.labelText = "Loading"
+    }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
