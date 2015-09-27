@@ -18,6 +18,7 @@
 		CE02D9BA1BA528C3003D83C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B91BA528C3003D83C6 /* Images.xcassets */; };
 		CE02D9BD1BA528C3003D83C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9BB1BA528C3003D83C6 /* LaunchScreen.xib */; };
 		CE02D9C91BA528C3003D83C6 /* EventHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9C81BA528C3003D83C6 /* EventHubTests.swift */; };
+		CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05E3581BB797AE00FE3A54 /* Category.swift */; settings = {ASSET_TAGS = (); }; };
 		CEBB321A1BB6AB2800273E4F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */; };
 		CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */; };
 		CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */; };
@@ -58,6 +59,7 @@
 		CE02D9C21BA528C3003D83C6 /* EventHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02D9C71BA528C3003D83C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE02D9C81BA528C3003D83C6 /* EventHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHubTests.swift; sourceTree = "<group>"; };
+		CE05E3581BB797AE00FE3A54 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				58E9771E1BB50EDE00A9595F /* Event.swift */,
 				58E977201BB5398400A9595F /* Location.swift */,
+				CE05E3581BB797AE00FE3A54 /* Category.swift */,
 			);
 			name = EventModel;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
+				CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */,
 				58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */,
 				F841B52B1BB8648E00B7694B /* CustomCallOutView.swift in Sources */,
 				F8ADA57B1BB7935F00402234 /* EventMapViewController.swift in Sources */,

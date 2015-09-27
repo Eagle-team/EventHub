@@ -64,11 +64,11 @@ class EventClient: BDBOAuth1RequestOperationManager {
     
     func suggestCurrentLocation(completion: (Location!, NSError!) -> Void) -> AFHTTPRequestOperation {
 
-       //let getCurrentLocationURL = "eventful.com/json/tools/location"
-        //var parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
+        let getCurrentLocationURL = "eventful.com/json/tools/location"
+        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
         return self.GET("", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             
-            //print(response)
+            print(response)
             
             let location = response["current"]! as? NSDictionary
             
@@ -125,7 +125,7 @@ class EventClient: BDBOAuth1RequestOperationManager {
             parameters["deals_filter"] = deals!
         }
         
-
+        print(parameters)
         
         return self.GET(searchEventApi, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             print(response["events"]);

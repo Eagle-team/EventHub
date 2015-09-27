@@ -38,6 +38,15 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         })
         
+        Category.getAllCategories { (categories, error) -> Void in
+            if categories != nil
+            {
+   
+                print(categories)
+                
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 
