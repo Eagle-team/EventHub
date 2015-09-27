@@ -60,7 +60,25 @@
 	<string>I will access your location</string>
     <key>NSAppTransportSecurity</key>
     <dict>
-        <!--Include to allow all connections (DANGER)-->
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>facebook.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key> <true/>
+                <key>NSExceptionRequiresForwardSecrecy</key> <false/>
+            </dict>
+            <key>fbcdn.net</key>
+            <dict>
+                <key>NSIncludesSubdomains</key> <true/>
+                <key>NSExceptionRequiresForwardSecrecy</key>  <false/>
+            </dict>
+            <key>akamaihd.net</key>
+            <dict>
+                <key>NSIncludesSubdomains</key> <true/>
+                <key>NSExceptionRequiresForwardSecrecy</key> <false/>
+            </dict>
+            
+        </dict>
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
