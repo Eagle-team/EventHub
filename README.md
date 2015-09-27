@@ -5,6 +5,7 @@ The final project of Swift course provided by coderschool.vn
 * Le Hoan (team lead)
 * Nguyen Hoang-Anh
 * Doan Dat 
+* Dang Hoang
 
 ## Overview
 EventHub is an application that helps people keep updated with upcoming events in local or some other regions. 
