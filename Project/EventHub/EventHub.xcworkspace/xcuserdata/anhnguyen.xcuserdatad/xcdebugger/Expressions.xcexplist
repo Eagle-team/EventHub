@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "EventDetail.init(dictionary : NSDictionary) -&gt; EventDetail:EventDetail.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "category">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "EventDetailsViewController.viewControllerAtIndex(Int) -&gt; ImageItemViewController:EventDetailsViewController.swift">
          <PersistentStrings>
             <PersistentString

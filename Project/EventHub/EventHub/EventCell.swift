@@ -17,6 +17,33 @@ class EventCell: UITableViewCell {
             if event.imageURL != nil {
                 eventPoster.setImageWithURL(event.imageURL!)
             }
+            else
+            {
+                
+                EventClient.sharedInstance.getEventDetail(event.ID!, completion: { (detail, error) -> Void in
+                    if ( error == nil )
+                    {
+
+                        let category = detail.category
+                        
+                        let baseUrl =  "http://s1.evcdn.com/images/thumb/fallback/event/categories/"
+                        let baseFileName1 = "_default_1.jpg"
+                    
+                        let slash = "/"
+                        
+                        let url1 = "\(baseUrl)\(category!)\(slash)\(category!)\(baseFileName1)"
+                        
+                        self.eventPoster.setImageWithURL(NSURL(string: url1)!)
+
+
+
+                    }
+                    else
+                    {
+                        self.eventPoster.setImageWithURL(NSURL(string: "http://s1.evcdn.com/images/edpborder300/fallback/event/categories/other/other_default_1.jpg"))
+                    }
+                })
+            }
             
             eventAddress.text = event.address
             eventCity.text = event.cityName

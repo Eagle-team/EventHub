@@ -25,6 +25,7 @@ class Event: NSObject {
     let countryName: String?
     let imageURL: NSURL?
     let startTime: String?
+    let eventDes: String?
     
     let ID: String?
 
@@ -35,6 +36,7 @@ class Event: NSObject {
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
         ID = dictionary["id"] as? String
+        eventDes = dictionary["description"] as? String
         
         let url = dictionary.valueForKeyPath("image.medium.url") as? String
         

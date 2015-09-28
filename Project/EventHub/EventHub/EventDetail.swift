@@ -33,7 +33,9 @@ class EventDetail: NSObject {
     let countryName: String?
 
     let startTime: String?
+    let eventDes: String?
     
+    let category: String?
     
     // for simple processing, let load detail event into event
     let detailImageURLs : [NSURL]?
@@ -47,10 +49,21 @@ class EventDetail: NSObject {
         address = dictionary["venue_address"] as? String
         
     
-        
+        eventDes = dictionary["description"] as? String
         
         cityName = dictionary["city_name"] as? String
         countryName = dictionary["country_name"] as? String
+        
+        var categories = dictionary.valueForKeyPath("categories.category") as? [NSDictionary]
+        
+        if (categories != nil)
+        {
+            category = categories![0]["id"] as? String
+        }
+        else
+        {
+            category = "music" //why music?, because Anh.Nguyen loves it :)
+        }
         
         
         startTime = dictionary["start_time"] as? String
@@ -65,14 +78,34 @@ class EventDetail: NSObject {
             {
                 if image.valueForKeyPath("thumb.url") != nil
                 {
-                    let url = image.valueForKeyPath("thumb.url") as? String
+                    var url = image.valueForKeyPath("thumb.url") as? String
+                    
+                    //get better quality
+                    url = url!.stringByReplacingOccurrencesOfString("medium", withString: "block250")
+                    
                     urls.append(NSURL(string: url!)!)
                 }
             }
             
             detailImageURLs = urls
         }
-        else {detailImageURLs = nil}
+        else
+        {
+            var urls : [NSURL] = []
+            let baseUrl =  "http://s1.evcdn.com/images/edpborder300/fallback/event/categories/"
+            let baseFileName1 = "_default_1.jpg"
+            let baseFileName2 = "_default_2.jpg"
+            let slash = "/"
+            
+            let url1 = "\(baseUrl)\(category!)\(slash)\(category!)\(baseFileName1)"
+            
+            urls.append(NSURL(string: url1)!)
+            
+            let url2 = "\(baseUrl)\(category!)\(slash)\(category!)\(baseFileName2)"
+            urls.append(NSURL(string: url2)!)
+            
+              detailImageURLs = urls
+        }
         
         
         //detail

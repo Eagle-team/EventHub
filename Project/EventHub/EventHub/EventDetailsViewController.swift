@@ -33,12 +33,15 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         cityLabel.text = event.cityName
         addressLabel.text = event.address
         startTimeLabel.text = event.startTime
+        descriptionLabel.text = event.eventDes
+  
         
         EventDetail.fetchEventDetail(event.ID!) { (detail, error) -> Void in
             
             if (error == nil)
             {
                 self.eventDetail = detail
+                
                 if self.eventDetail.detailImageURLs != nil
                 {
                     self.pageImages = self.eventDetail.detailImageURLs
@@ -129,7 +132,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
             index = vc.pageIndex as Int
         }
         
-        if (index == 0 || index == NSNotFound)
+        if (index == nil || index == 0 || index == NSNotFound)
         {
             return nil
             
@@ -144,14 +147,17 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
         let vc = viewController as! ImageItemViewController
-        var index = vc.pageIndex as Int
-        
-        if (index == NSNotFound)
+        var index : Int!
+        if (vc.pageIndex != nil) {
+            index = vc.pageIndex as Int
+
+        }
+        if (index == nil || index == NSNotFound)
         {
             return nil
         }
         
-        index++
+        index!++
         
         if (index == self.pageImages.count)
         {
