@@ -11,7 +11,7 @@ import UIKit
 class ImageItemViewController: UIViewController {
     
     var pageIndex: Int!
-    var imageFile: String!
+    var imageFile: NSURL!
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -19,10 +19,12 @@ class ImageItemViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        self.imageView.image = UIImage(named: self.imageFile)
+       
+        if (imageFile != nil)
+        {
+            self.imageView.setImageWithURL(imageFile)
       
-        
+        }
     }
     
     override func didReceiveMemoryWarning() {

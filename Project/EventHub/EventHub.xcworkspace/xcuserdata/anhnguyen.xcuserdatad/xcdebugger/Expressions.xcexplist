@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "EventDetailsViewController.viewControllerAtIndex(Int) -&gt; ImageItemViewController:EventDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pageImages">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ImageItemViewController.viewDidLoad() -&gt; ():ImageItemViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageFile">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

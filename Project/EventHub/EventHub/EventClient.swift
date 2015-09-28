@@ -25,6 +25,7 @@ let locationSearchAPI = "/Location/typedown"
 let currentLocationAPI = "/Location/"
 
 let allCategoryAPI = "/json/categories/list"
+let getEventDetailAPI = "/json/events/get"
 
 enum EventSortMode: Int {
     case Relevance = 0, Date, Popularity, Alphabet, VenueName
@@ -143,7 +144,7 @@ class EventClient: BDBOAuth1RequestOperationManager {
     
     
     func getAllCategories(completion: ([Category]!, NSError!) -> Void) -> AFHTTPRequestOperation {
-        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
+        let parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
         return self.GET(allCategoryAPI, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             print(response["category"]);
             let dictionaries = response["category"]! as? [NSDictionary]
@@ -158,4 +159,20 @@ class EventClient: BDBOAuth1RequestOperationManager {
         })
     }
     
+    func getEventDetail(eventId: String, completion:(EventDetail!, NSError!)->Void)-> AFHTTPRequestOperation
+    {
+        let parameters: [String : AnyObject] = ["app_key": eventfulAppKey, "id": eventId]
+        return self.GET(getEventDetailAPI, parameters: parameters, success: { (operation:AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+
+            let eventDetail = response! as? NSDictionary
+            
+            if eventDetail != nil {
+                
+                completion(EventDetail.parseEventDetail(eventDetail!) , nil)
+            }
+            }, failure: {
+                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                completion(nil, error)
+        })
+    }
 }

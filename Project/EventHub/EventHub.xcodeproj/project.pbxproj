@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57631285BCC4AC3EBEAF6DE4 /* libPods-EventHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DB3E22764FFA4A50661458 /* libPods-EventHub.a */; };
+		5813B3221BB8F9CF00411A02 /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813B3211BB8F9CF00411A02 /* EventDetail.swift */; settings = {ASSET_TAGS = (); }; };
 		58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771B1BB50BAC00A9595F /* EventClient.swift */; };
 		58E9771F1BB50EDE00A9595F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771E1BB50EDE00A9595F /* Event.swift */; };
 		58E977211BB5398400A9595F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977201BB5398400A9595F /* Location.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5813B3211BB8F9CF00411A02 /* EventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
 		58E9771B1BB50BAC00A9595F /* EventClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventClient.swift; sourceTree = "<group>"; };
 		58E9771E1BB50EDE00A9595F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		58E977201BB5398400A9595F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				58E9771E1BB50EDE00A9595F /* Event.swift */,
 				58E977201BB5398400A9595F /* Location.swift */,
 				CE05E3581BB797AE00FE3A54 /* Category.swift */,
+				5813B3211BB8F9CF00411A02 /* EventDetail.swift */,
 			);
 			name = EventModel;
 			sourceTree = "<group>";
@@ -265,7 +268,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Eagle-team";
 				TargetAttributes = {
 					CE02D9AC1BA528C3003D83C6 = {
@@ -359,6 +362,7 @@
 				CE600BDD1BB7F45600A3D338 /* ImageItemViewController.swift in Sources */,
 				58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */,
 				58E977251BB5609200A9595F /* EventViewController.swift in Sources */,
+				5813B3221BB8F9CF00411A02 /* EventDetail.swift in Sources */,
 				CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */,
 				58E977281BB56AD400A9595F /* EventCell.swift in Sources */,
 				CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */,
@@ -427,6 +431,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -501,6 +506,7 @@
 				);
 				INFOPLIST_FILE = EventHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eagle-team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventHub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -519,6 +525,7 @@
 				);
 				INFOPLIST_FILE = EventHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eagle-team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventHub-Bridging-Header.h";
 			};
@@ -538,6 +545,7 @@
 				);
 				INFOPLIST_FILE = EventHubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eagle-team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventHub.app/EventHub";
 			};
@@ -553,6 +561,7 @@
 				);
 				INFOPLIST_FILE = EventHubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "eagle-team.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventHub.app/EventHub";
 			};

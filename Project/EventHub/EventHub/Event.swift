@@ -26,11 +26,16 @@ class Event: NSObject {
     let imageURL: NSURL?
     let startTime: String?
     
+    let ID: String?
+
+    
     
     init(dictionary: NSDictionary) {
         
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
+        ID = dictionary["id"] as? String
+        
         let url = dictionary.valueForKeyPath("image.medium.url") as? String
         
         
@@ -48,7 +53,7 @@ class Event: NSObject {
         
         
         startTime = dictionary["start_time"] as? String
-        
+
     }
     
     class func allEvents(array array: [NSDictionary]) -> [Event] {
@@ -60,10 +65,12 @@ class Event: NSObject {
         return events
     }
     
+
     
     class func searchWithBaseLocation(location: String, completion: ([Event]!, NSError!) -> Void) {
         EventClient.sharedInstance.searchWithBaseLocation(location, completion: completion)
     }
+    
     
     class func searchWithTerm(term: String, sort: EventSortMode?, categories: [String]?, deals: Bool?, completion: ([Event]!, NSError!) -> Void) -> Void {
         EventClient.sharedInstance.searchWithTerm(term, sort: sort,categories: categories, deals: deals, completion: completion)

@@ -12,10 +12,8 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
 
     //@IBOutlet weak var imageSlider: TNImageSliderCollectionViewCell!
     var event : Event!
-    
+    var eventDetail: EventDetail!
   
- 
- 
     
     @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var cityLabel: UILabel!
@@ -23,8 +21,10 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     @IBOutlet weak var startTimeLabel: UILabel!
     
     var pageViewController: UIPageViewController!
-    var pageTitles: NSArray!
-    var pageImages: NSArray!
+    var  pageImages: [NSURL]!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +34,43 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         addressLabel.text = event.address
         startTimeLabel.text = event.startTime
         
-        self.pageTitles = NSArray(objects: "Explore", "Today Widget")
-        self.pageImages = NSArray(objects: "page1", "page2")
-        
-        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
-        self.pageViewController.dataSource = self
-        
-        var startVC = self.viewControllerAtIndex(0) as ImageItemViewController
-        var viewControllers = NSArray(object: startVC)
-        
-        self.pageViewController.setViewControllers(viewControllers as! [UIViewController], direction: .Forward, animated: true, completion: nil)
-        
-        self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 800)
-        
-        self.addChildViewController(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view)
-        self.pageViewController.didMoveToParentViewController(self)
+        EventDetail.fetchEventDetail(event.ID!) { (detail, error) -> Void in
+            
+            if (error == nil)
+            {
+                self.eventDetail = detail
+                if self.eventDetail.detailImageURLs != nil
+                {
+                    self.pageImages = self.eventDetail.detailImageURLs
+                }
+                else
+                {
+                    self.pageImages = [NSURL]()
+                }
+            }else
+            {
+            
+                self.pageImages = [NSURL]()
+            }
+                self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+                self.pageViewController.dataSource = self
+            
+                let startVC = self.viewControllerAtIndex(0) as ImageItemViewController
+                let viewControllers = NSArray(object: startVC)
+            
+                self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+            
+                self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 400)
+            
+                self.addChildViewController(self.pageViewController)
+                self.view.addSubview(self.pageViewController.view)
+                self.pageViewController.didMoveToParentViewController(self)
+            
 
+        }
+        
+        
+       
         // Do any additional setup after loading the view.
     }
 
@@ -82,13 +102,13 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     func viewControllerAtIndex(index: Int) -> ImageItemViewController
     {
-        if ((self.pageTitles.count == 0) || (index >= self.pageTitles.count)) {
+        if (self.pageImages == nil || (self.pageImages.count == 0) || (index >= self.pageImages.count)) {
             return ImageItemViewController()
         }
         
-        var vc: ImageItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ImageItemViewController") as! ImageItemViewController
+        let vc: ImageItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ImageItemViewController") as! ImageItemViewController
         
-        vc.imageFile = self.pageImages[index] as! String
+        vc.imageFile = self.pageImages[index]
         vc.pageIndex = index
         
         return vc
@@ -102,7 +122,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {
         
-        var vc = viewController as! ImageItemViewController
+        let vc = viewController as! ImageItemViewController
         var index = vc.pageIndex as Int
         
         
@@ -119,7 +139,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
-        var vc = viewController as! ImageItemViewController
+        let vc = viewController as! ImageItemViewController
         var index = vc.pageIndex as Int
         
         if (index == NSNotFound)
@@ -129,7 +149,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         
         index++
         
-        if (index == self.pageTitles.count)
+        if (index == self.pageImages.count)
         {
             return nil
         }
@@ -140,7 +160,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return self.pageTitles.count
+        return self.pageImages.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
