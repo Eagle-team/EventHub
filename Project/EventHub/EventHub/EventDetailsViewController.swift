@@ -123,8 +123,11 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     {
         
         let vc = viewController as! ImageItemViewController
-        var index = vc.pageIndex as Int
-        
+        var index : Int!
+        if (vc.pageIndex != nil)
+        {
+            index = vc.pageIndex as Int
+        }
         
         if (index == 0 || index == NSNotFound)
         {
@@ -132,7 +135,8 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
             
         }
         
-        index--
+        index!--
+        
         return self.viewControllerAtIndex(index)
         
     }
