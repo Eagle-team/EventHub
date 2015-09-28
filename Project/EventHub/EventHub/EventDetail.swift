@@ -92,7 +92,7 @@ class EventDetail: NSObject {
         else
         {
             var urls : [NSURL] = []
-            let baseUrl =  "http://s1.evcdn.com/images/edpborder300/fallback/event/categories/"
+            let baseUrl =  "http://s1.evcdn.com/images/edpborder250/fallback/event/categories/"
             let baseFileName1 = "_default_1.jpg"
             let baseFileName2 = "_default_2.jpg"
             let slash = "/"

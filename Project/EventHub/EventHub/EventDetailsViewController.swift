@@ -19,6 +19,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var descriptionWebView: UIWebView!
     
     var pageViewController: UIPageViewController!
     var  pageImages: [NSURL]!
@@ -33,8 +34,8 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         cityLabel.text = event.cityName
         addressLabel.text = event.address
         startTimeLabel.text = event.startTime
-        descriptionLabel.text = event.eventDes
-  
+        //descriptionLabel.text = event.eventDes
+        descriptionWebView.loadHTMLString(event.eventDes!, baseURL: nil)
         
         EventDetail.fetchEventDetail(event.ID!) { (detail, error) -> Void in
             

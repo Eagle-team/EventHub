@@ -178,32 +178,36 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
                                 <rect key="frame" x="14" y="363" width="216" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UhA-Hi-HqK">
-                                <rect key="frame" x="14" y="386" width="286" height="162"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
                                 <rect key="frame" x="14" y="300" width="183" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
+                                <rect key="frame" x="8" y="379" width="304" height="132"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TFC-7I-3Vs" firstAttribute="top" secondItem="mSS-nT-5XD" secondAttribute="bottom" constant="8" id="05W-gs-JNp"/>
+                            <constraint firstItem="mSS-nT-5XD" firstAttribute="top" secondItem="ncO-XF-SrL" secondAttribute="bottom" constant="1" id="1jK-i4-ms9"/>
+                            <constraint firstAttribute="trailing" secondItem="mSS-nT-5XD" secondAttribute="trailing" constant="8" id="90O-Dy-IUO"/>
+                            <constraint firstItem="mSS-nT-5XD" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="8" id="Pfs-UL-jpF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gmK-St-pho"/>
                     <connections>
                         <outlet property="addressLabel" destination="KVi-Jo-0i3" id="wBj-ks-Zoc"/>
                         <outlet property="cityLabel" destination="ncO-XF-SrL" id="PvO-5J-VFb"/>
-                        <outlet property="descriptionLabel" destination="UhA-Hi-HqK" id="A4z-2w-1o2"/>
+                        <outlet property="descriptionWebView" destination="mSS-nT-5XD" id="uqm-IH-7m1"/>
                         <outlet property="startTimeLabel" destination="00x-GM-2JN" id="xwX-VG-thB"/>
                     </connections>
                 </viewController>
