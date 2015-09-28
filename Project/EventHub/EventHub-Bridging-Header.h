@@ -13,5 +13,6 @@
 #import "DXAnnotationView.h"
 #import "DXAnnotationSettings.h"
 #import "MBProgressHUD.h"
+#import "Parse.h"
 #endif
 

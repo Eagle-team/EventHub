@@ -17,7 +17,6 @@
 		CE02D9B81BA528C3003D83C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B61BA528C3003D83C6 /* Main.storyboard */; };
 		CE02D9BA1BA528C3003D83C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B91BA528C3003D83C6 /* Images.xcassets */; };
 		CE02D9BD1BA528C3003D83C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9BB1BA528C3003D83C6 /* LaunchScreen.xib */; };
-		CE02D9C91BA528C3003D83C6 /* EventHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9C81BA528C3003D83C6 /* EventHubTests.swift */; };
 		CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05E3581BB797AE00FE3A54 /* Category.swift */; settings = {ASSET_TAGS = (); }; };
 		CEBB321A1BB6AB2800273E4F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */; };
 		CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */; };
@@ -33,16 +32,6 @@
 		F8F65DE81BB64E0600120A12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F65DE71BB64E0600120A12 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CE02D9C31BA528C3003D83C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE02D9A51BA528C3003D83C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE02D9AC1BA528C3003D83C6;
-			remoteInfo = EventHub;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		58E9771B1BB50BAC00A9595F /* EventClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventClient.swift; sourceTree = "<group>"; };
 		58E9771E1BB50EDE00A9595F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -56,7 +45,6 @@
 		CE02D9B71BA528C3003D83C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE02D9B91BA528C3003D83C6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE02D9BC1BA528C3003D83C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CE02D9C21BA528C3003D83C6 /* EventHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02D9C71BA528C3003D83C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE02D9C81BA528C3003D83C6 /* EventHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHubTests.swift; sourceTree = "<group>"; };
 		CE05E3581BB797AE00FE3A54 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -86,13 +74,6 @@
 				CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */,
 				CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */,
 				57631285BCC4AC3EBEAF6DE4 /* libPods-EventHub.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE02D9BF1BA528C3003D83C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				CE02D9AD1BA528C3003D83C6 /* EventHub.app */,
-				CE02D9C21BA528C3003D83C6 /* EventHubTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,24 +234,6 @@
 			productReference = CE02D9AD1BA528C3003D83C6 /* EventHub.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CE02D9C11BA528C3003D83C6 /* EventHubTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE02D9CF1BA528C3003D83C6 /* Build configuration list for PBXNativeTarget "EventHubTests" */;
-			buildPhases = (
-				CE02D9BE1BA528C3003D83C6 /* Sources */,
-				CE02D9BF1BA528C3003D83C6 /* Frameworks */,
-				CE02D9C01BA528C3003D83C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE02D9C41BA528C3003D83C6 /* PBXTargetDependency */,
-			);
-			name = EventHubTests;
-			productName = EventHubTests;
-			productReference = CE02D9C21BA528C3003D83C6 /* EventHubTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,10 +247,6 @@
 				TargetAttributes = {
 					CE02D9AC1BA528C3003D83C6 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					CE02D9C11BA528C3003D83C6 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = CE02D9AC1BA528C3003D83C6;
 					};
 				};
 			};
@@ -306,7 +264,6 @@
 			projectRoot = "";
 			targets = (
 				CE02D9AC1BA528C3003D83C6 /* EventHub */,
-				CE02D9C11BA528C3003D83C6 /* EventHubTests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,13 +277,6 @@
 				CE02D9B81BA528C3003D83C6 /* Main.storyboard in Resources */,
 				CE02D9BD1BA528C3003D83C6 /* LaunchScreen.xib in Resources */,
 				CE02D9BA1BA528C3003D83C6 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE02D9C01BA528C3003D83C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,23 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE02D9BE1BA528C3003D83C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE02D9C91BA528C3003D83C6 /* EventHubTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CE02D9C41BA528C3003D83C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE02D9AC1BA528C3003D83C6 /* EventHub */;
-			targetProxy = CE02D9C31BA528C3003D83C6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE02D9B61BA528C3003D83C6 /* Main.storyboard */ = {
@@ -443,9 +377,10 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khoa Pham (DGQC328H3Y)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -465,6 +400,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "dfca7140-64f1-4c55-a891-a90f8864025a";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,6 +427,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -503,6 +440,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "dfca7140-64f1-4c55-a891-a90f8864025a";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -533,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Khoa Pham (DGQC328H3Y)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -541,40 +480,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EventHub-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		CE02D9D01BA528C3003D83C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = EventHubTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventHub.app/EventHub";
-			};
-			name = Debug;
-		};
-		CE02D9D11BA528C3003D83C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = EventHubTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventHub.app/EventHub";
 			};
 			name = Release;
 		};
@@ -595,15 +500,6 @@
 			buildConfigurations = (
 				CE02D9CD1BA528C3003D83C6 /* Debug */,
 				CE02D9CE1BA528C3003D83C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE02D9CF1BA528C3003D83C6 /* Build configuration list for PBXNativeTarget "EventHubTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE02D9D01BA528C3003D83C6 /* Debug */,
-				CE02D9D11BA528C3003D83C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

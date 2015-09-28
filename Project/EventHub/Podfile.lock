@@ -23,19 +23,25 @@ PODS:
   - BDBOAuth1Manager (1.5.0):
     - AFNetworking/NSURLConnection (~> 2.5.0)
     - AFNetworking/NSURLSession (~> 2.5.0)
+  - Bolts/Tasks (1.3.0)
   - DXCustomCallout-ObjC (0.2.0)
   - MBProgressHUD (0.9.1)
+  - Parse (1.8.5):
+    - Bolts/Tasks (>= 1.2.2)
 
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
   - DXCustomCallout-ObjC
   - MBProgressHUD (~> 0.9.1)
+  - Parse
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   BDBOAuth1Manager: 2e28773b58f880fb36b5cd3efcf0b1fefbc78a99
+  Bolts: 805a4a87413e49d4a0c2b7d469084cbc46b09342
   DXCustomCallout-ObjC: fb223603ee148365de51c2d69bb10443943ff89b
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
 
 COCOAPODS: 0.38.2
