@@ -6,8 +6,10 @@ target 'EventHub' do
 
 pod "AFNetworking"
 pod "BDBOAuth1Manager"
-pod "MBProgressHUD"
 #pod "TNImageSliderViewController"
+pod "DXCustomCallout-ObjC"
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'Parse'
 
 end
 

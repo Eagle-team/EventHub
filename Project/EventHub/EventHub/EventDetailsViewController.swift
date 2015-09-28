@@ -35,7 +35,16 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         addressLabel.text = event.address
         startTimeLabel.text = event.startTime
         //descriptionLabel.text = event.eventDes
-        descriptionWebView.loadHTMLString(event.eventDes! ?? "No descrition available", baseURL: nil)
+        
+        //TODO: find the new way to save a line of code
+        if (event.eventDes != nil)
+        {
+            descriptionWebView.loadHTMLString(event.eventDes!, baseURL: nil)
+        }
+        else
+        {
+             descriptionWebView.loadHTMLString("No description available", baseURL: nil)
+        }
         
         EventDetail.fetchEventDetail(event.ID!) { (detail, error) -> Void in
             
