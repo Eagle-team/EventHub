@@ -53,6 +53,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         }
     }
     
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
