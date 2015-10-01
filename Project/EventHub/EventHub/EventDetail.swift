@@ -119,7 +119,18 @@ class EventDetail: NSObject {
                 if link.valueForKeyPath("url") != nil
                 {
                     let url = link.valueForKeyPath("url") as? String
-                    links.append(NSURL(string: url!)!)
+                    if(url != nil)
+                    {
+                        var urlLink = NSURL(string: url!)
+                        if (urlLink != nil)
+                        {
+                            links.append(urlLink!)
+                        }
+                        else
+                        {
+                            var debug = 0
+                        }
+                    }
                 }
             }
             
