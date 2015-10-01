@@ -14,5 +14,6 @@
 #import "DXAnnotationSettings.h"
 #import "MBProgressHUD.h"
 #import "Parse.h"
+#import "FlatUIKit/FlatUIKit.h"
 #endif
 

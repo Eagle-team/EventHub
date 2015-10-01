@@ -58,9 +58,19 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "FlatUIKit/Resources/flat-ui-icons-regular.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Bold.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Italic.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Light.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Regular.ttf"
   install_resource "Parse/Parse/Resources/en.lproj"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "FlatUIKit/Resources/flat-ui-icons-regular.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Bold.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Italic.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Light.ttf"
+  install_resource "FlatUIKit/Resources/Lato-Regular.ttf"
   install_resource "Parse/Parse/Resources/en.lproj"
 fi
 
