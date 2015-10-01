@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0F5C6053CF75E2C469E1A996BFCD011"
-               BuildableName = "libAFNetworking.a"
-               BlueprintName = "AFNetworking"
+               BlueprintIdentifier = "1EED9D2735B1C5F1D23EF2A65B244CC9"
+               BuildableName = "libBolts.a"
+               BlueprintName = "Bolts"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E0F5C6053CF75E2C469E1A996BFCD011"
-            BuildableName = "libAFNetworking.a"
-            BlueprintName = "AFNetworking"
+            BlueprintIdentifier = "1EED9D2735B1C5F1D23EF2A65B244CC9"
+            BuildableName = "libBolts.a"
+            BlueprintName = "Bolts"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1EED9D2735B1C5F1D23EF2A65B244CC9"
+            BuildableName = "libBolts.a"
+            BlueprintName = "Bolts"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

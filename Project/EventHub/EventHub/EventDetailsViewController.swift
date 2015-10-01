@@ -8,56 +8,82 @@
 
 import UIKit
 
-class EventDetailsViewController: UIViewController {
+class EventDetailsViewController: UIViewController, UIPageViewControllerDataSource {
 
     //@IBOutlet weak var imageSlider: TNImageSliderCollectionViewCell!
     var event : Event!
+    var eventDetail: EventDetail!
+  
     
+    @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var descriptionWebView: UIWebView!
+    
+    var pageViewController: UIPageViewController!
+    var  pageImages: [NSURL]!
+    
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*
-        println("[ViewController] View did load")
-        
-        
-        let image1 = UIImage(named: "image-1")
-        
-        
-        Alamofire.request(.GET, "https://robohash.org/123.png").response { (request, response, data, error) in
-            image1 = UIImage(data: data, scale:1)
-    }
-        
-        if let image1 = image1{
             
-            // 1. Set the image array with UIImage objects
-            imageSlider.images = [image1]
-            
-            // 2. If you want, you can set some options
-            var options = TNImageSliderViewOptions()
-            options.pageControlHidden = false
-            options.scrollDirection = .Horizontal
-            options.pageControlCurrentIndicatorTintColor = UIColor.yellowColor()
-            
-            imageSlider.options = options
-            
-        }else {
-            
-            println("[ViewController] Could not find one of the images in the image catalog")
-            
-        }
-        */
-        
         //
         cityLabel.text = event.cityName
         addressLabel.text = event.address
         startTimeLabel.text = event.startTime
+        //descriptionLabel.text = event.eventDes
+        
+        //TODO: find the new way to save a line of code
+        if (event.eventDes != nil)
+        {
+            descriptionWebView.loadHTMLString(event.eventDes!, baseURL: nil)
+        }
+        else
+        {
+             descriptionWebView.loadHTMLString("No description available", baseURL: nil)
+        }
+        
+        EventDetail.fetchEventDetail(event.ID!) { (detail, error) -> Void in
+            
+            if (error == nil)
+            {
+                self.eventDetail = detail
+                
+                if self.eventDetail.detailImageURLs != nil
+                {
+                    self.pageImages = self.eventDetail.detailImageURLs
+                }
+                else
+                {
+                    self.pageImages = [NSURL]()
+                }
+            }else
+            {
+            
+                self.pageImages = [NSURL]()
+            }
+                self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+                self.pageViewController.dataSource = self
+            
+                let startVC = self.viewControllerAtIndex(0) as ImageItemViewController
+                let viewControllers = NSArray(object: startVC)
+            
+                self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+            
+                self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 400)
+            
+                self.addChildViewController(self.pageViewController)
+                self.view.addSubview(self.pageViewController.view)
+                self.pageViewController.didMoveToParentViewController(self)
+            
+
+        }
         
         
+       
         // Do any additional setup after loading the view.
     }
 
@@ -87,5 +113,79 @@ class EventDetailsViewController: UIViewController {
     */
     }
     
+    func viewControllerAtIndex(index: Int) -> ImageItemViewController
+    {
+        if (self.pageImages == nil || (self.pageImages.count == 0) || (index >= self.pageImages.count)) {
+            return ImageItemViewController()
+        }
+        
+        let vc: ImageItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ImageItemViewController") as! ImageItemViewController
+        
+        vc.imageFile = self.pageImages[index]
+        vc.pageIndex = index
+        
+        return vc
+        
+        
+    }
+    
+    
+    // MARK: - Page View Controller Data Source
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
+        
+        let vc = viewController as! ImageItemViewController
+        var index : Int!
+        if (vc.pageIndex != nil)
+        {
+            index = vc.pageIndex as Int
+        }
+        
+        if (index == nil || index == 0 || index == NSNotFound)
+        {
+            return nil
+            
+        }
+        
+        index!--
+        
+        return self.viewControllerAtIndex(index)
+        
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        
+        let vc = viewController as! ImageItemViewController
+        var index : Int!
+        if (vc.pageIndex != nil) {
+            index = vc.pageIndex as Int
 
+        }
+        if (index == nil || index == NSNotFound)
+        {
+            return nil
+        }
+        
+        index!++
+        
+        if (index == self.pageImages.count)
+        {
+            return nil
+        }
+        
+        return self.viewControllerAtIndex(index)
+        
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return self.pageImages.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return 0
+    }
+    
 }

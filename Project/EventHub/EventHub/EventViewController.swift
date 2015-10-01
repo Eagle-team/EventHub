@@ -38,7 +38,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
             self.eventTableView.reloadData()
             
         })
-        
+        /*
         Category.getAllCategories { (categories, error) -> Void in
             if categories != nil
             {
@@ -47,6 +47,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
             }
         }
+        */
         
         // Do any additional setup after loading the view.
     }

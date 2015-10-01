@@ -21,6 +21,8 @@
 		CE02D9BD1BA528C3003D83C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9BB1BA528C3003D83C6 /* LaunchScreen.xib */; };
 		CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE05E3581BB797AE00FE3A54 /* Category.swift */; settings = {ASSET_TAGS = (); }; };
 		CEBB321A1BB6AB2800273E4F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */; };
+		CEC15E661BB99CD700EAC656 /* EventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC15E651BB99CD700EAC656 /* EventDetail.swift */; settings = {ASSET_TAGS = (); }; };
+		CEC15E681BB99CFE00EAC656 /* ImageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC15E671BB99CFE00EAC656 /* ImageItemViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */; };
 		CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */; };
 		CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */; };
@@ -53,6 +55,8 @@
 		CE02D9C71BA528C3003D83C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE05E3581BB797AE00FE3A54 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		CEC15E651BB99CD700EAC656 /* EventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetail.swift; sourceTree = "<group>"; };
+		CEC15E671BB99CFE00EAC656 /* ImageItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItemViewController.swift; sourceTree = "<group>"; };
 		CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		CEF1D3391BAD7D8A00CE17B4 /* EventHub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventHub-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				283076141BB990410066DA62 /* Filter.swift */,
+				CEC15E651BB99CD700EAC656 /* EventDetail.swift */,
 				58E9771E1BB50EDE00A9595F /* Event.swift */,
 				58E977201BB5398400A9595F /* Location.swift */,
 				CE05E3581BB797AE00FE3A54 /* Category.swift */,
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				283076161BB9904D0066DA62 /* FilterViewController.swift */,
+				CEC15E671BB99CFE00EAC656 /* ImageItemViewController.swift */,
 				CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */,
 				CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */,
 				58E977241BB5609200A9595F /* EventViewController.swift */,
@@ -324,7 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC15E681BB99CFE00EAC656 /* ImageItemViewController.swift in Sources */,
 				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
+				CEC15E661BB99CD700EAC656 /* EventDetail.swift in Sources */,
 				CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */,
 				58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */,
 				283076171BB9904D0066DA62 /* FilterViewController.swift in Sources */,

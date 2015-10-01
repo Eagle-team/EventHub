@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0F5C6053CF75E2C469E1A996BFCD011"
-               BuildableName = "libAFNetworking.a"
-               BlueprintName = "AFNetworking"
+               BlueprintIdentifier = "5A59E9BBE6601D82FDCFD923C6307F03"
+               BuildableName = "libDXCustomCallout-ObjC.a"
+               BlueprintName = "DXCustomCallout-ObjC"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E0F5C6053CF75E2C469E1A996BFCD011"
-            BuildableName = "libAFNetworking.a"
-            BlueprintName = "AFNetworking"
+            BlueprintIdentifier = "5A59E9BBE6601D82FDCFD923C6307F03"
+            BuildableName = "libDXCustomCallout-ObjC.a"
+            BlueprintName = "DXCustomCallout-ObjC"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5A59E9BBE6601D82FDCFD923C6307F03"
+            BuildableName = "libDXCustomCallout-ObjC.a"
+            BlueprintName = "DXCustomCallout-ObjC"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -8,26 +8,69 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 		<key>BDBOAuth1Manager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>DXCustomCallout-ObjC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Parse.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-EventHub.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>01A28A2CF8BB76C378125CF1778375E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>19C3C39773D3CEDE035617A9C87DB946</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1EED9D2735B1C5F1D23EF2A65B244CC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>231458C7F1A304A083022DDA5188EF2A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>36D4E001FE80D3BC2E98BBD4A2CF6E89</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,7 +80,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5A59E9BBE6601D82FDCFD923C6307F03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B6C9103563AE116444CED1EF6B521C1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E0F5C6053CF75E2C469E1A996BFCD011</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5FA515E1E28F9BFB99AA09CB122CE1A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

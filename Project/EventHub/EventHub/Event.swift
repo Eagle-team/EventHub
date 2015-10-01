@@ -25,6 +25,10 @@ class Event: NSObject {
     let countryName: String?
     let imageURL: NSURL?
     let startTime: String?
+    let eventDes: String?
+    
+    let ID: String?
+
     
     let longitude: String?
     let latitude: String?
@@ -34,6 +38,9 @@ class Event: NSObject {
         
         title = dictionary["title"] as? String
         address = dictionary["venue_address"] as? String
+        ID = dictionary["id"] as? String
+        eventDes = dictionary["description"] as? String
+        
         let url = dictionary.valueForKeyPath("image.medium.url") as? String
         
         
@@ -50,6 +57,8 @@ class Event: NSObject {
         
         
         startTime = dictionary["start_time"] as? String
+
+
         
         latitude = dictionary["latitude"] as? String
         longitude = dictionary["longitude"] as? String
@@ -65,10 +74,12 @@ class Event: NSObject {
         return events
     }
     
+
     
     class func searchWithBaseLocation(location: String, completion: ([Event]!, NSError!) -> Void) {
         EventClient.sharedInstance.searchWithBaseLocation(location, completion: completion)
     }
+    
     
     class func searchWithTerm(term: String, sort: EventSortMode?, categories: [String]?, deals: Bool?, completion: ([Event]!, NSError!) -> Void) -> Void {
         EventClient.sharedInstance.searchWithTerm(term, sort: sort,categories: categories, deals: deals, completion: completion)
