@@ -171,25 +171,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18, Nguyen thi minh khai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-Jo-0i3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18, Nguyen thi minh khai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-Jo-0i3">
                                 <rect key="frame" x="14" y="329" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
                                 <rect key="frame" x="14" y="363" width="216" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
                                 <rect key="frame" x="14" y="300" width="183" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
                                 <rect key="frame" x="8" y="379" width="304" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -198,8 +198,15 @@
                         <constraints>
                             <constraint firstItem="TFC-7I-3Vs" firstAttribute="top" secondItem="mSS-nT-5XD" secondAttribute="bottom" constant="8" id="05W-gs-JNp"/>
                             <constraint firstItem="mSS-nT-5XD" firstAttribute="top" secondItem="ncO-XF-SrL" secondAttribute="bottom" constant="1" id="1jK-i4-ms9"/>
+                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="KVi-Jo-0i3" secondAttribute="leading" id="5oa-Jo-0mU"/>
                             <constraint firstAttribute="trailing" secondItem="mSS-nT-5XD" secondAttribute="trailing" constant="8" id="90O-Dy-IUO"/>
                             <constraint firstItem="mSS-nT-5XD" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="8" id="Pfs-UL-jpF"/>
+                            <constraint firstItem="ncO-XF-SrL" firstAttribute="top" secondItem="KVi-Jo-0i3" secondAttribute="bottom" constant="13" id="R85-St-SBI"/>
+                            <constraint firstAttribute="bottom" secondItem="ncO-XF-SrL" secondAttribute="bottom" constant="190" id="a1m-CW-ZQy"/>
+                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leadingMargin" constant="-2" id="b1h-YD-5Sq"/>
+                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="00x-GM-2JN" secondAttribute="leading" id="elh-ri-UhT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ncO-XF-SrL" secondAttribute="trailing" constant="74" id="g4I-xe-7uw"/>
+                            <constraint firstItem="KVi-Jo-0i3" firstAttribute="top" secondItem="00x-GM-2JN" secondAttribute="bottom" constant="8" symbolic="YES" id="pSv-mQ-3xz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gmK-St-pho"/>
