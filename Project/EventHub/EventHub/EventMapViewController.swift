@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class EventMapViewController: UIViewController, MKMapViewDelegate{
+class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, FilterViewControllerDelegate{
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -112,6 +112,76 @@ class EventMapViewController: UIViewController, MKMapViewDelegate{
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         return scaledImage
+    }
+    
+    func filterViewController(filterViewController:FilterViewController?, didUpdateFilters filters:[String:AnyObject]) {
+        print(filters)
+    }
+    
+    // Search click handler
+    @IBAction func onSearch(sender: UIBarButtonItem) {
+        showSearchUI(true)
+    }
+    
+    // update navigation bar
+    func showSearchUI(showSearchUI:Bool) {
+        if showSearchUI {
+            // clear search button bar
+            self.navigationItem.rightBarButtonItem = nil
+            
+            // create filter button
+            let filterButton = UIButton(frame: CGRectMake(0, 0, 25, 25))
+            filterButton.setBackgroundImage(UIImage(named: "Filter"), forState: .Normal)
+            filterButton.addTarget(self, action: "onFilterClick:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            let filter = UIBarButtonItem(customView: filterButton)
+            self.navigationItem.leftBarButtonItem = filter
+            
+            // create search bar
+            let searchBar = UISearchBar()
+            searchBar.placeholder = "Music, Events ..."
+            searchBar.showsCancelButton = true
+            
+            // enable cancel button on search bar
+            enableCancelSearchBar(searchBar)
+            
+            searchBar.delegate = self
+            self.navigationItem.titleView = searchBar
+        }
+        else {
+            // clear search ui on navigation bar
+            self.navigationItem.titleView = nil
+            self.navigationItem.leftBarButtonItem = nil
+            
+            let searchBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "onSearch:")
+            self.navigationItem.rightBarButtonItem = searchBarButton
+        }
+    }
+    
+    // enable Cancel button when display
+    func enableCancelSearchBar(searchBar:UISearchBar) {
+        for containerView in searchBar.subviews {
+            for view in containerView.subviews {
+                if view.isKindOfClass(UIButton) {
+                    let cancelButton = view as! UIButton
+                    cancelButton.enabled = true
+                    cancelButton.userInteractionEnabled = true
+                }
+            }
+        }
+    }
+    
+    // cancel button handler of search bar
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) { // called when cancel button
+        showSearchUI(false)
+    }
+    
+    func onFilterClick(sender:UIButton) {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let filterVc = mainStoryBoard.instantiateViewControllerWithIdentifier("FilterVC") as? UINavigationController
+        let filterViewController = filterVc?.topViewController as! FilterViewController
+        filterViewController.delegate = self
+        self.presentViewController(filterVc!, animated: true, completion: nil)
     }
     
     /*

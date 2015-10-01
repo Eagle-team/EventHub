@@ -1,7 +1,8 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '6.0'
 #use_frameworks!
-
+#source 'https://github.com/CocoaPods/Specs.git'
+#platform :ios, '8.0'
 target 'EventHub' do
 
 pod "AFNetworking"
@@ -10,10 +11,11 @@ pod "BDBOAuth1Manager"
 pod "DXCustomCallout-ObjC"
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'Parse'
+pod 'FlatUIKit'
 
 end
 
-target 'EventHubTests' do
+#target 'EventHubTests' do
 
-end
+#end
 
