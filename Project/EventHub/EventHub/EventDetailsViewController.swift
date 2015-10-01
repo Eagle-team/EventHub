@@ -94,25 +94,6 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     
 
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        /*
-        println("[ViewController] Prepare for segue")
-        
-        if( segue.identifier == "seg_imageSlider" ){
-            
-            imageSlider = segue.destinationViewController as! TNImageSliderViewController
-            
-        }
-        
-    */
-    }
-    
     func viewControllerAtIndex(index: Int) -> ImageItemViewController
     {
         if (self.pageImages == nil || (self.pageImages.count == 0) || (index >= self.pageImages.count)) {
@@ -187,5 +168,19 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     {
         return 0
     }
+    
+    @IBAction func onMapTap(sender: AnyObject) {
+        
+    }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        let detailMap = segue.destinationViewController as! EventDetailMapViewController
+        detailMap.event = event
+        
+    }
+
     
 }

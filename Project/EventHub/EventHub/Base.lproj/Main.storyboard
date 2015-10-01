@@ -253,7 +253,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
                             <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
+=======
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
+>>>>>>> 79ff776... map for event
                                 <rect key="frame" x="8" y="379" width="304" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -266,7 +270,20 @@
                             <constraint firstItem="mSS-nT-5XD" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="8" id="Pfs-UL-jpF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gmK-St-pho"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="gmK-St-pho">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="bQU-h8-xZ7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XLg-uY-YaA">
+                                <rect key="frame" x="266" y="1" width="38" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Google-Maps-icon"/>
+                                <connections>
+                                    <segue destination="ksn-Qm-5Qd" kind="push" id="Ava-wX-Igs"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLabel" destination="KVi-Jo-0i3" id="wBj-ks-Zoc"/>
                         <outlet property="cityLabel" destination="ncO-XF-SrL" id="PvO-5J-VFb"/>
@@ -277,6 +294,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrW-Pj-NWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1871" y="395"/>
+        </scene>
+        <!--Event Detail Map View Controller-->
+        <scene sceneID="dsj-8R-ShW">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailMapViewController" id="ksn-Qm-5Qd" customClass="EventDetailMapViewController" customModule="EventHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="QV2-gJ-JIz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <navigationItem key="navigationItem" id="HgF-hW-kbd"/>
+                    <connections>
+                        <outlet property="mapView" destination="QV2-gJ-JIz" id="hJP-K8-iMf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DvX-AG-UII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455" y="157"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Itq-9a-dnC">
@@ -319,7 +353,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXw-Jp-qNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="1793" y="157"/>
+=======
+            <point key="canvasLocation" x="2466" y="811"/>
+>>>>>>> 79ff776... map for event
         </scene>
         <!--Map View-->
         <scene sceneID="oDz-Se-FBG">
@@ -440,6 +478,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Google-Maps-icon" width="256" height="256"/>
         <image name="clock" width="128" height="128"/>
     </resources>
 </document>
