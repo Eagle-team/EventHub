@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		283076151BB990410066DA62 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283076141BB990410066DA62 /* Filter.swift */; settings = {ASSET_TAGS = (); }; };
 		283076171BB9904D0066DA62 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283076161BB9904D0066DA62 /* FilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		586B182D1BBD306B007F9B9D /* EventDetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B182C1BBD306B007F9B9D /* EventDetailMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771B1BB50BAC00A9595F /* EventClient.swift */; };
 		58E9771F1BB50EDE00A9595F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771E1BB50EDE00A9595F /* Event.swift */; };
 		58E977211BB5398400A9595F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977201BB5398400A9595F /* Location.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		283076141BB990410066DA62 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		283076161BB9904D0066DA62 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		586B182C1BBD306B007F9B9D /* EventDetailMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailMapViewController.swift; sourceTree = "<group>"; };
 		58E9771B1BB50BAC00A9595F /* EventClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventClient.swift; sourceTree = "<group>"; };
 		58E9771E1BB50EDE00A9595F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		58E977201BB5398400A9595F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				58E977241BB5609200A9595F /* EventViewController.swift */,
 				CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */,
 				F8ADA57A1BB7935F00402234 /* EventMapViewController.swift */,
+				586B182C1BBD306B007F9B9D /* EventDetailMapViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				283076151BB990410066DA62 /* Filter.swift in Sources */,
 				58E977211BB5398400A9595F /* Location.swift in Sources */,
 				58E9771F1BB50EDE00A9595F /* Event.swift in Sources */,
+				586B182D1BBD306B007F9B9D /* EventDetailMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
