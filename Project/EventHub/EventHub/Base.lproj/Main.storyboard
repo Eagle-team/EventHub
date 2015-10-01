@@ -253,11 +253,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-<<<<<<< HEAD
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
-=======
                             <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
->>>>>>> 79ff776... map for event
                                 <rect key="frame" x="8" y="379" width="304" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -294,6 +290,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrW-Pj-NWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1871" y="395"/>
+        </scene>
+        <!--Event Detail Map View Controller-->
+        <scene sceneID="dsj-8R-ShW">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailMapViewController" id="ksn-Qm-5Qd" customClass="EventDetailMapViewController" customModule="EventHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="QV2-gJ-JIz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <navigationItem key="navigationItem" id="HgF-hW-kbd"/>
+                    <connections>
+                        <outlet property="mapView" destination="QV2-gJ-JIz" id="hJP-K8-iMf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DvX-AG-UII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455" y="157"/>
         </scene>
         <!--Event Detail Map View Controller-->
         <scene sceneID="dsj-8R-ShW">
@@ -353,11 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXw-Jp-qNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="1793" y="157"/>
-=======
             <point key="canvasLocation" x="2466" y="811"/>
->>>>>>> 79ff776... map for event
         </scene>
         <!--Map View-->
         <scene sceneID="oDz-Se-FBG">
