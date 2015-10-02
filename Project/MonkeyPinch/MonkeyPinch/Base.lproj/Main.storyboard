@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MonkeyPinch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="monkey.png" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-7y-rav">
+                                <rect key="frame" x="26" y="42" width="168" height="168"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WXZ-Cj-zLe" appends="YES" id="aW0-uj-oBq"/>
+                                    <outletCollection property="gestureRecognizers" destination="X1A-jr-iSJ" appends="YES" id="oFI-Dt-5nj"/>
+                                    <outletCollection property="gestureRecognizers" destination="xOT-qC-vch" appends="YES" id="dyg-FX-Aam"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana.png" translatesAutoresizingMaskIntoConstraints="NO" id="mqX-7f-RzA">
+                                <rect key="frame" x="40" y="269" width="175" height="175"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="D3f-aD-xzB" appends="YES" id="x5D-Vs-L13"/>
+                                    <outletCollection property="gestureRecognizers" destination="486-HH-bpF" appends="YES" id="a1A-ae-hDJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="Phy-XG-z8n" appends="YES" id="xIJ-tM-dbz"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="bananaPan" destination="D3f-aD-xzB" id="bnc-Dm-bwd"/>
+                        <outlet property="monkeyPan" destination="WXZ-Cj-zLe" id="YpQ-fe-wHf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="WXZ-Cj-zLe">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="S4V-2y-4zv"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="hGa-3I-tl1"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="D3f-aD-xzB">
+                    <connections>
+                        <action selector="handlePan:" destination="vXZ-lx-hvc" id="hEH-6S-EBr"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="ra9-dr-sBu"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="X1A-jr-iSJ">
+                    <connections>
+                        <action selector="handlePinch:" destination="vXZ-lx-hvc" id="qpS-bo-lEF"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="Uy2-Ft-aTf"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="xOT-qC-vch">
+                    <connections>
+                        <action selector="handleRotate:" destination="vXZ-lx-hvc" id="evt-R2-x3r"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="FvR-b9-BaZ"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="486-HH-bpF">
+                    <connections>
+                        <action selector="handlePinch:" destination="vXZ-lx-hvc" id="XOT-6j-1Ih"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="cad-J6-vfT"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="Phy-XG-z8n">
+                    <connections>
+                        <action selector="handleRotate:" destination="vXZ-lx-hvc" id="brC-17-FAL"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="lzP-Hy-HE7"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="162.66666666666666" y="406.12"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="banana.png" width="175" height="175"/>
+        <image name="monkey.png" width="168" height="168"/>
+    </resources>
+</document>
