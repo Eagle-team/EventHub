@@ -308,23 +308,6 @@
             </objects>
             <point key="canvasLocation" x="2455" y="157"/>
         </scene>
-        <!--Event Detail Map View Controller-->
-        <scene sceneID="dsj-8R-ShW">
-            <objects>
-                <viewController storyboardIdentifier="EventDetailMapViewController" id="ksn-Qm-5Qd" customClass="EventDetailMapViewController" customModule="EventHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="QV2-gJ-JIz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
-                    <navigationItem key="navigationItem" id="HgF-hW-kbd"/>
-                    <connections>
-                        <outlet property="mapView" destination="QV2-gJ-JIz" id="hJP-K8-iMf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DvX-AG-UII" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2455" y="157"/>
-        </scene>
         <!--Page View Controller-->
         <scene sceneID="Itq-9a-dnC">
             <objects>
