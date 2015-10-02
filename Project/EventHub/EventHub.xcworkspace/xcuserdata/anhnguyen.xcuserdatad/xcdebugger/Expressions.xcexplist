@@ -19,6 +19,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "EventDetailMapViewController.initMap() -&gt; ():EventDetailMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "location!">
+            </PersistentString>
+            <PersistentString
+               value = "location!.coordinate.latitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ImageItemViewController.viewDidLoad() -&gt; ():ImageItemViewController.swift">
          <PersistentStrings>
             <PersistentString
