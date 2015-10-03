@@ -444,7 +444,7 @@
         <scene sceneID="bZk-Hw-Tqa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4VI-6K-TGu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List View" id="1L7-zM-Paf"/>
+                    <tabBarItem key="tabBarItem" title="List View" image="list" id="1L7-zM-Paf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="50h-oa-NJx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -463,7 +463,7 @@
         <scene sceneID="UfK-rT-1Za">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nxN-Tt-HHG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map View" id="qMf-kf-2R4"/>
+                    <tabBarItem key="tabBarItem" title="Map View" image="mapview" id="qMf-kf-2R4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5y1-Vn-qGv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -496,7 +496,7 @@
             </objects>
             <point key="canvasLocation" x="2237" y="-822"/>
         </scene>
-        <!--Settings-->
+        <!--View Controller-->
         <scene sceneID="gKi-VD-ff3">
             <objects>
                 <viewController id="7wc-GD-Uk9" sceneMemberID="viewController">
@@ -509,7 +509,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" prompt="" id="6Kl-tu-fKh"/>
+                    <navigationItem key="navigationItem" prompt="" id="6Kl-tu-fKh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Buj-Cs-CxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -519,7 +519,7 @@
         <scene sceneID="f68-U0-aEP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Byd-2c-bcR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fod-li-1gW"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="favorite" id="fod-li-1gW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ChK-F1-jx7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -538,7 +538,7 @@
         <scene sceneID="9Ks-KF-4vp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jEB-dm-Xx5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sob-rw-t1e"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="settings" id="sob-rw-t1e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6oi-bj-YZW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -557,5 +557,9 @@
     <resources>
         <image name="Google-Maps-icon" width="256" height="256"/>
         <image name="clock" width="128" height="128"/>
+        <image name="favorite" width="62" height="56"/>
+        <image name="list" width="60" height="60"/>
+        <image name="mapview" width="60" height="60"/>
+        <image name="settings" width="58" height="58"/>
     </resources>
 </document>
