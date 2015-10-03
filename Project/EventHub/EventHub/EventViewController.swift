@@ -25,7 +25,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         eventTableView.dataSource = self
         eventTableView.delegate = self
         eventTableView.rowHeight = UITableViewAutomaticDimension
-        eventTableView.estimatedRowHeight = 120
+        eventTableView.estimatedRowHeight = 250
         
         Utils.showLoading(self.view)
         
@@ -77,6 +77,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         cell.event = events[indexPath.row]        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return UITableViewAutomaticDimension
     }
 
 

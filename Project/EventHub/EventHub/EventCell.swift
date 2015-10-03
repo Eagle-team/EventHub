@@ -8,8 +8,11 @@
 
 import UIKit
 
-class EventCell: UITableViewCell {
-    
+class EventCell: UITableViewCell, ScaleTableViewTransform {
+   
+    let miniumScale:CGFloat = 0.1;
+
+    @IBOutlet weak var scaleView: UIView!
     var event: Event! {
         didSet {
             
@@ -54,7 +57,9 @@ class EventCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
+        super.prepareForReuse();
         eventPoster.image = nil
+        self.scaleView.transform = CGAffineTransformMakeScale(self.miniumScale, self.miniumScale);
     }
     @IBOutlet weak var eventTitle: UILabel!
     
@@ -75,6 +80,11 @@ class EventCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func transformCell(forScale scale: CGFloat) {
+        self.scaleView.transform = CGAffineTransformMakeScale(1.0 - scale, 1.0 - scale);
     }
 
 }
