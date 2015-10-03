@@ -15,5 +15,6 @@
 #import "MBProgressHUD.h"
 #import "Parse.h"
 #import "FlatUIKit/FlatUIKit.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #endif
 

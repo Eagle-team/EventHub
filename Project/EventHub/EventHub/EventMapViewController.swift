@@ -67,7 +67,7 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
         
         var dxAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? CustomAnnotationView
         if (dxAnnotationView == nil){
-            pinView = UIImageView(image: imageResize(UIImage(named: "clock")!, sizeChange: CGSizeMake(30, 30)))
+            pinView = UIImageView(image: imageResize(UIImage(named: "chooselocation")!, sizeChange: CGSizeMake(30, 30)))
             calloutView = NSBundle.mainBundle().loadNibNamed("customAnnotation", owner: self, options: nil).first as! CustomCallOutView
             
             dxAnnotationView = CustomAnnotationView(annotation: annotation, reuseIdentifier: reuseId, pinView: pinView, calloutView: calloutView, settings: DXAnnotationSettings.defaultSettings())
@@ -99,6 +99,7 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
             callOutView?.eventTimeLabel.text = annotationCasted?.event?.startTime
             
             callOutView?.event = annotationCasted?.event
+            callOutView?.controller = self
         }
     }
     

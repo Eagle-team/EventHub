@@ -22,11 +22,21 @@ class CustomCallOutView: UIView {
     
     @IBOutlet weak var shareButton: UIButton!
     
+    var controller: UIViewController!
+
     var event: Event?
     
     
     @IBAction func onShare(sender: UIButton) {
         print("share \(event?.title)")
+        
+        let shareContent = FBSDKShareLinkContent()
+        shareContent.contentURL = NSURL(string: (event?.eventURL)!)
+        
+        shareContent.contentTitle = event?.title
+        
+        FBSDKShareDialog.showFromViewController(controller, withContent: shareContent, delegate: nil)
+
     }
     
     @IBAction func onTrack(sender: UIButton) {

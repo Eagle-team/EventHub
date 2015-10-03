@@ -33,6 +33,7 @@
 		F8419E2D1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419E2C1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
 		F841B5291BB861CA00B7694B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841B5281BB861CA00B7694B /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
 		F841B52B1BB8648E00B7694B /* CustomCallOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841B52A1BB8648E00B7694B /* CustomCallOutView.swift */; settings = {ASSET_TAGS = (); }; };
+		F86ABD7F1BBFB63C006D24B9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86ABD7E1BBFB63C006D24B9 /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
 		F8ADA57B1BB7935F00402234 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ADA57A1BB7935F00402234 /* EventMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F8F65DE81BB64E0600120A12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F65DE71BB64E0600120A12 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		F8419E2C1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMKPointAnnotation.swift; sourceTree = "<group>"; };
 		F841B5281BB861CA00B7694B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F841B52A1BB8648E00B7694B /* CustomCallOutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCallOutView.swift; sourceTree = "<group>"; };
+		F86ABD7E1BBFB63C006D24B9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F8ADA57A1BB7935F00402234 /* EventMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapViewController.swift; sourceTree = "<group>"; };
 		F8F65DE71BB64E0600120A12 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 			files = (
 				F8F65DE81BB64E0600120A12 /* CoreLocation.framework in Frameworks */,
 				CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */,
+				F86ABD7F1BBFB63C006D24B9 /* FBSDKShareKit.framework in Frameworks */,
 				CEF1D3371BAD7D6A00CE17B4 /* FBSDKCoreKit.framework in Frameworks */,
 				9021F68C0B2B7F9EB6BB55E5 /* libPods-EventHub.a in Frameworks */,
 			);
@@ -185,6 +188,7 @@
 		CEF1D3341BAD7D4700CE17B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F86ABD7E1BBFB63C006D24B9 /* FBSDKShareKit.framework */,
 				F8F65DE71BB64E0600120A12 /* CoreLocation.framework */,
 				CEF1D3351BAD7D6A00CE17B4 /* FBSDKCoreKit.framework */,
 				CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */,
