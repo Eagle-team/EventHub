@@ -10,9 +10,10 @@ import UIKit
 
 class EventCell: UITableViewCell, ScaleTableViewTransform {
    
-    let miniumScale:CGFloat = 0.1;
+    let miniumScale:CGFloat = 0.55;
 
     @IBOutlet weak var scaleView: UIView!
+ //   @IBOutlet weak var scaleView: UIView!
     var event: Event! {
         didSet {
             
@@ -29,7 +30,8 @@ class EventCell: UITableViewCell, ScaleTableViewTransform {
 
                         let category = detail.category
                         
-                        let baseUrl =  "http://s1.evcdn.com/images/thumb/fallback/event/categories/"
+                        let baseUrl =  "http://s1.evcdn.com/images/block250/fallback/event/categories/"
+                        //let baseUrl =  "http://s1.evcdn.com/images/thumb/fallback/event/categories/"
                         let baseFileName1 = "_default_1.jpg"
                     
                         let slash = "/"
@@ -74,7 +76,15 @@ class EventCell: UITableViewCell, ScaleTableViewTransform {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
+        // Initialization code
+        eventPoster.layer.cornerRadius = 10
+        eventPoster.layer.masksToBounds = true
+        
+        scaleView.layer.cornerRadius = 10
+        scaleView.layer.masksToBounds = true
+         }
+    
+
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

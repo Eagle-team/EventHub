@@ -43,12 +43,21 @@ class Event: NSObject {
         eventDes = dictionary["description"] as? String
         eventURL = dictionary["url"] as? String
         
-        let url = dictionary.valueForKeyPath("image.medium.url") as? String
+        var url = dictionary.valueForKeyPath("image.medium.url") as? String
         
         
         if  url != nil
         {
+            
+          
+            
+                
+            //get better quality
+            url = url!.stringByReplacingOccurrencesOfString("medium", withString: "block250")
             imageURL = NSURL(string: url!)
+            
+            
+
         }
         else {
             imageURL = nil
