@@ -16,5 +16,6 @@
 #import "Parse.h"
 #import "FlatUIKit/FlatUIKit.h"
 #import "UIScrollView+InfiniteScroll.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #endif
 

@@ -54,6 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let types: UIRemoteNotificationType = [.Badge, .Alert, .Sound]
             application.registerForRemoteNotificationTypes(types)
         }
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 255/255.0, green: 13/255.0, blue: 1/255.0, alpha: 1.0)//UIColor(patternImage: UIImage(named: "body")!)//
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 255/255.0, green: 13/255.0, blue: 1/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
     }
