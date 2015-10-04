@@ -12,6 +12,7 @@ pod "DXCustomCallout-ObjC"
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'Parse'
 pod 'FlatUIKit'
+pod 'UIScrollView-InfiniteScroll'
 
 end
 

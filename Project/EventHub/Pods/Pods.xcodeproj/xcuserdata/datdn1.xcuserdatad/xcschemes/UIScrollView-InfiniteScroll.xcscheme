@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6823916CE8D742BB9A93828B"
-               BuildableName = "libPods-EventHub.a"
-               BlueprintName = "Pods-EventHub"
+               BlueprintIdentifier = "792EBF603B792A65F7A3BE14"
+               BuildableName = "libUIScrollView-InfiniteScroll.a"
+               BlueprintName = "UIScrollView-InfiniteScroll"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -29,6 +29,7 @@ PODS:
   - MBProgressHUD (0.9.1)
   - Parse (1.8.5):
     - Bolts/Tasks (>= 1.2.2)
+  - UIScrollView-InfiniteScroll (0.7.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - FlatUIKit
   - MBProgressHUD (~> 0.9.1)
   - Parse
+  - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -46,5 +48,6 @@ SPEC CHECKSUMS:
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 17ad8e0677ed682f7f00503860fcda0f4eb74168
+  UIScrollView-InfiniteScroll: b6c7d6d155dca7f9c5dd43813ecffeb301b3d50c
 
 COCOAPODS: 0.38.2

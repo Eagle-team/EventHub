@@ -129,12 +129,26 @@ class EventClient: BDBOAuth1RequestOperationManager {
 
         
         return self.GET(searchEventApi, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            print(response["events"]);
+//            print(response["events"])
             let dictionarie = response["events"]! as? NSDictionary
             let dictionaries = dictionarie?["event"] as? [NSDictionary]
+            
             if dictionaries != nil {
                 
                 completion(Event.allEvents(array: dictionaries!), nil)
+                
+                // get event response header
+                let totalItemsOp = response["total_items"] as? String
+                let pageNumberOp = response["page_number"] as? String
+                let pageCountOp = response["page_count"] as? String
+                
+                let totalItems =  totalItemsOp == nil ? 0 : Int(totalItemsOp!)
+                let pageNumber =  pageNumberOp == nil ? 0 : Int(pageNumberOp!)
+                let pageCount =  pageCountOp == nil ? 0 : Int(pageCountOp!)
+                
+                EventViewController.eventResponseHeader.totalItems = totalItems
+                EventViewController.eventResponseHeader.pageNumber = pageNumber
+                EventViewController.eventResponseHeader.pageCount = pageCount
             }
             }, failure: {
                 (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
@@ -142,11 +156,74 @@ class EventClient: BDBOAuth1RequestOperationManager {
         })
     }
     
+    // func query events with all params
+    func searchWithTerm(location: String, term:String?, date:String?, distance:Int?, sort: String?, categories: [String]?, pageNumber: Int?, completion: ([Event]!, NSError!) -> Void) -> AFHTTPRequestOperation {
+        
+        // Default the location to San Francisco
+        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey,"location": location]
+        //"oauth_consumer_key":"2a9b64c7b372deb628fc", "oauth_signature_method":"HMAC-SHA1"]
+        
+        //oauth_consumer_key=2a9b64c7b372deb628fc&oauth_signature_method=HMAC-SHA1
+        
+        if term != nil {
+            parameters["keywords"] = term
+        }
+        if date != nil {
+            parameters["date"] = date
+        }
+        if distance != nil {
+            parameters["within"] = distance
+        }
+        if sort != nil {
+            parameters["sort_order"] = sort
+        }
+        if categories != nil && categories!.count > 0 {
+            parameters["category"] = (categories!).joinWithSeparator(",")
+        }
+        if pageNumber != nil {
+            parameters["page_number"] = pageNumber
+        }
+        
+        print("All params = \(parameters)")
+        
+        return self.GET(searchEventApi, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+//            print(response["events"])
+            let dictionarie = response["events"]! as? NSDictionary
+            let dictionaries = dictionarie?["event"] as? [NSDictionary]
+            
+            if dictionaries != nil {
+                // get event response header
+                let totalItemsOp = response["total_items"] as? String
+                let pageNumberOp = response["page_number"] as? String
+                let pageCountOp = response["page_count"] as? String
+                
+                let totalItems =  totalItemsOp == nil ? 0 : Int(totalItemsOp!)
+                let pageNumber =  pageNumberOp == nil ? 0 : Int(pageNumberOp!)
+                let pageCount =  pageCountOp == nil ? 0 : Int(pageCountOp!)
+                
+                EventViewController.eventResponseHeader.totalItems = totalItems
+                EventViewController.eventResponseHeader.pageNumber = pageNumber
+                EventViewController.eventResponseHeader.pageCount = pageCount
+                
+                // callback to update UI when success
+                completion(Event.allEvents(array: dictionaries!), nil)
+            }
+            else {
+                // callback when no event returned
+                completion(Event.allEvents(array: []), nil)
+            }
+            }, failure: {
+                (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                // callback when fail
+                completion(nil, error)
+        })
+    }
+
     
     func getAllCategories(completion: ([Category]!, NSError!) -> Void) -> AFHTTPRequestOperation {
         let parameters: [String : AnyObject] = ["app_key": eventfulAppKey]
         return self.GET(allCategoryAPI, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            print(response["category"]);
+//            print(response["category"]);
             let dictionaries = response["category"]! as? [NSDictionary]
             
             if dictionaries != nil {

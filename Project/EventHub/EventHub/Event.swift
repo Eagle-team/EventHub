@@ -33,6 +33,12 @@ class Event: NSObject {
     let longitude: String?
     let latitude: String?
     
+//    // variable for paging
+//    let totalItems:Int?
+//    let pageCounts:Int?
+//    let pageNumber:Int?
+    
+    
     
     init(dictionary: NSDictionary) {
         
@@ -63,6 +69,10 @@ class Event: NSObject {
         latitude = dictionary["latitude"] as? String
         longitude = dictionary["longitude"] as? String
         
+//        // initialize variables paging
+//        totalItems = Int((dictionary["total_items"] as? String)!)
+//        pageCounts = Int((dictionary["page_count"] as? String)!)
+//        pageNumber = Int((dictionary["page_number"] as? String)!)
     }
     
     class func allEvents(array array: [NSDictionary]) -> [Event] {
@@ -78,6 +88,13 @@ class Event: NSObject {
     
     class func searchWithBaseLocation(location: String, completion: ([Event]!, NSError!) -> Void) {
         EventClient.sharedInstance.searchWithBaseLocation(location, completion: completion)
+    }
+    
+    // func query with all params
+    class func searchWithTerm(location:String, term: String?, date:String?, distance:Int?, sort: String?, categories: [String]?, pageNumber:Int?, completion: ([Event]!, NSError!) -> Void) -> Void {
+//        EventClient.sharedInstance.searchWithTerm(location, term, sort: sort,categories: categories, deals: deals, completion: completion)
+//        EventClient.sharedInstance.searchWithTerm(location, term, date, distance, sort, categories, completion: completion)
+        EventClient.sharedInstance.searchWithTerm(location, term: term, date: date, distance: distance, sort: sort, categories: categories, pageNumber: pageNumber, completion: completion)
     }
     
     

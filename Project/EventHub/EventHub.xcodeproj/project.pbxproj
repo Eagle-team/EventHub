@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		283076151BB990410066DA62 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283076141BB990410066DA62 /* Filter.swift */; settings = {ASSET_TAGS = (); }; };
 		283076171BB9904D0066DA62 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283076161BB9904D0066DA62 /* FilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		28CBFC491BBF9954004CCFA2 /* EventResponeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CBFC481BBF9954004CCFA2 /* EventResponeHeader.swift */; settings = {ASSET_TAGS = (); }; };
 		586B182D1BBD306B007F9B9D /* EventDetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B182C1BBD306B007F9B9D /* EventDetailMapViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771B1BB50BAC00A9595F /* EventClient.swift */; };
 		58E9771F1BB50EDE00A9595F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9771E1BB50EDE00A9595F /* Event.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		283076141BB990410066DA62 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		283076161BB9904D0066DA62 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		28CBFC481BBF9954004CCFA2 /* EventResponeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResponeHeader.swift; sourceTree = "<group>"; };
 		586B182C1BBD306B007F9B9D /* EventDetailMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailMapViewController.swift; sourceTree = "<group>"; };
 		58E9771B1BB50BAC00A9595F /* EventClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventClient.swift; sourceTree = "<group>"; };
 		58E9771E1BB50EDE00A9595F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				58E9771E1BB50EDE00A9595F /* Event.swift */,
 				58E977201BB5398400A9595F /* Location.swift */,
 				CE05E3581BB797AE00FE3A54 /* Category.swift */,
+				28CBFC481BBF9954004CCFA2 /* EventResponeHeader.swift */,
 			);
 			name = EventModel;
 			sourceTree = "<group>";
@@ -260,7 +263,7 @@
 				TargetAttributes = {
 					CE02D9AC1BA528C3003D83C6 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = W2P68J7P7G;
+						DevelopmentTeam = 7DE4F8T92P;
 					};
 				};
 			};
@@ -342,6 +345,7 @@
 				283076171BB9904D0066DA62 /* FilterViewController.swift in Sources */,
 				F841B52B1BB8648E00B7694B /* CustomCallOutView.swift in Sources */,
 				F8ADA57B1BB7935F00402234 /* EventMapViewController.swift in Sources */,
+				28CBFC491BBF9954004CCFA2 /* EventResponeHeader.swift in Sources */,
 				58E977251BB5609200A9595F /* EventViewController.swift in Sources */,
 				CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */,
 				F841B5291BB861CA00B7694B /* Utils.swift in Sources */,

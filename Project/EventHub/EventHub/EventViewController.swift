@@ -15,41 +15,149 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     var location: CLLocation?
     var events: [Event]!
     
+    static var eventResponseHeader = EventResponeHeader()
+    
+    var isLoading:Bool!
+    var term:String!
+    
+    var params:[String:AnyObject]?
+    
+    // offset 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("locationLat \(location?.coordinate.latitude)")
         print("locationLng \(location?.coordinate.longitude)")
         
+        // set loading
+        isLoading = false
+//        self.events = []
         
         eventTableView.dataSource = self
         eventTableView.delegate = self
         eventTableView.rowHeight = UITableViewAutomaticDimension
         eventTableView.estimatedRowHeight = 120
         
-        Utils.showLoading(self.view)
+//        Utils.showLoading(self.view)
         
+//        let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+//        
+//        
+//        // get events when launch event view controller
+//        Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
+//            Utils.hideLoading(self.view)
+//            self.events = events
+//            self.eventTableView.reloadData()
+//            
+//        })
+        
+        self.eventTableView.infiniteScrollIndicatorStyle = .Gray
+        self.eventTableView.addInfiniteScrollWithHandler { (scrollView) -> Void in
+            let tableView = scrollView as! UITableView
+            self.loadMoreEvents()
+            tableView.finishInfiniteScroll()
+        }
+        loadEvents(false)
+    }
+    
+    func loadMoreEvents() {
+        if EventViewController.eventResponseHeader.pageNumber <  EventViewController.eventResponseHeader.pageCount {
+            self.isLoading = true
+            loadEvents(true)
+            print("Page count = \(EventViewController.eventResponseHeader.pageCount)")
+            print("Page number = \(EventViewController.eventResponseHeader.pageNumber)")
+        }
+    }
+    
+    
+    func loadEvents(loading:Bool) {
+            // get params to query
+        let sortParams = params?["sort_order"] as? String
+        let dateParams = params?["date"] as? String
+        let distanceParams = params?["within"] as? Int
+        let categoriesParams = params?["category"] as? [String]
         let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+        let pageNumber:Int? = (self.isLoading == true ) ? (EventViewController.eventResponseHeader.pageNumber! + 1) : nil
         
-        
-        Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
+            Utils.showLoading(self.view)
+//            Event.searchWithTerm(term, sort: EventSortMode.Date, categories: ["edution"], deals: nil, completion: { (events:[Event]!, error: NSError!) -> Void in
+//                
+//                // hide progess bar
+//                Utils.hideLoading(self.view)
+//                
+//                if error == nil {
+//                    // if loading
+//                    if loading {
+//                        self.events = events + self.events!  // add new event to event array
+////                        self.even tTableView.reloadData()     // reload table
+//                    }
+//                    // if the first load or filter changed
+//                    else {
+//                        self.events = events
+////                        self.eventTableView.
+//                    }
+//                    self.eventTableView.reloadData()
+//                }
+//                else {
+//                    // display error message 
+//                    
+//                }
+//            })
+        Event.searchWithTerm(locationCoordinate, term: term, date: dateParams, distance: distanceParams, sort: sortParams, categories: categoriesParams, pageNumber: pageNumber) { (events: [Event]!, error: NSError!) -> Void in
+            // hide progess bar
             Utils.hideLoading(self.view)
-            self.events = events
-            self.eventTableView.reloadData()
             
-        })
-        /*
-        Category.getAllCategories { (categories, error) -> Void in
-            if categories != nil
-            {
-   
-                print(categories)
-                
+            if error == nil {
+                // if loading
+                if loading {
+                    self.events = self.events! + events // add new event to event array
+                    self.isLoading = false
+                    print("Event number when loading = \(self.events.count)")
+                    self.updateTableView()
+                    //                        self.even tTableView.reloadData()     // reload table
+                }
+                    // if the first load or filter changed
+                else {
+                    
+                    self.events = events
+                    print("Event number when not loading = \(self.events.count)")
+                    if self.events.count == 0 {
+                        print("not data to show")
+                    }
+                    //                        self.eventTableView.
+                    self.eventTableView.reloadData()
+                }
+            }
+            else {
+                // display error message
             }
         }
-        */
-        
-        // Do any additional setup after loading the view.
+//        else {
+//            // query event when launch view controller
+//            let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+//            Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
+//                Utils.hideLoading(self.view)
+//                self.events = events
+//                self.eventTableView.reloadData()
+//                
+//            })
+//            
+//            
+//    }
+    }
+    
+    func updateTableView() {
+        var indexPathArrRowInsert = [NSIndexPath]()
+        let offset = 10 * (EventViewController.eventResponseHeader.pageNumber! - 1)
+        print("Update row at offset \(offset)-\(self.events.count-1)")
+        for rowToInsert in offset...self.events.count-1 {
+            var indexPathRow = NSIndexPath(forRow: rowToInsert, inSection: 0)
+            indexPathArrRowInsert.append(indexPathRow)
+        }
+        self.eventTableView.beginUpdates()
+        self.eventTableView.insertRowsAtIndexPaths(indexPathArrRowInsert, withRowAnimation: UITableViewRowAnimation.Bottom)
+        self.eventTableView.endUpdates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,12 +179,39 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if self.events == nil || self.events.count > 0 {
+            self.eventTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine;
+            return 1;
+        }
+        else {
+            // Display a message when the table is empty
+            let messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+            
+            messageLabel.text = "No data is currently available. Please try again."
+            messageLabel.textColor = UIColor.blackColor()
+            messageLabel.numberOfLines = 0
+            messageLabel.textAlignment = NSTextAlignment.Center
+            messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+            
+            messageLabel.sizeToFit()
+            
+            self.eventTableView.backgroundView = messageLabel;
+            self.eventTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        }
+        return 0
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
         
         cell.event = events[indexPath.row]        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 
@@ -138,6 +273,13 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         showSearchUI(false)
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print("\(searchBar.text)")
+        self.term = searchBar.text
+        searchBar.resignFirstResponder()
+        loadEvents(false)
+    }
+    
     func onFilterClick(sender:UIButton) {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let filterVc = mainStoryBoard.instantiateViewControllerWithIdentifier("FilterVC") as? UINavigationController
@@ -149,6 +291,8 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     // implement protocol of FilterViewController
     func filterViewController(filterViewController:FilterViewController?, didUpdateFilters filters:[String:AnyObject]) {
         print(filters)
+        params = filters
+        loadEvents(false)
     }
 
     
@@ -167,6 +311,8 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         eventDetailsController.event = event
 
     }
+    
+    
     
 
 }
