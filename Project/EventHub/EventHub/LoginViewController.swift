@@ -18,6 +18,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
     override func viewDidLoad() {
         super.viewDidLoad()
         print("============================================")
+        
+        setBackground()
+        
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
         loginView.center = self.view.center
@@ -30,6 +33,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         }
     }
     
+    func setBackground(){
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+    }
    
     
     func getLocation(){

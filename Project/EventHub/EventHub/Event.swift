@@ -24,6 +24,7 @@ class Event: NSObject {
     let cityName: String?
     let countryName: String?
     let imageURL: NSURL?
+    let eventURL: String?
     let startTime: String?
     let eventDes: String?
     
@@ -46,13 +47,23 @@ class Event: NSObject {
         address = dictionary["venue_address"] as? String
         ID = dictionary["id"] as? String
         eventDes = dictionary["description"] as? String
+        eventURL = dictionary["url"] as? String
         
-        let url = dictionary.valueForKeyPath("image.medium.url") as? String
+        var url = dictionary.valueForKeyPath("image.medium.url") as? String
         
         
         if  url != nil
         {
+            
+          
+            
+                
+            //get better quality
+            url = url!.stringByReplacingOccurrencesOfString("medium", withString: "block250")
             imageURL = NSURL(string: url!)
+            
+            
+
         }
         else {
             imageURL = nil

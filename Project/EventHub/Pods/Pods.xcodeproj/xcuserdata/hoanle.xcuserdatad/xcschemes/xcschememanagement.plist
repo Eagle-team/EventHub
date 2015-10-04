@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01A28A2CF8BB76C378125CF1778375E1</key>
+		<key>1164049365A0B65D5E14EBA5AE0A082F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1EED9D2735B1C5F1D23EF2A65B244CC9</key>
+		<key>1A600BFCCA5EE1B823FD83D024A65FCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>231458C7F1A304A083022DDA5188EF2A</key>
+		<key>2A19A780958EB7BAF0886B0261C7A0D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36D4E001FE80D3BC2E98BBD4A2CF6E89</key>
+		<key>2E409D2D17D3CA5DBE641B8364D4A212</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A59E9BBE6601D82FDCFD923C6307F03</key>
+		<key>36DF35204B6B865DCCD40DED4878E8AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B6C9103563AE116444CED1EF6B521C1</key>
+		<key>561E889EA10E05695D7CEC3611A956C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5FA515E1E28F9BFB99AA09CB122CE1A</key>
+		<key>65CD2551D7D9F88751CC144AB958F3EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E1EFAD8BE8D28C425BDC83E20CD29F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

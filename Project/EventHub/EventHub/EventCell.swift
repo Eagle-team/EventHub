@@ -8,8 +8,12 @@
 
 import UIKit
 
-class EventCell: UITableViewCell {
-    
+class EventCell: UITableViewCell, ScaleTableViewTransform {
+   
+    let miniumScale:CGFloat = 0.55;
+
+    @IBOutlet weak var scaleView: UIView!
+ //   @IBOutlet weak var scaleView: UIView!
     var event: Event! {
         didSet {
             
@@ -26,7 +30,8 @@ class EventCell: UITableViewCell {
 
                         let category = detail.category
                         
-                        let baseUrl =  "http://s1.evcdn.com/images/thumb/fallback/event/categories/"
+                        let baseUrl =  "http://s1.evcdn.com/images/block250/fallback/event/categories/"
+                        //let baseUrl =  "http://s1.evcdn.com/images/thumb/fallback/event/categories/"
                         let baseFileName1 = "_default_1.jpg"
                     
                         let slash = "/"
@@ -54,7 +59,9 @@ class EventCell: UITableViewCell {
     }
 
     override func prepareForReuse() {
+        super.prepareForReuse();
         eventPoster.image = nil
+        self.scaleView.transform = CGAffineTransformMakeScale(self.miniumScale, self.miniumScale);
     }
     @IBOutlet weak var eventTitle: UILabel!
     
@@ -69,12 +76,25 @@ class EventCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
+        // Initialization code
+        eventPoster.layer.cornerRadius = 10
+        eventPoster.layer.masksToBounds = true
+        
+        scaleView.layer.cornerRadius = 10
+        scaleView.layer.masksToBounds = true
+         }
+    
+
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func transformCell(forScale scale: CGFloat) {
+        self.scaleView.transform = CGAffineTransformMakeScale(1.0 - scale, 1.0 - scale);
     }
 
 }
