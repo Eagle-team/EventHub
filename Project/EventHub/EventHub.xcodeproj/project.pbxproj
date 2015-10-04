@@ -30,6 +30,9 @@
 		CEF1D3381BAD7D6A00CE17B4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF1D3361BAD7D6A00CE17B4 /* FBSDKLoginKit.framework */; };
 		CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */; };
 		CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */; };
+		F839D5FA1BC1166200F52526 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839D5F91BC1166200F52526 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F839D5FC1BC11CA400F52526 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839D5FB1BC11CA400F52526 /* SearchLocationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F839D5FE1BC11D4200F52526 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839D5FD1BC11D4200F52526 /* LocationCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F8419E271BB7B0E300E9EF77 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419E261BB7B0E300E9EF77 /* CustomAnnotationView.swift */; settings = {ASSET_TAGS = (); }; };
 		F8419E2B1BB7C1F300E9EF77 /* customAnnotation.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8419E2A1BB7C1F300E9EF77 /* customAnnotation.xib */; settings = {ASSET_TAGS = (); }; };
 		F8419E2D1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8419E2C1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
@@ -70,6 +73,9 @@
 		CEF1D33D1BAD7F1200CE17B4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetLocationViewController.swift; sourceTree = "<group>"; };
 		D08CA2B3783D2E8A1ACCC6E0 /* Pods-EventHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventHub/Pods-EventHub.debug.xcconfig"; sourceTree = "<group>"; };
+		F839D5F91BC1166200F52526 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F839D5FB1BC11CA400F52526 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		F839D5FD1BC11D4200F52526 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		F8419E261BB7B0E300E9EF77 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		F8419E2A1BB7C1F300E9EF77 /* customAnnotation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = customAnnotation.xib; sourceTree = "<group>"; };
 		F8419E2C1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMKPointAnnotation.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				F8419E2A1BB7C1F300E9EF77 /* customAnnotation.xib */,
 				F8419E2C1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift */,
 				F841B52A1BB8648E00B7694B /* CustomCallOutView.swift */,
+				F839D5FD1BC11D4200F52526 /* LocationCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 				CEBB32191BB6AB2800273E4F /* EventDetailsViewController.swift */,
 				F8ADA57A1BB7935F00402234 /* EventMapViewController.swift */,
 				586B182C1BBD306B007F9B9D /* EventDetailMapViewController.swift */,
+				F839D5F91BC1166200F52526 /* SettingsViewController.swift */,
+				F839D5FB1BC11CA400F52526 /* SearchLocationViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -367,10 +376,13 @@
 				F841B5291BB861CA00B7694B /* Utils.swift in Sources */,
 				F8419E271BB7B0E300E9EF77 /* CustomAnnotationView.swift in Sources */,
 				F8419E2D1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift in Sources */,
+				F839D5FC1BC11CA400F52526 /* SearchLocationViewController.swift in Sources */,
+				F839D5FA1BC1166200F52526 /* SettingsViewController.swift in Sources */,
 				58E977281BB56AD400A9595F /* EventCell.swift in Sources */,
 				CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */,
 				CEBB321A1BB6AB2800273E4F /* EventDetailsViewController.swift in Sources */,
 				283076151BB990410066DA62 /* Filter.swift in Sources */,
+				F839D5FE1BC11D4200F52526 /* LocationCell.swift in Sources */,
 				58E977211BB5398400A9595F /* Location.swift in Sources */,
 				58E9771F1BB50EDE00A9595F /* Event.swift in Sources */,
 				586B182D1BBD306B007F9B9D /* EventDetailMapViewController.swift in Sources */,

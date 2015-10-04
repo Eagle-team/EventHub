@@ -114,22 +114,9 @@ class EventClient: BDBOAuth1RequestOperationManager {
         
         //oauth_consumer_key=2a9b64c7b372deb628fc&oauth_signature_method=HMAC-SHA1
         
-        if sort != nil {
-            parameters["sort"] = sort!.rawValue
-        }
-        
-        if categories != nil && categories!.count > 0 {
-            parameters["category_filter"] = (categories!).joinWithSeparator(",")
-        }
-        
-        if deals != nil {
-            parameters["deals_filter"] = deals!
-        }
-        
-
         
         return self.GET(searchEventApi, parameters: parameters, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-//            print(response["events"])
+            print(response["events"])
             let dictionarie = response["events"]! as? NSDictionary
             let dictionaries = dictionarie?["event"] as? [NSDictionary]
             
@@ -159,11 +146,7 @@ class EventClient: BDBOAuth1RequestOperationManager {
     // func query events with all params
     func searchWithTerm(location: String, term:String?, date:String?, distance:Int?, sort: String?, categories: [String]?, pageNumber: Int?, completion: ([Event]!, NSError!) -> Void) -> AFHTTPRequestOperation {
         
-        // Default the location to San Francisco
-        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey,"location": location]
-        //"oauth_consumer_key":"2a9b64c7b372deb628fc", "oauth_signature_method":"HMAC-SHA1"]
-        
-        //oauth_consumer_key=2a9b64c7b372deb628fc&oauth_signature_method=HMAC-SHA1
+        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey,"location": location, "date": "Future", "within" : 5]
         
         if term != nil {
             parameters["keywords"] = term

@@ -54,10 +54,10 @@ class Location: NSObject {
         EventClient.sharedInstance.suggestCurrentLocation(completion);
 
     }
-    
+    /*
     class func searchWithTerm(term: String, sort: EventSortMode?, categories: [String]?, deals: Bool?, completion: ([Event]!, NSError!) -> Void) -> Void {
         EventClient.sharedInstance.searchWithTerm(term, sort: sort,categories: categories, deals: deals, completion: completion)
     }
-    
+    */
 }
 

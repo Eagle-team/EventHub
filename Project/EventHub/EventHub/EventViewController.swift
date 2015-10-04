@@ -78,32 +78,11 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         let distanceParams = params?["within"] as? Int
         let categoriesParams = params?["category"] as? [String]
         let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+        print("loc \(locationCoordinate)")
         let pageNumber:Int? = (self.isLoading == true ) ? (EventViewController.eventResponseHeader.pageNumber! + 1) : nil
         
             Utils.showLoading(self.view)
-//            Event.searchWithTerm(term, sort: EventSortMode.Date, categories: ["edution"], deals: nil, completion: { (events:[Event]!, error: NSError!) -> Void in
-//                
-//                // hide progess bar
-//                Utils.hideLoading(self.view)
-//                
-//                if error == nil {
-//                    // if loading
-//                    if loading {
-//                        self.events = events + self.events!  // add new event to event array
-////                        self.even tTableView.reloadData()     // reload table
-//                    }
-//                    // if the first load or filter changed
-//                    else {
-//                        self.events = events
-////                        self.eventTableView.
-//                    }
-//                    self.eventTableView.reloadData()
-//                }
-//                else {
-//                    // display error message 
-//                    
-//                }
-//            })
+
         Event.searchWithTerm(locationCoordinate, term: term, date: dateParams, distance: distanceParams, sort: sortParams, categories: categoriesParams, pageNumber: pageNumber) { (events: [Event]!, error: NSError!) -> Void in
             // hide progess bar
             Utils.hideLoading(self.view)
