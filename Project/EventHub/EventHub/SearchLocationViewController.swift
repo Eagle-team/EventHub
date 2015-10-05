@@ -46,14 +46,22 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
     @IBAction func onAccepted(sender: AnyObject) {
         
        // let loc = CLLocation(latitude: self.currentSelectedLat, longitude: self.currentSelectedLng)
-        let locationSavedObj = PFObject(className: "UserCurrentLocation")
-        locationSavedObj.setObject(self.currentSelectedLng, forKey: "currentLng")
+        let locationSavedObj = PFObject(className: LocalSettings.SettingsClass)
+        locationSavedObj.setObject(self.currentSelectedLng, forKey: "useCurrentLocation")
         locationSavedObj.setObject(self.currentSelectedLat, forKey: "currentLat")
         locationSavedObj.setObject(self.currentSelectedCity, forKey: "currentCityName")
+        locationSavedObj.pinInBackground()
+        self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
+        self.navigationController?.popViewControllerAnimated(true)
+
+        /*
         
         locationSavedObj.pinInBackgroundWithBlock({(success: Bool, error: NSError?) -> Void in
             if success {
                 print("Pin success!")
+                
+                
+                
             }
             else {
                 print("Pin fail")
@@ -62,6 +70,7 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
             self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
             self.navigationController?.popViewControllerAnimated(true)
         })
+*/
     }
     
     var currentSearchValue: String!

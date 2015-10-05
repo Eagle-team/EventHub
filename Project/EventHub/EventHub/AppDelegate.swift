@@ -26,8 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
         pageControl.backgroundColor = UIColor.whiteColor()
 
+        Parse.enableLocalDatastore()
         Parse.setApplicationId("tQYHqy35emsiGewPFc74n2ydY83c2G4jGO6Bdwqs",
             clientKey: "rabuOebPyCSKCwA9ZsHbje6Zws8HvjyGax1k4Yay")
+    
+        PFUser.enableAutomaticUser()
+        var defaultACL = PFACL()
+        defaultACL.setPublicReadAccess(true)
+        defaultACL.setPublicWriteAccess(true)
+        PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: false)
         
         // Register for Push Notitications
         if application.applicationState != UIApplicationState.Background {

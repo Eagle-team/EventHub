@@ -13,7 +13,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var eventTableView: UITableView!
     var location: CLLocation?
-    var events: [Event]!
+    static var events: [Event]!
     
     static var eventResponseHeader = EventResponeHeader()
     
@@ -90,18 +90,18 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
             if error == nil {
                 // if loading
                 if loading {
-                    self.events = self.events! + events // add new event to event array
+                    EventViewController.events = EventViewController.events! + events // add new event to event array
                     self.isLoading = false
-                    print("Event number when loading = \(self.events.count)")
+                    print("Event number when loading = \(EventViewController.events.count)")
                     self.updateTableView()
                     //                        self.even tTableView.reloadData()     // reload table
                 }
                     // if the first load or filter changed
                 else {
                     
-                    self.events = events
-                    print("Event number when not loading = \(self.events.count)")
-                    if self.events.count == 0 {
+                    EventViewController.events = events
+                    print("Event number when not loading = \(EventViewController.events.count)")
+                    if EventViewController.events.count == 0 {
                         print("not data to show")
                     }
                     //                        self.eventTableView.
@@ -129,8 +129,8 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     func updateTableView() {
         var indexPathArrRowInsert = [NSIndexPath]()
         let offset = 10 * (EventViewController.eventResponseHeader.pageNumber! - 1)
-        print("Update row at offset \(offset)-\(self.events.count-1)")
-        for rowToInsert in offset...self.events.count-1 {
+        print("Update row at offset \(offset)-\(EventViewController.events.count-1)")
+        for rowToInsert in offset...EventViewController.events.count-1 {
             var indexPathRow = NSIndexPath(forRow: rowToInsert, inSection: 0)
             indexPathArrRowInsert.append(indexPathRow)
         }
@@ -151,15 +151,15 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if events != nil {
-            return events.count
+        if EventViewController.events != nil {
+            return EventViewController.events.count
         } else {
             return 0
         }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if self.events == nil || self.events.count > 0 {
+        if EventViewController.events == nil || EventViewController.events.count > 0 {
             self.eventTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine;
             return 1;
         }
@@ -185,7 +185,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventCell
         
-        cell.event = events[indexPath.row]        
+        cell.event = EventViewController.events[indexPath.row]
         return cell
     }
     
@@ -289,7 +289,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = sender as! UITableViewCell
         let indexPath = eventTableView.indexPathForCell(cell)!
         
-        let event = events![indexPath.row]
+        let event = EventViewController.events![indexPath.row]
         
         let eventDetailsController = segue.destinationViewController as! EventDetailsViewController
         eventDetailsController.event = event

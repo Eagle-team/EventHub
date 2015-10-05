@@ -17,8 +17,8 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+               // Do any additional setup after loading the view.
+       
     }
 
     @IBOutlet weak var cityName: UILabel!
@@ -49,6 +49,23 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
     
     func filtersViewControllerUpdateDistanceState(searchLocationViewController: SearchLocationViewController, near: String){
         cityName.text = near
+        /*
+        
+        */
+        let query = PFQuery(className: LocalSettings.SettingsClass)
+        query.fromLocalDatastore()
+        query.getObjectInBackgroundWithId("currentCityName").continueWithBlock {
+            (task: BFTask!) -> AnyObject in
+            if let error = task.error {
+                // Something went wrong.
+                return task;
+            }
+            
+            // task.result will be your game score
+            var valueD = task.valueForKey( "currentCityName") as! String
+            print(valueD)
+            return task;
+        }
     }
     
 
