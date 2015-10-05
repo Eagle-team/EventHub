@@ -29,21 +29,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-       
-            
-            var query = PFQuery(className:"GameScore")
-            query.getObjectInBackgroundWithId("xWMyZEGZ") {
-                (gameScore: PFObject?, error: NSError?) -> Void in
-                if error == nil && gameScore != nil {
-                    print(gameScore)
-                } else {
-                    print(error)
-                }
-            }
-
             getLocation()
-            
-            
         }
     }
     
