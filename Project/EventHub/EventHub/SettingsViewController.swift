@@ -29,7 +29,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
                let settingVCNavigator = mainStoryBoard.instantiateViewControllerWithIdentifier("SearchNavigationVC") as? UINavigationController
         let searchCityVC = settingVCNavigator?.viewControllers[0] as! SearchLocationViewController
-       // settingViewController.delegate = self
+        searchCityVC.delegate = self
         
         self.navigationController?.pushViewController(searchCityVC, animated: true)
         /*

@@ -38,23 +38,17 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onCancel(sender: AnyObject) {
-       //  self.dismissViewControllerAnimated(true, completion: nil)
-        
-        //let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        //let settingVCNavigator = mainStoryBoard.instantiateViewControllerWithIdentifier("SearchNavigationVC") as? UINavigationController
-        //let searchCityVC = settingVCNavigator?.viewControllers[0] as! SearchLocationViewController
-        // settingViewController.delegate = self
-        
-        self.navigationController?.popViewControllerAnimated(true)
+
+    @IBAction func onCancelled(sender: AnyObject) {
+           self.navigationController?.popViewControllerAnimated(true)
     }
 
     @IBAction func onAccepted(sender: AnyObject) {
         
-        let loc = CLLocation(latitude: self.currentSelectedLat, longitude: self.currentSelectedLng)
+       // let loc = CLLocation(latitude: self.currentSelectedLat, longitude: self.currentSelectedLng)
         let locationSavedObj = PFObject(className: "UserCurrentLocation")
-        locationSavedObj.setObject(loc, forKey: "currentLocation")
+        locationSavedObj.setObject(self.currentSelectedLng, forKey: "currentLng")
+        locationSavedObj.setObject(self.currentSelectedLat, forKey: "currentLat")
         locationSavedObj.setObject(self.currentSelectedCity, forKey: "currentCityName")
         
         locationSavedObj.pinInBackgroundWithBlock({(success: Bool, error: NSError?) -> Void in
@@ -79,7 +73,7 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let nearLocation = results[indexPath.row] as! NSDictionary
-        let cityName = nearLocation.valueForKeyPath("location.state")
+        let cityName = nearLocation["name"]
         
         if (cityName != nil)
         {
