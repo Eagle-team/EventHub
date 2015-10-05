@@ -44,7 +44,43 @@ class CustomCallOutView: UIView {
     }
     
     @IBAction func onFavorite(sender: AnyObject) {
-        print("favorite \(event?.title)")
+        let query = PFQuery(className:"FavoriteEvent")
+        query.fromLocalDatastore()
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if (objects == nil || objects?.count == 0){
+                print("nil or 0")
+                let obj = PFObject(className:"FavoriteEvent")
+                obj["eventId"] = self.event!.ID!
+                obj["eventTitle"] = self.event?.title
+                obj["eventAddress"] = self.event?.address
+                obj["eventStartTime"] = self.event?.startTime
+                obj.pinInBackground()
+                
+            }else{
+                var check = false
+                for o in objects!{
+                    var oName = o["eventTitle"] as! String
+                    print("eventTitle:: \(oName)")
+                    var oID = o["eventId"] as! String
+                    if (self.event?.ID == oID){
+                        o["eventId"] = self.event!.ID!
+                        o["eventTitle"] = self.event?.title
+                        o["eventAddress"] = self.event?.address
+                        o["eventStartTime"] = self.event?.startTime
+                        o.saveInBackground()
+                        check = true
+                    }
+                }
+                if (check == false){
+                    let obj = PFObject(className:"FavoriteEvent")
+                    obj["eventId"] = self.event!.ID!
+                    obj["eventTitle"] = self.event?.title
+                    obj["eventAddress"] = self.event?.address
+                    obj["eventStartTime"] = self.event?.startTime
+                    obj.pinInBackground()
+                }
+            }
+        }
     }
     
     

@@ -10,10 +10,6 @@ import UIKit
 
 class LocationCell: UITableViewCell {
 
-    
-    
-    
-    
     @IBOutlet weak var cityName: UILabel!
     var location: NSDictionary! {
         didSet {
