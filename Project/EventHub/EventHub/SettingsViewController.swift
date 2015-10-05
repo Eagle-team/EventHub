@@ -48,10 +48,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
     
     
     func filtersViewControllerUpdateDistanceState(searchLocationViewController: SearchLocationViewController, near: String){
-        
         cityName.text = near
-       
-        
     }
     
 

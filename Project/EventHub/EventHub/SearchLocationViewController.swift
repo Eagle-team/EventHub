@@ -28,7 +28,7 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         
      
         locationsTableView.dataSource = self
-               locationsTableView.delegate = self
+        locationsTableView.delegate = self
         searchBar.delegate = self
         // Do any additional setup after loading the view.
         print("didload")
@@ -50,17 +50,64 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         self.navigationController?.popViewControllerAnimated(true)
     }
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    @IBAction func onAccepted(sender: AnyObject) {
+        
+        let loc = CLLocation(latitude: self.currentSelectedLat, longitude: self.currentSelectedLng)
+        let locationSavedObj = PFObject(className: "UserCurrentLocation")
+        locationSavedObj.setObject(loc, forKey: "currentLocation")
+        locationSavedObj.setObject(self.currentSelectedCity, forKey: "currentCityName")
+        
+        locationSavedObj.pinInBackgroundWithBlock({(success: Bool, error: NSError?) -> Void in
+            if success {
+                print("Pin success!")
+            }
+            else {
+                print("Pin fail")
+            }
+            
+            self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
+            self.navigationController?.popViewControllerAnimated(true)
+        })
+    }
+    
+    var currentSearchValue: String!
+    var currentSelectedCity : String!
+    var currentSelectedLng : Double!
+    var currentSelectedLat : Double!
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let nearLocation = results[indexPath.row] as! NSDictionary
-        let cityName = nearLocation.valueForKeyPath("location.state") as? String ?? "" //as! String
+        let cityName = nearLocation.valueForKeyPath("location.state")
         
-        let longitude = nearLocation.valueForKeyPath("location.lat") as! String
-        let latitude = nearLocation.valueForKeyPath("location.lng") as! String
+        if (cityName != nil)
+        {
+            self.currentSelectedCity = cityName as! String
+        }
+        else {  self.currentSelectedCity = self.currentSearchValue}
         
-        let latitudeF: CLLocationDegrees = (longitude as NSString).doubleValue
-        let longitudeF: CLLocationDegrees = (latitude as NSString).doubleValue
+        let longitude = nearLocation.valueForKeyPath("location.lng")
+        if (longitude != nil)
+        {
+            let longitudeF = longitude as! Double
+            self.currentSelectedLng = longitudeF
+        }
+        else {  self.currentSelectedLng = 100}
 
+        
+        let latitude = nearLocation.valueForKeyPath("location.lat")
+        if (latitude != nil)
+        {
+            let latitudeF = latitude as! Double
+            self.currentSelectedLat = latitudeF
+        }
+        else {  self.currentSelectedLat = 100}
+
+        print("CURRENT CITY \(self.currentSelectedCity) LAT \(self.currentSelectedLat) LONG \(self.currentSelectedLng)")
+       
+
+        /*
         
         let loc = CLLocation(latitude: latitudeF, longitude: longitudeF)
         let locationSavedObj = PFObject(className: "LocationObject")
@@ -78,6 +125,7 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         
           self.navigationController?.popViewControllerAnimated(true)
          //dismissViewControllerAnimated(true, completion: nil)
+        */
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -98,27 +146,34 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+         searchBar.endEditing(true)
+        currentSearchValue = searchBar.text!
         fetchLocations(searchBar.text!)
     }
-func searchBarTextDidBeginEditing(searchBar: UISearchBar)
-{
-   
-}
+    func showLoading(){
+        let loadingNotification = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        loadingNotification.mode = MBProgressHUDMode.Indeterminate
+        loadingNotification.labelText = "Loading"
+    }
     var messageLabel : UILabel!
     
-func fetchLocations(near: String = "") {
+    func fetchLocations(near: String = "") {
     
     
     let url = "https://api.foursquare.com/v2/venues/search?client_id=QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL&client_secret=W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU&v=20141020&near=\(near.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)"
     
     let request = NSURLRequest(URL: NSURL(string: url)!)
     
-    
+    Utils.showLoading(self.view)
+        
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
         if let data = data {
             
             do {
                 if let responseDictionary:NSDictionary = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
+                    
+                    Utils.hideLoading(self.view)
+                    
                     var resultsObject = responseDictionary.valueForKeyPath("response.venues")
                     
                    
