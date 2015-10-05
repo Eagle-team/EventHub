@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UITableViewController, SearchLocationViewControllerDelegate, CLLocationManagerDelegate{
+class SettingsViewController: UITableViewController, SearchLocationViewControllerDelegate, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
 
 
  
@@ -22,7 +22,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
                // Do any additional setup after loading the view.
-       
+       fbButton.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,6 +37,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
         }
         
     }
+    @IBOutlet weak var fbButton: FBSDKLoginButton!
     
     @IBAction func onSwitchLocationChanged(sender: UISwitch) {
       
@@ -122,6 +123,40 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
+    {
+        print("User Logged In")
+        
+        if ((error) != nil)
+        {
+            print("error")
+        }
+        else if result.isCancelled
+        {
+            print("cancel")
+        }
+        else {
+            getLocation()
+        }
+    }
+    
+    /*!
+    @abstract Sent to the delegate when the button was used to logout.
+    @param loginButton The button that was clicked.
+    */
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController") as UIViewController
+        //self.presentViewController(vc, animated: true, completion: nil)
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.setRootViewController(vc)
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+
     
     func filtersViewControllerUpdateDistanceState(searchLocationViewController: SearchLocationViewController, near: String){
         cityName.text = near

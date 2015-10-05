@@ -653,10 +653,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-Md-eQc" customClass="FBSDKLoginButton">
-                                                    <rect key="frame" x="172" y="7" width="123" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="oIR-F1-Ud9">
                                                     <rect key="frame" x="25" y="6" width="32" height="32"/>
                                                     <constraints>
@@ -670,6 +666,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-Md-eQc" customClass="FBSDKLoginButton">
+                                                    <rect key="frame" x="172" y="7" width="123" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mjk-Jj-6Wp" firstAttribute="centerY" secondItem="FBE-FG-GFR" secondAttribute="centerY" id="3p9-au-tUT"/>
@@ -695,6 +695,7 @@
                         <outlet property="changeLocationCell" destination="aTq-ok-zdn" id="hnz-fH-kzh"/>
                         <outlet property="cityName" destination="XNe-fY-Ui8" id="dxz-10-c7i"/>
                         <outlet property="currentLocatoinSwitch" destination="nqa-2s-qPD" id="vdM-M4-aqm"/>
+                        <outlet property="fbButton" destination="gfP-Md-eQc" id="SXq-R9-X9w"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ho4-ff-BjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
