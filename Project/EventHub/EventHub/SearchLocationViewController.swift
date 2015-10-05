@@ -40,21 +40,53 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
     }
 
     @IBAction func onCancelled(sender: AnyObject) {
-           self.navigationController?.popViewControllerAnimated(true)
+        /*
+        let query = PFQuery(className: LocalSettings.SettingsClass)
+        query.fromLocalDatastore()
+        query.getObjectInBackgroundWithId("currentCityName") {
+            (gameScore: PFObject?, error: NSError?) -> Void in
+            if error == nil && gameScore != nil {
+                print(gameScore)
+            } else {
+                print(error)
+            }
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+*/
+        /*
+        query.getObjectInBackgroundWithId("currentCityName").continueWithBlock {
+            (task: BFTask!) -> AnyObject in
+            if let error = task.error {
+                // Something went wrong.
+                return task;
+            }
+            
+            // task.result will be your game score
+            //var valueD = task.valueForKey( "currentCityName") as! String
+            //print(valueD)
+            print(task.result)
+            return task;
+        }*/
+        
+        //var query = PFQuery(className:"GameScore")
+       var locationSettings = LocalSettings.GetLocationSettings()
+        
+        var a = 999
+        
     }
 
     @IBAction func onAccepted(sender: AnyObject) {
         
        // let loc = CLLocation(latitude: self.currentSelectedLat, longitude: self.currentSelectedLng)
+        /*
         let locationSavedObj = PFObject(className: LocalSettings.SettingsClass)
         locationSavedObj.setObject(self.currentSelectedLng, forKey: "useCurrentLocation")
         locationSavedObj.setObject(self.currentSelectedLat, forKey: "currentLat")
         locationSavedObj.setObject(self.currentSelectedCity, forKey: "currentCityName")
-        locationSavedObj.pinInBackground()
-        self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
-        self.navigationController?.popViewControllerAnimated(true)
+       // locationSavedObj.pinInBackground()
 
-        /*
+
+        
         
         locationSavedObj.pinInBackgroundWithBlock({(success: Bool, error: NSError?) -> Void in
             if success {
@@ -67,12 +99,16 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
                 print("Pin fail")
             }
             
-            self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
-            self.navigationController?.popViewControllerAnimated(true)
+
         })
 */
+        let locationSettings = UserLocationSettings(useCurrent: false, address: self.currentSelectedCity, lat: self.currentSelectedLat, lng: self.currentSelectedLng)
+        LocalSettings.SaveLocationSettings(locationSettings)
+        self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
+        self.navigationController?.popViewControllerAnimated(true)
+
     }
-    
+
     var currentSearchValue: String!
     var currentSelectedCity : String!
     var currentSelectedLng : Double!

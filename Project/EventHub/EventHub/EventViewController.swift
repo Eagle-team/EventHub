@@ -70,6 +70,20 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        var currentSettings = LocalSettings.GetLocationSettings()
+        if (currentSettings != nil)
+        {
+            if (abs(currentSettings.latitude - location!.coordinate.latitude) > 2
+            && abs(currentSettings.longitude - location!.coordinate.longitude) > 2)
+            {
+                location = CLLocation(latitude: currentSettings.latitude, longitude: currentSettings.longitude)
+                loadEvents(false)
+            }
+            
+        }
+    }
     
     func loadEvents(loading:Bool) {
             // get params to query

@@ -8,21 +8,97 @@
 
 import UIKit
 
-class SettingsViewController: UITableViewController, SearchLocationViewControllerDelegate{
+class SettingsViewController: UITableViewController, SearchLocationViewControllerDelegate, CLLocationManagerDelegate{
 
 
  
     
+      let locationManager = CLLocationManager()
 
     
+    @IBOutlet weak var currentLocatoinSwitch: UISwitch!
+    
+    @IBOutlet weak var changeLocationCell: UITableViewCell!
     override func viewDidLoad() {
         super.viewDidLoad()
                // Do any additional setup after loading the view.
        
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        var settings = LocalSettings.GetLocationSettings()
+        if (settings != nil)
+        {
+            currentLocatoinSwitch.setOn(settings.useCurrentLocation, animated: true)
+            changeLocationCell.hidden = settings.useCurrentLocation
+            cityName.text = settings.addressName
+            
+        }
+        
+    }
+    
+    @IBAction func onSwitchLocationChanged(sender: UISwitch) {
+      
+        Utils.showLoading(self.view)
+        changeLocationCell.hidden = sender.on
+        var currentSettings = LocalSettings.GetLocationSettings()
+        if (currentSettings == nil)
+        {
+            Utils.hideLoading(self.view)
+        }
+        else
+        {
+            currentSettings.useCurrentLocation = sender.on
+            
+            if (sender.on)
+            {
+                
+                LocalSettings.SaveLocationSettings(currentSettings)
+                getLocation()
+            }
+            else
+            {
+                LocalSettings.SaveLocationSettings(currentSettings)
+                cityName.text = currentSettings.addressName
+                Utils.hideLoading(self.view)
+            }
+          
+        }
+    }
+   
+    
+    
+    
+    func getLocation(){
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.locationServicesEnabled()){
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+        }
+        
+    }
+    var a = 0
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if (a == 0){
+            a = a + 1
+            //manager.stopUpdatingLocation()
+            let locationSettings = UserLocationSettings(useCurrent: true, address: "Ho Chi Minh City", lat: manager.location!.coordinate.latitude, lng: manager.location!.coordinate.longitude)
+            LocalSettings.SaveLocationSettings(locationSettings)
+            
+            Utils.hideLoading(self.view)
+        }
+    }
 
+   
     @IBOutlet weak var cityName: UILabel!
 
+   
+  
   
     @IBAction func onTouchChangeLocation(sender: AnyObject) {
         
@@ -52,6 +128,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
         /*
         
         */
+        /*
         let query = PFQuery(className: LocalSettings.SettingsClass)
         query.fromLocalDatastore()
         query.getObjectInBackgroundWithId("currentCityName").continueWithBlock {
@@ -65,7 +142,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
             var valueD = task.valueForKey( "currentCityName") as! String
             print(valueD)
             return task;
-        }
+        }*/
     }
     
 

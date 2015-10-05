@@ -597,6 +597,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nqa-2s-qPD">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="onSwitchLocationChanged:" destination="ZKc-cA-Nf1" eventType="valueChanged" id="iLg-4m-eaR"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -689,7 +692,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="45V-jh-Aq4"/>
                     <connections>
-                        <outlet property="cityName" destination="XNe-fY-Ui8" id="WCX-FM-aED"/>
+                        <outlet property="changeLocationCell" destination="aTq-ok-zdn" id="hnz-fH-kzh"/>
+                        <outlet property="cityName" destination="XNe-fY-Ui8" id="dxz-10-c7i"/>
+                        <outlet property="currentLocatoinSwitch" destination="nqa-2s-qPD" id="vdM-M4-aqm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ho4-ff-BjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -720,7 +725,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPz-Sa-QfL">
                                             <rect key="frame" x="20" y="5" width="280" height="33"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

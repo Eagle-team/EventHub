@@ -29,7 +29,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
-            getLocation()
+            let locationSettings = LocalSettings.GetLocationSettings()
+            if (locationSettings != nil && !locationSettings.useCurrentLocation)
+            {
+                locationManager.requestAlwaysAuthorization()
+                locationManager.requestWhenInUseAuthorization()
+                
+                CLLocationManager.locationServicesEnabled()
+                goToLanding(CLLocation(latitude: locationSettings.latitude, longitude: locationSettings.longitude))
+            }
+            else
+            {
+                getLocation()
+            }
         }
     }
     
@@ -55,6 +67,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, CLLocatio
         if (a == 0){
             a = a + 1
             //manager.stopUpdatingLocation()
+            let locationSettings = UserLocationSettings(useCurrent: true, address: "Ho Chi Minh City", lat: manager.location!.coordinate.latitude, lng: manager.location!.coordinate.longitude)
+            LocalSettings.SaveLocationSettings(locationSettings)
+
             goToLanding(manager.location!)
         }
     }

@@ -25,8 +25,11 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
         let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
         print("map \(locationCoordinate)")
         
+        if (EventViewController.events == nil || EventViewController.events.count == 0)
+        {
         Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
             self.events = events
+            EventViewController.events = events
             for event in events{
                 let annotation = EventMKPointAnnotation()
                 if (event.latitude != nil || event.longitude != nil){
@@ -44,6 +47,72 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
                 }
             }
         })
+        }
+        else
+        {
+            self.events = EventViewController.events
+            for event in events{
+                let annotation = EventMKPointAnnotation()
+                if (event.latitude != nil || event.longitude != nil){
+                    let coordinate = CLLocationCoordinate2DMake((event.latitude as! NSString).doubleValue, (event.longitude as! NSString).doubleValue)
+                    annotation.coordinate = coordinate
+                    
+                    annotation.title = event.title
+                    
+                    annotation.subtitle = event.address
+                    annotation.event = event
+                    
+                    self.mapView.addAnnotation(annotation)
+                }else{
+                    print("nil")
+                }
+            }
+
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        var currentSettings = LocalSettings.GetLocationSettings()
+        if (currentSettings != nil)
+        {
+            if (abs(currentSettings.latitude - location!.coordinate.latitude) > 2
+                && abs(currentSettings.longitude - location!.coordinate.longitude) > 2)
+            {
+                Utils.showLoading(self.view)
+                location = CLLocation(latitude: currentSettings.latitude, longitude: currentSettings.longitude)
+                 mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(location!.coordinate.latitude,location!.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1)), animated: false)
+                let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+                Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
+                    Utils.hideLoading(self.view)
+                    self.events = events
+                    EventViewController.events = events
+                    for event in events{
+                        let annotation = EventMKPointAnnotation()
+                        if (event.latitude != nil || event.longitude != nil){
+                            let coordinate = CLLocationCoordinate2DMake((event.latitude as! NSString).doubleValue, (event.longitude as! NSString).doubleValue)
+                            annotation.coordinate = coordinate
+                            
+                            annotation.title = event.title
+                            
+                            annotation.subtitle = event.address
+                            annotation.event = event
+                            
+                            self.mapView.addAnnotation(annotation)
+                        }else{
+                            print("nil")
+                        }
+                    }
+                })
+
+            }
+            else
+            {
+                self.events = EventViewController.events
+                
+            }
+            
+        }
     }
     
     func initMap() {
