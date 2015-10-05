@@ -24,9 +24,6 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     var pageViewController: UIPageViewController!
     var  pageImages: [NSURL]!
     
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
             
