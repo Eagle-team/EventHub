@@ -53,16 +53,16 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
         let nearLocation = results[indexPath.row] as! NSDictionary
-        var cityName = nearLocation.valueForKeyPath("location.state") as! String ?? "" //as! String
+        let cityName = nearLocation.valueForKeyPath("location.state") as? String ?? "" //as! String
         
-        var longitude = nearLocation.valueForKeyPath("location.lat") as! String
-        var latitude = nearLocation.valueForKeyPath("location.lng") as! String
+        let longitude = nearLocation.valueForKeyPath("location.lat") as! String
+        let latitude = nearLocation.valueForKeyPath("location.lng") as! String
         
         let latitudeF: CLLocationDegrees = (longitude as NSString).doubleValue
         let longitudeF: CLLocationDegrees = (latitude as NSString).doubleValue
 
         
-        var loc = CLLocation(latitude: latitudeF, longitude: longitudeF)
+        let loc = CLLocation(latitude: latitudeF, longitude: longitudeF)
         let locationSavedObj = PFObject(className: "LocationObject")
         locationSavedObj.setObject(loc, forKey: "current_location")
         locationSavedObj.pinInBackgroundWithBlock({(success: Bool, error: NSError?) -> Void in
@@ -76,7 +76,8 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         
         delegate?.filtersViewControllerUpdateDistanceState!(self, near: cityName)
         
-         dismissViewControllerAnimated(true, completion: nil)
+          self.navigationController?.popViewControllerAnimated(true)
+         //dismissViewControllerAnimated(true, completion: nil)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -85,23 +86,32 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         cell.location = results[indexPath.row] as! NSDictionary
         return cell
     }
-
+ 
     func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        let newText = NSString(string: searchBar.text!).stringByReplacingCharactersInRange(range, withString: text)
+        //let newText = NSString(string: searchBar.text!).stringByReplacingCharactersInRange(range, withString: text)
         //fetchLocations(newText)
+        if (self.messageLabel != nil && (!self.messageLabel.text!.isEmpty)) {
+            self.messageLabel.text = ""
+            self.locationsTableView.backgroundView = self.messageLabel;
+        }
         return true
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         fetchLocations(searchBar.text!)
     }
-
+func searchBarTextDidBeginEditing(searchBar: UISearchBar)
+{
+   
+}
+    var messageLabel : UILabel!
+    
 func fetchLocations(near: String = "") {
     
     
-    var url = "https://api.foursquare.com/v2/venues/search?client_id=QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL&client_secret=W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU&v=20141020&near=\(near.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)"
+    let url = "https://api.foursquare.com/v2/venues/search?client_id=QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL&client_secret=W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU&v=20141020&near=\(near.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)"
     
-    var request = NSURLRequest(URL: NSURL(string: url)!)
+    let request = NSURLRequest(URL: NSURL(string: url)!)
     
     
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
@@ -109,8 +119,51 @@ func fetchLocations(near: String = "") {
             
             do {
                 if let responseDictionary:NSDictionary = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
-                    self.results = responseDictionary.valueForKeyPath("response.venues") as! NSArray
-                    self.locationsTableView.reloadData()
+                    var resultsObject = responseDictionary.valueForKeyPath("response.venues")
+                    
+                   
+                    
+                    if resultsObject != nil
+                    {
+                        self.results =  resultsObject as! NSArray
+                        if self.results.count > 0
+                        {self.locationsTableView.reloadData()}
+                        else
+                        {
+                            // Display a message when the table is empty
+                            self.messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+                            
+                            self.messageLabel.text = "No locations found. Please try another keyword!"
+                            self.messageLabel.textColor = UIColor.blackColor()
+                            self.messageLabel.numberOfLines = 0
+                            self.messageLabel.textAlignment = NSTextAlignment.Center
+                            //messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+                            
+                            self.messageLabel.sizeToFit()
+                            
+                            self.locationsTableView.backgroundView = self.messageLabel;
+                            //self.locationsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+                        }
+                    }
+                    else
+                    {
+                        // Display a message when the table is empty
+                        self.messageLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+                        
+                        self.messageLabel.text = "No locations found. Please try another keyword!"
+                        self.messageLabel.textColor = UIColor.blackColor()
+                        self.messageLabel.numberOfLines = 0
+                        self.messageLabel.textAlignment = NSTextAlignment.Center
+                        //messageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+                        
+                        self.messageLabel.sizeToFit()
+                        
+                        self.locationsTableView.backgroundView = self.messageLabel;
+                        //self.locationsTableView.separatorStyle = UITableViewCellSeparatorStyle.None
+                    }
+                    
+                    
+                    
                 } else {
                     print("Failed...")
                 }
