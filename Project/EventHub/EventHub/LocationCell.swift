@@ -12,8 +12,9 @@ class LocationCell: UITableViewCell {
 
     
     
-    @IBOutlet weak var cityName: UILabel!
     
+    
+    @IBOutlet weak var cityName: UILabel!
     var location: NSDictionary! {
         didSet {
             cityName.text = location["name"] as? String

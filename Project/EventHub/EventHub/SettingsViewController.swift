@@ -8,29 +8,39 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, SearchLocationViewControllerDelegate{
+class SettingsViewController: UITableViewController, SearchLocationViewControllerDelegate{
 
 
  
     
-    @IBOutlet weak var remindTimeSegment: UISegmentedControl!
-    
-    @IBOutlet weak var changeLocationButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
     @IBOutlet weak var cityName: UILabel!
 
+  
     @IBAction func onTouchChangeLocation(sender: AnyObject) {
-        let searchLocationVc = storyboard?.instantiateViewControllerWithIdentifier("SearchLocationViewController")  as! SearchLocationViewController
+        
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+               let settingVCNavigator = mainStoryBoard.instantiateViewControllerWithIdentifier("SearchNavigationVC") as? UINavigationController
+        let searchCityVC = settingVCNavigator?.viewControllers[0] as! SearchLocationViewController
+       // settingViewController.delegate = self
+        
+        self.navigationController?.pushViewController(searchCityVC, animated: true)
+        /*
+
+        let searchLocationVc = mainStoryBoard.instantiateViewControllerWithIdentifier("SearchLocationViewController")  as! SearchLocationViewController
         searchLocationVc.delegate = self
         self.presentViewController(searchLocationVc, animated: true, completion: nil)
-        
+ */
+
     }
-  
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,6 +53,22 @@ class SettingsViewController: UIViewController, SearchLocationViewControllerDele
        
         
     }
+    
+
+    
+    // MARK: - Table view data source
+    /*
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 3
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+*/
+    
     /*
     // MARK: - Navigation
 

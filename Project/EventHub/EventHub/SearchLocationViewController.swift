@@ -14,9 +14,11 @@ import UIKit
 
 class SearchLocationViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
 
-    @IBOutlet weak var searchBar: UISearchBar!
     
-    @IBOutlet weak var locationsTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+   
+    @IBOutlet var locationsTableView: UITableView!
+    
     var delegate: SearchLocationViewControllerDelegate?
     
     var results: NSArray = []
@@ -24,8 +26,9 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+     
         locationsTableView.dataSource = self
-        locationsTableView.delegate = self
+               locationsTableView.delegate = self
         searchBar.delegate = self
         // Do any additional setup after loading the view.
         print("didload")
@@ -36,6 +39,16 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onCancel(sender: AnyObject) {
+       //  self.dismissViewControllerAnimated(true, completion: nil)
+        
+        //let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        //let settingVCNavigator = mainStoryBoard.instantiateViewControllerWithIdentifier("SearchNavigationVC") as? UINavigationController
+        //let searchCityVC = settingVCNavigator?.viewControllers[0] as! SearchLocationViewController
+        // settingViewController.delegate = self
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
