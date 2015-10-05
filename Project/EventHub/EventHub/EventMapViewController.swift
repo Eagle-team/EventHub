@@ -19,7 +19,7 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 1, green: 165/255, blue: 233, alpha: 1)
-        
+        Utils.showLoading(self.view)
         initMap()
         
         let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
@@ -27,7 +27,9 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
         
         if (EventViewController.events == nil || EventViewController.events.count == 0)
         {
+            
         Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
+            
             self.events = events
             EventViewController.events = events
             for event in events{
@@ -50,6 +52,7 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
         }
         else
         {
+            
             self.events = EventViewController.events
             for event in events{
                 let annotation = EventMKPointAnnotation()
@@ -76,15 +79,15 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
         var currentSettings = LocalSettings.GetLocationSettings()
         if (currentSettings != nil)
         {
-            if (abs(currentSettings.latitude - location!.coordinate.latitude) > 2
-                && abs(currentSettings.longitude - location!.coordinate.longitude) > 2)
-            {
-                Utils.showLoading(self.view)
+           
+          
+               
                 location = CLLocation(latitude: currentSettings.latitude, longitude: currentSettings.longitude)
                  mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(location!.coordinate.latitude,location!.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1)), animated: false)
                 let locationCoordinate = "\(location!.coordinate.latitude),\(location!.coordinate.longitude)"
+                print("loc \(locationCoordinate)")
                 Event.searchWithBaseLocation(locationCoordinate, completion: { (events, error) -> Void in
-                    Utils.hideLoading(self.view)
+                    
                     self.events = events
                     EventViewController.events = events
                     for event in events{
@@ -105,14 +108,11 @@ class EventMapViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
                     }
                 })
 
-            }
-            else
-            {
-                self.events = EventViewController.events
-                
-            }
+           
+            
             
         }
+        Utils.hideLoading(self.view)
     }
     
     func initMap() {

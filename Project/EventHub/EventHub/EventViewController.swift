@@ -71,7 +71,6 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewWillAppear(animated: Bool) {
-        
         var currentSettings = LocalSettings.GetLocationSettings()
         if (currentSettings != nil)
         {

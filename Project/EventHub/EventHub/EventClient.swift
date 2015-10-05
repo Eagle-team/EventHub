@@ -109,7 +109,7 @@ class EventClient: BDBOAuth1RequestOperationManager {
         
         
         // Default the location to San Francisco
-        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey,"location": location, "date": "Future", "within" : 5]
+        var parameters: [String : AnyObject] = ["app_key": eventfulAppKey,"location": location, "date": "Future", "within" : 20]
         //"oauth_consumer_key":"2a9b64c7b372deb628fc", "oauth_signature_method":"HMAC-SHA1"]
         
         //oauth_consumer_key=2a9b64c7b372deb628fc&oauth_signature_method=HMAC-SHA1
