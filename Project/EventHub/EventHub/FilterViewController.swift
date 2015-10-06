@@ -28,9 +28,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
             filterSectionType: FilterSectionType.SingleChoose,
             expanded: false),
         FilterSection(titleHeader: "Distance", parameterFilterName: "within", itemsInSection: [
-            ItemInSection(title: "1", parameterValue: 1, selected: true),
-            ItemInSection(title: "10", parameterValue: 10, selected: false),
-            ItemInSection(title: "20", parameterValue: 20, selected: false)],
+            ItemInSection(title: "40 Km", parameterValue: 40, selected: true),
+            ItemInSection(title: "15 Km", parameterValue: 15, selected: false),
+            ItemInSection(title: "5 Km", parameterValue: 5, selected: false)],
             filterSectionType: .SingleChoose,
             expanded: false),
         FilterSection(titleHeader: "Sort by", parameterFilterName: "sort_order", itemsInSection: [

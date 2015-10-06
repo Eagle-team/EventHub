@@ -74,8 +74,8 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         var currentSettings = LocalSettings.GetLocationSettings()
         if (currentSettings != nil)
         {
-            if (abs(currentSettings.latitude - location!.coordinate.latitude) > 2
-            && abs(currentSettings.longitude - location!.coordinate.longitude) > 2)
+            if (abs(currentSettings.latitude - location!.coordinate.latitude) > 0.01
+            && abs(currentSettings.longitude - location!.coordinate.longitude) > 0.01)
             {
                 location = CLLocation(latitude: currentSettings.latitude, longitude: currentSettings.longitude)
                 loadEvents(false)
