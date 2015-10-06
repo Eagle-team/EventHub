@@ -34,6 +34,8 @@
 		CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1D3451BAD993300CE17B4 /* SetLocationViewController.swift */; };
 		F81EDE7C1BC2E24500A32B19 /* FavoriteEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDE7B1BC2E24500A32B19 /* FavoriteEventTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F81EDE7E1BC2E7E300A32B19 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDE7D1BC2E7E300A32B19 /* FavoriteCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F81EDE801BC3AC4000A32B19 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDE7F1BC3AC4000A32B19 /* FavoriteViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F81EDE821BC3AD9000A32B19 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81EDE811BC3AD9000A32B19 /* FavoritesCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F839D5FA1BC1166200F52526 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839D5F91BC1166200F52526 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F839D5FC1BC11CA400F52526 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839D5FB1BC11CA400F52526 /* SearchLocationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F839D5FE1BC11D4200F52526 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F839D5FD1BC11D4200F52526 /* LocationCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -81,6 +83,8 @@
 		D08CA2B3783D2E8A1ACCC6E0 /* Pods-EventHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EventHub/Pods-EventHub.debug.xcconfig"; sourceTree = "<group>"; };
 		F81EDE7B1BC2E24500A32B19 /* FavoriteEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteEventTableViewController.swift; sourceTree = "<group>"; };
 		F81EDE7D1BC2E7E300A32B19 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		F81EDE7F1BC3AC4000A32B19 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		F81EDE811BC3AD9000A32B19 /* FavoritesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		F839D5F91BC1166200F52526 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F839D5FB1BC11CA400F52526 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 		F839D5FD1BC11D4200F52526 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				F841B52A1BB8648E00B7694B /* CustomCallOutView.swift */,
 				F839D5FD1BC11D4200F52526 /* LocationCell.swift */,
 				F81EDE7D1BC2E7E300A32B19 /* FavoriteCell.swift */,
+				F81EDE811BC3AD9000A32B19 /* FavoritesCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				F839D5F91BC1166200F52526 /* SettingsViewController.swift */,
 				F839D5FB1BC11CA400F52526 /* SearchLocationViewController.swift */,
 				F81EDE7B1BC2E24500A32B19 /* FavoriteEventTableViewController.swift */,
+				F81EDE7F1BC3AC4000A32B19 /* FavoriteViewController.swift */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -375,8 +381,10 @@
 			files = (
 				F81EDE7C1BC2E24500A32B19 /* FavoriteEventTableViewController.swift in Sources */,
 				CEC15E681BB99CFE00EAC656 /* ImageItemViewController.swift in Sources */,
+				F81EDE821BC3AD9000A32B19 /* FavoritesCell.swift in Sources */,
 				CE5604E11BC00F8A00D971FB /* ScalableTableView.swift in Sources */,
 				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
+				F81EDE801BC3AC4000A32B19 /* FavoriteViewController.swift in Sources */,
 				58EF28271BC37D8F00DEF159 /* TodoItem.swift in Sources */,
 				CEC15E661BB99CD700EAC656 /* EventDetail.swift in Sources */,
 				CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */,

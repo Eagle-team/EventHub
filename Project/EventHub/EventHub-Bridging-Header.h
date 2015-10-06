@@ -17,5 +17,6 @@
 #import "FlatUIKit/FlatUIKit.h"
 #import "UIScrollView+InfiniteScroll.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import <FSCalendar/FSCalendar.h>
 #endif
 
