@@ -20,8 +20,8 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var filters = [
         FilterSection(titleHeader: "Time", parameterFilterName: "date", itemsInSection: [
-            ItemInSection(title: "All", parameterValue: "All", selected: true),
-            ItemInSection(title: "Future", parameterValue: "Future", selected: false),
+            ItemInSection(title: "All", parameterValue: "all", selected: true),
+            ItemInSection(title: "Future", parameterValue: "Future", selected: true),
             ItemInSection(title: "Today", parameterValue: "Today", selected: false),
             ItemInSection(title: "This week", parameterValue: "This week", selected: false),
             ItemInSection(title: "Next week", parameterValue: "Next week", selected: false)],

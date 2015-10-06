@@ -287,6 +287,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // implement protocol of FilterViewController
     func filterViewController(filterViewController:FilterViewController?, didUpdateFilters filters:[String:AnyObject]) {
+        
         print(filters)
         params = filters
         loadEvents(false)
