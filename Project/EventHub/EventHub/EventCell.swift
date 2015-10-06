@@ -10,7 +10,7 @@ import UIKit
 
 class EventCell: UITableViewCell, ScaleTableViewTransform {
    
-    let miniumScale:CGFloat = 0.55;
+    let miniumScale:CGFloat = 0.65;
 
     @IBOutlet weak var scaleView: UIView!
  //   @IBOutlet weak var scaleView: UIView!
@@ -94,7 +94,7 @@ class EventCell: UITableViewCell, ScaleTableViewTransform {
     
     
     func transformCell(forScale scale: CGFloat) {
-        self.scaleView.transform = CGAffineTransformMakeScale(1.0 - scale, 1.0 - scale);
+        self.scaleView.transform = CGAffineTransformMakeScale(0.95 - scale, 0.95 - scale);
     }
 
 }

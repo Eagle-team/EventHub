@@ -247,42 +247,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18, Nguyen thi minh khai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-Jo-0i3">
-                                <rect key="frame" x="14" y="329" width="187" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
-                                <rect key="frame" x="14" y="363" width="216" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18, Nguyen thi minh khai" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-Jo-0i3">
+                                <rect key="frame" x="20" y="410" width="280" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
-                                <rect key="frame" x="14" y="300" width="183" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
+                                <rect key="frame" x="20" y="427" width="280" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
+                                <rect key="frame" x="20" y="393" width="280" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
+                                <rect key="frame" x="10" y="444" width="300" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Day ís Comming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjL-Y5-w9P">
+                                <rect key="frame" x="14" y="370" width="286" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
-                                <rect key="frame" x="8" y="379" width="304" height="132"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TFC-7I-3Vs" firstAttribute="top" secondItem="mSS-nT-5XD" secondAttribute="bottom" constant="8" id="05W-gs-JNp"/>
-                            <constraint firstItem="mSS-nT-5XD" firstAttribute="top" secondItem="ncO-XF-SrL" secondAttribute="bottom" constant="1" id="1jK-i4-ms9"/>
-                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leadingMargin" constant="-2" id="3Mk-pn-iFL"/>
-                            <constraint firstItem="ncO-XF-SrL" firstAttribute="top" secondItem="KVi-Jo-0i3" secondAttribute="bottom" constant="13" id="5j4-xc-qwS"/>
-                            <constraint firstAttribute="trailing" secondItem="mSS-nT-5XD" secondAttribute="trailing" constant="8" id="90O-Dy-IUO"/>
-                            <constraint firstItem="KVi-Jo-0i3" firstAttribute="top" secondItem="00x-GM-2JN" secondAttribute="bottom" constant="8" symbolic="YES" id="GIi-4t-Zsf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ncO-XF-SrL" secondAttribute="trailing" constant="74" id="MWZ-M4-hyv"/>
-                            <constraint firstItem="mSS-nT-5XD" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="8" id="Pfs-UL-jpF"/>
-                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="00x-GM-2JN" secondAttribute="leading" id="Wla-iQ-92y"/>
-                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="KVi-Jo-0i3" secondAttribute="leading" id="Y86-BR-Qbm"/>
-                            <constraint firstAttribute="bottom" secondItem="ncO-XF-SrL" secondAttribute="bottom" constant="190" id="dtv-zs-Ik5"/>
+                            <constraint firstAttribute="trailing" secondItem="00x-GM-2JN" secondAttribute="trailing" constant="20" id="0xn-eW-Bsa"/>
+                            <constraint firstItem="TFC-7I-3Vs" firstAttribute="top" secondItem="mSS-nT-5XD" secondAttribute="bottom" constant="5" id="7F0-9K-R05"/>
+                            <constraint firstItem="mSS-nT-5XD" firstAttribute="top" secondItem="ncO-XF-SrL" secondAttribute="bottom" constant="2" id="90Z-WJ-Css"/>
+                            <constraint firstAttribute="trailing" secondItem="mSS-nT-5XD" secondAttribute="trailing" constant="10" id="KGs-om-JYt"/>
+                            <constraint firstItem="00x-GM-2JN" firstAttribute="top" secondItem="DjL-Y5-w9P" secondAttribute="bottom" constant="2" id="Ot8-AL-ckw"/>
+                            <constraint firstItem="DjL-Y5-w9P" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="14" id="RQU-wO-qp8"/>
+                            <constraint firstItem="KVi-Jo-0i3" firstAttribute="top" secondItem="00x-GM-2JN" secondAttribute="bottom" constant="2" id="SZx-Ok-ZmV"/>
+                            <constraint firstAttribute="trailing" secondItem="KVi-Jo-0i3" secondAttribute="trailing" constant="20" id="Sk7-DI-TVe"/>
+                            <constraint firstItem="ncO-XF-SrL" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="20" id="T1s-Rb-q7P"/>
+                            <constraint firstItem="00x-GM-2JN" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="20" id="UJw-sZ-WLH"/>
+                            <constraint firstAttribute="trailing" secondItem="DjL-Y5-w9P" secondAttribute="trailing" constant="20" id="WoF-2a-44T"/>
+                            <constraint firstAttribute="trailing" secondItem="ncO-XF-SrL" secondAttribute="trailing" constant="20" id="aAw-C9-lfd"/>
+                            <constraint firstItem="KVi-Jo-0i3" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="20" id="anj-hn-j1J"/>
+                            <constraint firstItem="mSS-nT-5XD" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="10" id="hgg-sE-k4R"/>
+                            <constraint firstItem="ncO-XF-SrL" firstAttribute="top" secondItem="KVi-Jo-0i3" secondAttribute="bottom" constant="2" id="vV8-mh-mdB"/>
+                            <constraint firstItem="DjL-Y5-w9P" firstAttribute="top" secondItem="CHB-H5-ubv" secondAttribute="top" constant="370" id="zWa-oD-KDO"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -303,6 +314,7 @@
                         <outlet property="addressLabel" destination="KVi-Jo-0i3" id="wBj-ks-Zoc"/>
                         <outlet property="cityLabel" destination="ncO-XF-SrL" id="PvO-5J-VFb"/>
                         <outlet property="descriptionWebView" destination="mSS-nT-5XD" id="uqm-IH-7m1"/>
+                        <outlet property="evenTitle" destination="DjL-Y5-w9P" id="OWd-hK-qdj"/>
                         <outlet property="startTimeLabel" destination="00x-GM-2JN" id="xwX-VG-thB"/>
                     </connections>
                 </viewController>
@@ -429,18 +441,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eho-C5-RH0">
-                                <rect key="frame" x="0.0" y="20" width="320" height="320"/>
+                                <rect key="frame" x="10" y="60" width="300" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="3gY-dM-eCC"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="hvw-RK-zCk"/>
+                                    <constraint firstAttribute="height" constant="250" id="Pvk-C1-99O"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eho-C5-RH0" firstAttribute="top" secondItem="ppg-1r-pqu" secondAttribute="bottom" id="GHf-I5-fDc"/>
-                            <constraint firstItem="eho-C5-RH0" firstAttribute="leading" secondItem="agZ-hh-obC" secondAttribute="leading" id="bal-h5-cWn"/>
-                            <constraint firstAttribute="trailing" secondItem="eho-C5-RH0" secondAttribute="trailing" id="out-6u-EAi"/>
+                            <constraint firstAttribute="trailing" secondItem="eho-C5-RH0" secondAttribute="trailing" constant="10" id="7d1-Yu-fSy"/>
+                            <constraint firstItem="eho-C5-RH0" firstAttribute="leading" secondItem="agZ-hh-obC" secondAttribute="leading" constant="10" id="Gak-5u-lPx"/>
+                            <constraint firstItem="eho-C5-RH0" firstAttribute="top" secondItem="ppg-1r-pqu" secondAttribute="bottom" constant="40" id="agf-ax-lLj"/>
                         </constraints>
                     </view>
                     <connections>

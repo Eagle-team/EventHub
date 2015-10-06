@@ -23,7 +23,8 @@ class ImageItemViewController: UIViewController {
         if (imageFile != nil)
         {
             self.imageView.setImageWithURL(imageFile)
-      
+            self.imageView.layer.cornerRadius = 10
+            self.imageView.layer.masksToBounds = true
         }
     }
     

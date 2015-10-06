@@ -20,6 +20,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var descriptionWebView: UIWebView!
+    @IBOutlet weak var evenTitle: UILabel!
     
     var pageViewController: UIPageViewController!
     var  pageImages: [NSURL]!
@@ -31,8 +32,8 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         cityLabel.text = event.cityName
         addressLabel.text = event.address
         startTimeLabel.text = event.startTime
-        //descriptionLabel.text = event.eventDes
-        
+       
+        evenTitle.text = event.title
         //TODO: find the new way to save a line of code
         if (event.eventDes != nil)
         {
@@ -66,11 +67,13 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
                 self.pageViewController.dataSource = self
             
                 let startVC = self.viewControllerAtIndex(0) as ImageItemViewController
+            
                 let viewControllers = NSArray(object: startVC)
             
                 self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
             
-                self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, self.view.frame.size.height - 400)
+                self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, /* self.view.frame.size.height - */340)
+            
             
                 self.addChildViewController(self.pageViewController)
                 self.view.addSubview(self.pageViewController.view)
@@ -98,7 +101,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
         }
         
         let vc: ImageItemViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ImageItemViewController") as! ImageItemViewController
-        
+       
         vc.imageFile = self.pageImages[index]
         vc.pageIndex = index
         
