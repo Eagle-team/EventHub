@@ -30,10 +30,9 @@ struct DataKeys {
     static let Address = "Address"
     static let Longitude = "Longitude"
     static let Latitude = "Latitude"
-    
-    
-    
-    
+
+    static let isReminded = "Reminded"
+    static let RemindTime = "RemindTime"
 }
 
 class LocalSettings : NSObject
@@ -78,6 +77,37 @@ class LocalSettings : NSObject
 
     }
     
+    static func GetRemindSettings()-> UserReminderSettings!
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var isReminded : Bool!
+        var remindTime : Int!
+        
+        isReminded = defaults.boolForKey(DataKeys.isReminded)
+        remindTime = defaults.integerForKey(DataKeys.RemindTime)
+
+        defaults.synchronize()
+        if (isReminded == nil || remindTime == nil)
+        {
+            return nil
+        }else{
+            return
+                UserReminderSettings(isEnabled: isReminded, remindtime: remindTime)
+            
+        }
+    }
+    
+    static func SaveRemindSettings(settings : UserReminderSettings)
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setBool(settings.enabled, forKey: DataKeys.isReminded)
+        defaults.setInteger(settings.reminderBefore, forKey: DataKeys.RemindTime)
+        
+        defaults.synchronize()
+        
+    }
+    
     
 }
 
@@ -111,15 +141,15 @@ enum RemindTime {
 class UserReminderSettings : NSObject
 {
     public var enabled : Bool!
-    public var reminderBefore : RemindTime!
+    public var reminderBefore : Int!
     
-    init(isEnabled : Bool!,remindtime : RemindTime! )
+    init(isEnabled : Bool!,remindtime : Int! )
     {
         super.init()
         self.setData(isEnabled, remindtime: remindtime)
     }
     
-    public func setData(isEnabled : Bool!,remindtime : RemindTime! )
+    public func setData(isEnabled : Bool!,remindtime : Int! )
     {
         self.enabled = isEnabled
        self.reminderBefore = remindtime

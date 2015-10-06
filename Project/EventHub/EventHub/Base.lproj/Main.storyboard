@@ -590,6 +590,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KuB-4S-zCF">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="onReminderSwitchChanged:" destination="ZKc-cA-Nf1" eventType="valueChanged" id="nXM-Wa-bzD"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o31-WS-DGe">
                                                     <rect key="frame" x="25" y="13" width="62" height="17"/>
@@ -621,6 +624,9 @@
                                                         <segment title="2 hours"/>
                                                         <segment title="4 hours"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="onSegmentTimeChanged:" destination="ZKc-cA-Nf1" eventType="valueChanged" id="Fqs-dD-a7b"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKH-hI-hOr">
                                                     <rect key="frame" x="25" y="13" width="43" height="17"/>
@@ -758,6 +764,8 @@
                         <outlet property="cityName" destination="XNe-fY-Ui8" id="dxz-10-c7i"/>
                         <outlet property="currentLocatoinSwitch" destination="nqa-2s-qPD" id="vdM-M4-aqm"/>
                         <outlet property="fbButton" destination="gfP-Md-eQc" id="SXq-R9-X9w"/>
+                        <outlet property="remindSegment" destination="c1x-na-NL3" id="JmD-GD-g1D"/>
+                        <outlet property="remindSwitch" destination="KuB-4S-zCF" id="CuG-97-htv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ho4-ff-BjC" userLabel="First Responder" sceneMemberID="firstResponder"/>

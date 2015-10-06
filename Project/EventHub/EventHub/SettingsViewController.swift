@@ -15,6 +15,9 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
     
       let locationManager = CLLocationManager()
 
+    @IBOutlet weak var remindSwitch: UISwitch!
+    
+    @IBOutlet weak var remindSegment: UISegmentedControl!
     
     @IBOutlet weak var currentLocatoinSwitch: UISwitch!
     
@@ -36,7 +39,100 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
             
         }
         
+        
+        var remindSettings = LocalSettings.GetRemindSettings()
+        if (remindSettings != nil)
+        {
+            //currentLocatoinSwitch.setOn(settings.useCurrentLocation, animated: true)
+            //changeLocationCell.hidden = settings.useCurrentLocation
+            //cityName.text = settings.addressName
+            remindSwitch.setOn(remindSettings.enabled, animated: true)
+           
+            remindSegment.enabled = remindSettings.enabled
+          
+            
+            if(remindSettings.reminderBefore == 60)
+            {
+                remindSegment.selectedSegmentIndex = 1
+            }
+            else if(remindSettings.reminderBefore == 120)
+            {
+                remindSegment.selectedSegmentIndex = 2
+            }
+            else if(remindSettings.reminderBefore == 180)
+            {
+                remindSegment.selectedSegmentIndex = 3
+            }
+            else
+            {
+                remindSegment.selectedSegmentIndex = 0
+            }
+        }
+        
     }
+    
+    @IBAction func onReminderSwitchChanged(sender: UISwitch) {
+       // remindSwitch.setOn(sender.on, animated: true)
+        if (sender.on)
+        {
+            var remindSettings = LocalSettings.GetRemindSettings()
+            remindSettings.enabled = true
+            remindSegment.enabled = true
+           
+            if(remindSettings.reminderBefore == 60)
+            {
+                remindSegment.selectedSegmentIndex = 1
+            }
+            else if(remindSettings.reminderBefore == 120)
+            {
+                remindSegment.selectedSegmentIndex = 2
+            }
+            else if(remindSettings.reminderBefore == 240)
+            {
+                remindSegment.selectedSegmentIndex = 3
+            }
+            else
+            {
+                remindSegment.selectedSegmentIndex = 0
+            }
+           
+            LocalSettings.SaveRemindSettings(remindSettings)
+        }
+        else
+        {
+            var remindSettings = LocalSettings.GetRemindSettings()
+            remindSettings.enabled = false
+            LocalSettings.SaveRemindSettings(remindSettings)
+
+        }
+
+    }
+    @IBAction func onSegmentTimeChanged(sender: UISegmentedControl) {
+        if (remindSwitch.on)
+        {
+            //sender.enabled = true
+            var time :Int!
+            if (sender.selectedSegmentIndex == 0)
+            {
+                time = 30
+            }
+            else if (sender.selectedSegmentIndex == 1)
+            {
+                time = 120
+            }
+            else if (sender.selectedSegmentIndex == 2)
+            {
+                time = 180
+            }
+            else if (sender.selectedSegmentIndex == 3)
+            {
+                time = 240
+            }
+            var settings = UserReminderSettings(isEnabled: true, remindtime: time)
+            LocalSettings.SaveRemindSettings(settings)
+        }
+    }
+    
     @IBOutlet weak var fbButton: FBSDKLoginButton!
     
     @IBAction func onSwitchLocationChanged(sender: UISwitch) {
