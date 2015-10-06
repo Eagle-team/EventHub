@@ -23,6 +23,23 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
                 
             }else{
                 self.favorites = objects
+                
+                //anhnguyennotify
+                for fav in objects!{
+                    
+                    var title = fav["eventTitle"] as! String
+                    var deadlineString = fav["eventStartTime"] as! String
+                    
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    let date = dateFormatter.dateFromString(deadlineString)
+                    
+                    let todoItem = TodoItem(deadline: date!, title: title, UUID: NSUUID().UUIDString)
+                    TodoList.sharedInstance.addItem(todoItem)
+
+                
+                }
+
             }
             
             self.tableView?.reloadData()
@@ -32,6 +49,9 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
         self.tableView?.delegate = self
         self.tableView?.rowHeight = UITableViewAutomaticDimension
         self.tableView?.estimatedRowHeight = 120
+        
+        //notify
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList", name: "TodoListShouldRefresh", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +67,13 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
         }
     }
     
+    
+    //anhnguyennotify
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //refreshList()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FavoriteCell", forIndexPath: indexPath) as! FavoriteCell
@@ -54,6 +81,21 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
         cell.titleLabel.text = favorites[indexPath.row]["eventTitle"] as! String
         cell.timeLabel.text = favorites[indexPath.row]["eventStartTime"] as! String
         cell.addressLabel.text = favorites[indexPath.row]["eventAddress"] as! String
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFormatter.dateFromString(favorites[indexPath.row]["eventStartTime"] as! String)
+        cell.dueDate = date
+        
+       // cell.textLabel?.text = todoItem.title as String!
+        
+        if (cell.isOverdue) { // the current time is later than the to-do item's deadline
+            cell.titleLabel?.textColor = UIColor.redColor()
+        } else {
+            cell.titleLabel?.textColor = UIColor.blackColor() // we need to reset this because a cell with red subtitle may be returned by dequeueReusableCellWithIdentifier:indexPath:
+        }
+        
+
+        
         return cell
     }
     

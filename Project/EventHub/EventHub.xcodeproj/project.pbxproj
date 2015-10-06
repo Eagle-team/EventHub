@@ -16,6 +16,8 @@
 		58E977211BB5398400A9595F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977201BB5398400A9595F /* Location.swift */; };
 		58E977251BB5609200A9595F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977241BB5609200A9595F /* EventViewController.swift */; };
 		58E977281BB56AD400A9595F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E977271BB56AD400A9595F /* EventCell.swift */; };
+		58EF28251BC37D1500DEF159 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF28241BC37D1500DEF159 /* TodoList.swift */; settings = {ASSET_TAGS = (); }; };
+		58EF28271BC37D8F00DEF159 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EF28261BC37D8F00DEF159 /* TodoItem.swift */; settings = {ASSET_TAGS = (); }; };
 		9021F68C0B2B7F9EB6BB55E5 /* libPods-EventHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2796C8443B42FB74571720F /* libPods-EventHub.a */; };
 		CE02D9B31BA528C3003D83C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02D9B21BA528C3003D83C6 /* AppDelegate.swift */; };
 		CE02D9B81BA528C3003D83C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE02D9B61BA528C3003D83C6 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		58E977201BB5398400A9595F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		58E977241BB5609200A9595F /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		58E977271BB56AD400A9595F /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		58EF28241BC37D1500DEF159 /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
+		58EF28261BC37D8F00DEF159 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		916BC3F22BD15EAFBBF29A15 /* Pods-EventHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-EventHub/Pods-EventHub.release.xcconfig"; sourceTree = "<group>"; };
 		C2796C8443B42FB74571720F /* libPods-EventHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EventHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02D9AD1BA528C3003D83C6 /* EventHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				F841B5281BB861CA00B7694B /* Utils.swift */,
+				58EF28241BC37D1500DEF159 /* TodoList.swift */,
+				58EF28261BC37D8F00DEF159 /* TodoItem.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				CEC15E681BB99CFE00EAC656 /* ImageItemViewController.swift in Sources */,
 				CE5604E11BC00F8A00D971FB /* ScalableTableView.swift in Sources */,
 				CEF1D33E1BAD7F1200CE17B4 /* LoginViewController.swift in Sources */,
+				58EF28271BC37D8F00DEF159 /* TodoItem.swift in Sources */,
 				CEC15E661BB99CD700EAC656 /* EventDetail.swift in Sources */,
 				CE05E3591BB797AE00FE3A54 /* Category.swift in Sources */,
 				58E9771C1BB50BAC00A9595F /* EventClient.swift in Sources */,
@@ -382,6 +389,7 @@
 				CEF1D3461BAD993300CE17B4 /* SetLocationViewController.swift in Sources */,
 				F841B5291BB861CA00B7694B /* Utils.swift in Sources */,
 				F8419E271BB7B0E300E9EF77 /* CustomAnnotationView.swift in Sources */,
+				58EF28251BC37D1500DEF159 /* TodoList.swift in Sources */,
 				F81EDE7E1BC2E7E300A32B19 /* FavoriteCell.swift in Sources */,
 				F8419E2D1BB7FD7B00E9EF77 /* EventMKPointAnnotation.swift in Sources */,
 				F839D5FC1BC11CA400F52526 /* SearchLocationViewController.swift in Sources */,

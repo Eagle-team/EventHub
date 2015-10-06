@@ -17,6 +17,8 @@ class FavoriteCell: UITableViewCell {
     
     @IBOutlet weak var addressLabel: UILabel!
     
+    var dueDate : NSDate!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,5 +28,9 @@ class FavoriteCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    var isOverdue: Bool {
+        return (NSDate().compare(self.dueDate) == NSComparisonResult.OrderedDescending) // deadline is earlier than current date
     }
 }
