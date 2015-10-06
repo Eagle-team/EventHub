@@ -69,10 +69,8 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
         }*/
         
         //var query = PFQuery(className:"GameScore")
-       var locationSettings = LocalSettings.GetLocationSettings()
-        
-        var a = 999
-        
+
+            self.navigationController?.popViewControllerAnimated(true)
     }
 
     @IBAction func onAccepted(sender: AnyObject) {
@@ -101,12 +99,23 @@ class SearchLocationViewController: UIViewController , UITableViewDelegate, UITa
             
 
         })
+        
+        
 */
-        let locationSettings = UserLocationSettings(useCurrent: false, address: self.currentSelectedCity, lat: self.currentSelectedLat, lng: self.currentSelectedLng)
-        LocalSettings.SaveLocationSettings(locationSettings)
-        self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
-        self.navigationController?.popViewControllerAnimated(true)
-
+        if(self.currentSelectedCity == nil || self.currentSelectedLat == nil || self.currentSelectedLng == nil)
+        {
+            var alert = UIAlertController(title: "", message: "Please select a location!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else
+        {
+        
+            let locationSettings = UserLocationSettings(useCurrent: false, address: self.currentSelectedCity, lat: self.currentSelectedLat, lng: self.currentSelectedLng)
+            LocalSettings.SaveLocationSettings(locationSettings)
+            self.delegate?.filtersViewControllerUpdateDistanceState!(self, near: self.currentSelectedCity)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
 
     var currentSearchValue: String!

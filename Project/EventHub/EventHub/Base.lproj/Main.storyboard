@@ -247,31 +247,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18, Nguyen thi minh khai" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-Jo-0i3">
-                                <rect key="frame" x="20" y="410" width="280" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18, Nguyen thi minh khai" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-Jo-0i3">
+                                <rect key="frame" x="20" y="340" width="280" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
-                                <rect key="frame" x="20" y="427" width="280" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ho Chi Minh City, Viet Nam" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-XF-SrL">
+                                <rect key="frame" x="20" y="357" width="280" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
-                                <rect key="frame" x="20" y="393" width="280" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Oct 6, 2015 7pm - 8 pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00x-GM-2JN">
+                                <rect key="frame" x="20" y="323" width="280" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
-                                <rect key="frame" x="10" y="444" width="300" height="75"/>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mSS-nT-5XD">
+                                <rect key="frame" x="10" y="374" width="300" height="145"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Day ís Comming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjL-Y5-w9P">
-                                <rect key="frame" x="14" y="370" width="286" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Demo Day ís Comming" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjL-Y5-w9P">
+                                <rect key="frame" x="14" y="300" width="286" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -293,7 +293,7 @@
                             <constraint firstItem="KVi-Jo-0i3" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="20" id="anj-hn-j1J"/>
                             <constraint firstItem="mSS-nT-5XD" firstAttribute="leading" secondItem="CHB-H5-ubv" secondAttribute="leading" constant="10" id="hgg-sE-k4R"/>
                             <constraint firstItem="ncO-XF-SrL" firstAttribute="top" secondItem="KVi-Jo-0i3" secondAttribute="bottom" constant="2" id="vV8-mh-mdB"/>
-                            <constraint firstItem="DjL-Y5-w9P" firstAttribute="top" secondItem="CHB-H5-ubv" secondAttribute="top" constant="370" id="zWa-oD-KDO"/>
+                            <constraint firstItem="DjL-Y5-w9P" firstAttribute="top" secondItem="CHB-H5-ubv" secondAttribute="top" constant="300" id="zWa-oD-KDO"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -441,7 +441,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eho-C5-RH0">
-                                <rect key="frame" x="10" y="60" width="300" height="250"/>
+                                <rect key="frame" x="10" y="40" width="300" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Pvk-C1-99O"/>
                                 </constraints>
@@ -451,7 +451,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="eho-C5-RH0" secondAttribute="trailing" constant="10" id="7d1-Yu-fSy"/>
                             <constraint firstItem="eho-C5-RH0" firstAttribute="leading" secondItem="agZ-hh-obC" secondAttribute="leading" constant="10" id="Gak-5u-lPx"/>
-                            <constraint firstItem="eho-C5-RH0" firstAttribute="top" secondItem="ppg-1r-pqu" secondAttribute="bottom" constant="40" id="agf-ax-lLj"/>
+                            <constraint firstItem="eho-C5-RH0" firstAttribute="top" secondItem="ppg-1r-pqu" secondAttribute="bottom" constant="20" id="agf-ax-lLj"/>
                         </constraints>
                     </view>
                     <connections>

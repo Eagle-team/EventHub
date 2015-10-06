@@ -72,7 +72,7 @@ class EventDetailsViewController: UIViewController, UIPageViewControllerDataSour
             
                 self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
             
-                self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, /* self.view.frame.size.height - */340)
+                self.pageViewController.view.frame = CGRectMake(0, 30, self.view.frame.width, /* self.view.frame.size.height - */270)
             
             
                 self.addChildViewController(self.pageViewController)

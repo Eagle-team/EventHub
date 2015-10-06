@@ -68,10 +68,13 @@ class EventDetailMapViewController: UIViewController, MKMapViewDelegate{
         
         var dxAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? CustomAnnotationView
         if (dxAnnotationView == nil){
-            pinView = UIImageView(image: imageResize(UIImage(named: "clock")!, sizeChange: CGSizeMake(30, 30)))
+            pinView = UIImageView(image: imageResize(UIImage(named: "chooselocation")!, sizeChange: CGSizeMake(30, 30)))
             calloutView = NSBundle.mainBundle().loadNibNamed("customAnnotation", owner: self, options: nil).first as! CustomCallOutView
             
             dxAnnotationView = CustomAnnotationView(annotation: annotation, reuseIdentifier: reuseId, pinView: pinView, calloutView: calloutView, settings: DXAnnotationSettings.defaultSettings())
+            
+        
+            
         }else{
             dxAnnotationView?.annotation = annotation
             dxAnnotationView?.pinView = pinView
