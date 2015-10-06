@@ -103,6 +103,7 @@ class SettingsViewController: UITableViewController, SearchLocationViewControlle
             var remindSettings = LocalSettings.GetRemindSettings()
             remindSettings.enabled = false
             LocalSettings.SaveRemindSettings(remindSettings)
+            remindSegment.enabled = false
 
         }
 
