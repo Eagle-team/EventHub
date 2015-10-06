@@ -30,7 +30,7 @@ class FavoriteViewController: UIViewController, FSCalendarDataSource, FSCalendar
         let panGesture = UIPanGestureRecognizer(target: self, action: "expandCalendar:")
         calendar.addGestureRecognizer(panGesture)
         
-        calendar.appearance.eventColor = UIColor.greenColor()
+//        calendar.appearance.eventColor = UIColor.greenColor()
         calendar.appearance.selectionColor = UIColor.blueColor()
         calendar.appearance.todayColor = UIColor.orangeColor()
         
@@ -58,14 +58,25 @@ class FavoriteViewController: UIViewController, FSCalendarDataSource, FSCalendar
     }
     
     func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Day, .Month, .Year], fromDate: date)
-        print(components)
+//        let calendar = NSCalendar.currentCalendar()
+//        let components = calendar.components([.Day, .Month, .Year], fromDate: date)
+//        print(components)
+//        
+//        let day = components.day < 10 ? "0\(components.day)" : "\(components.day)"
+//        let month = components.month < 10 ? "0\(components.month)" : "\(components.month)"
+//        let dateSelected = "\(components.year)-\(month)-\(day)"
+        let dateSelected = getDateString(date)
         
-        let day = components.day < 10 ? "0\(components.day)" : "\(components.day)"
-        let month = components.month < 10 ? "0\(components.month)" : "\(components.month)"
-        let dateSelected = "\(components.year)-\(month)-\(day)"
-        
+        for event in events {
+            let dateString = event.objectForKey("eventStartTime") as! String
+            var dateArr = dateString.characters.split{$0 == " "}.map(String.init)
+            var date:String = dateArr[0]
+            if date == dateSelected {
+//                eventsForShow.append(event)
+                //                self.favoriteTableView.reloadData()
+                return true
+            }
+        }
         return false
     }
     
@@ -119,6 +130,30 @@ class FavoriteViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.
 //    }
+    
+    func calendar(calendar: FSCalendar!, imageForDate date: NSDate!) -> UIImage! {
+        if hasEvents(date) {
+            return UIImage(named: "event-calendar-icon")
+        }
+        return nil
+    }
+    
+    func hasEvents(date:NSDate) -> Bool {
+        let dateSelected = getDateString(date)
+        
+        for event in events {
+            let dateString = event.objectForKey("eventStartTime") as! String
+            var dateArr = dateString.characters.split{$0 == " "}.map(String.init)
+            var date:String = dateArr[0]
+            if date == dateSelected {
+                //                eventsForShow.append(event)
+                //                self.favoriteTableView.reloadData()
+                return true
+            }
+        }
+        return false
+
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
