@@ -25,7 +25,7 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
                 self.favorites = objects
                 
                 //anhnguyennotify
-                for fav in objects!{
+                /*for fav in objects!{
                     
                     var title = fav["eventTitle"] as! String
                     var deadlineString = fav["eventStartTime"] as! String
@@ -38,7 +38,7 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
                     TodoList.sharedInstance.addItem(todoItem)
 
                 
-                }
+                }*/
 
             }
             
@@ -81,6 +81,8 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
         cell.titleLabel.text = favorites[indexPath.row]["eventTitle"] as! String
         cell.timeLabel.text = favorites[indexPath.row]["eventStartTime"] as! String
         cell.addressLabel.text = favorites[indexPath.row]["eventAddress"] as! String
+        
+        /*
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.dateFromString(favorites[indexPath.row]["eventStartTime"] as! String)
@@ -93,7 +95,7 @@ class FavoriteEventTableViewController: UIViewController, UITableViewDataSource,
         } else {
             cell.titleLabel?.textColor = UIColor.blackColor() // we need to reset this because a cell with red subtitle may be returned by dequeueReusableCellWithIdentifier:indexPath:
         }
-        
+        */
 
         
         return cell
